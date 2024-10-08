@@ -1,0 +1,15 @@
+<div class="fsbac-card-course-mini">
+    <div class="fsbac-card-course-mini-img" {{#courseimage}}style="background-image:url({{courseimage}})"{{/courseimage}}>
+
+    {{#tipologiaLabel}}<div class="fsbac-card-course-type {{tipologia}}" title="{{tipologiaLabel}}"><span>{{tipologiaLabel}}</span></div>{{/tipologiaLabel}}
+    </div>
+    <div class="fsbac-card-course-mini-container">
+            <a href='{{{viewurl}}}' class="fsbac-card-course-mini-fullname" title="{{{fullname}}}">{{{fullname}}}</a>
+            <p class="fsbac-card-course-mini-description" title="{{{sottotitolo}}}" {{^sottotitolo}}style='visibility:hidden'{{/sottotitolo}}>{{{sottotitolo}}}</p>
+            <p class="fsbac-card-course-mini-author" title="{{{autore}}}" {{^autore}}style='visibility:hidden'{{/autore}} >{{#str}}common.coursecard_of,theme_fsbac{{/str}} <b>{{autore}}</b></p>
+         
+    </div>
+    {{#showCompleted}}
+     <div class="fsbac-card-course-mini-completed">{{#str}}common.completed,theme_fsbac{{/str}}</div>
+    {{/showCompleted}}
+</div>   

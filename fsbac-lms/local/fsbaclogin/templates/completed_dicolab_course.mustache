@@ -1,0 +1,18 @@
+<div class='fsbac-login-fixed fsbac-container-confirm'>
+
+    <div class="fsbac-container-confirm-card">
+        <p class="welcome"> {{#str}} greetings, local_fsbaclogin {{/str}}</p>
+        <p class="fsbac-welcome-text-info">{{#str}} youcompleteddicolabcourse, local_fsbaclogin, {{coursename}} {{/str}}</p>
+        {{#customcertid}}
+            <p class="fsbac-welcome-text-info">{{#str}} downloadcertificate, local_fsbaclogin, {{coursename}} {{/str}}</p>
+            <a href="{{config.wwwroot}}/mod/certificate/view.php?id={{customcertid}}&downloadown=1" class="btn btn-primary button-certificate" target="_blank">
+                {{#str}}course.certificate_download, theme_fsbac{{/str}} <i class="fas fa-download"></i>
+            </a>
+        {{/customcertid}}
+            <a href="{{config.wwwroot}}/course/view.php?id={{courseid}}" class="btn btn-primary button-certificate">
+                {{#str}} backtocourse, local_fsbaclogin {{/str}}
+            </a>
+    </div>
+
+
+</div>

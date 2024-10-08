@@ -1,0 +1,27 @@
+
+<div class="fsbac-filters-container-inputs">
+<div class="closeMobile"><button class='showFilters'><i class="fas fa-times"></i></button></div>
+  <div class="fsbac-filters-courses">
+      <div class="form-group fsbac-select-fiters">
+                <label for="levels">{{#str}}filter.level,theme_fsbac{{/str}}</label>
+                <select  class="form-control" id="levels" data-type='level'>
+                    <option value='-'>-</option>
+                    {{#levels}}
+                      <option value="{{value}}">{{label}}</option>
+                    {{/levels}}
+                </select>
+        </div>
+        <div class="form-group fsbac-select-fiters  range-filter">
+          
+            {{< theme_fsbac/components/filters/range_slider_duration}}
+              {{$label}}{{#str}}filter.duration_path,theme_fsbac{{/str}}{{/label}}
+              {{$maxDuration}}600{{/maxDuration}}
+            {{/ theme_fsbac/components/filters/range_slider_duration}}
+        </div>
+  </div>
+<div class="mobileSearch fsbac-filters-input-search">
+ <button type="button" class="btn btn-primary submit-filter">{{#str}}search,theme_fsbac{{/str}}</button>
+</div>
+</div>
+
+

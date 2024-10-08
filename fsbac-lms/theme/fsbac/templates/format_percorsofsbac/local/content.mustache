@@ -1,0 +1,11 @@
+{{#islogged}}
+    {{#isenrolled}}
+        {{> format_percorsofsbac/local/pathcontent }}
+    {{/isenrolled}}
+    {{^isenrolled}}
+        {{> format_percorsofsbac/local/pathcontentenrolafterlogin }}
+    {{/isenrolled}}
+{{/islogged}}
+{{^islogged}}
+    {{> format_percorsofsbac/local/pathcontentenrol }}
+{{/islogged}}

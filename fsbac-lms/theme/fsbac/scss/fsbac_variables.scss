@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'NunitoSans-Regular';
+    src: url([[font:theme|NunitoSans-Regular.ttf]]);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NunitoSans-Bold';
+    src: url([[font:theme|NunitoSans-Bold.ttf]]);
+}
+
+@font-face {
+    font-family: 'NunitoSans-Light';
+    src: url([[font:theme|NunitoSans-Light.ttf]]);
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url([[font:theme|OpenSans-Regular.ttf]]);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url([[font:theme|OpenSans-Bold.ttf]]);
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url([[font:theme|OpenSans-Light.ttf]]);
+}
+
+
+
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1280px) !default;
+
+
+
+$font-family-base: NunitoSans-Regular;
+$font-regular-NunitoSans: NunitoSans-Regular;
+$font-light-NunitoSans: NunitoSans-Light;
+$font-bold-NunitoSans: NunitoSans-Bold;
+
+$font-regular-OpenSans: OpenSans-Regular;
+$font-light-OpenSans: OpenSans-Light;
+$font-bold-OpenSans: OpenSans-Bold;
+
+
+
+
+$primary-10: rgba(126, 101, 160, 0.10
+);
+$white: #fff;
+$general-bianco: #fff;
+$neri-grigio-chiarissimo: #FAFBFF;
+$neri-grigio-chiaro: #E7E9F1;
+$neri-grigio-medio: #C5C8D2;
+$neri-nero-pieno: #24252B;
+$neri-nero-chiaro: #34363F;
+$neutral-100: #101010;
+$servizio-pericolo-default: #E12F2F;
+$dicolab-color:#9B49D6;
+
+$primari-10: rgba(126, 101, 160, 0.10);
+$primary: #7E65A0;
+$secondary: $primary-10;
+$secondari-chiaro: #3162BF;
+$secondari-default: #193D80;
+$secondari-scuro : #133371;
+$neri-grigio-scuro: #6C6E76;
+$servizio-conferma-default: #64BB20;
+$btn-border-radius: 4px;
+$navbar-height: 88px;

@@ -1,0 +1,45 @@
+.fsbac-offriamo-container {
+    margin-top: 78px;
+    width: 100%;
+
+    .fsbac-offriamo-cards{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 24px;
+        @include media-breakpoint-down(md) {
+            display: flex;
+            flex-direction: column;
+         }
+    }
+
+
+    .fsbac-offriamo-card {
+        padding: 40px;
+        border-radius: 4px;
+        background: $white;
+        box-shadow: 2px 4px 60px 0px rgba(101, 102, 106, 0.10);
+        width: 100%;
+        max-width: 411px;
+       
+        min-height: 358px;
+
+        .fsbac-offriamo-card-title {
+            color: #23242A;
+            font-family: $font-bold-NunitoSans;
+            font-size: 24px;
+            line-height: 135%;
+        }
+
+        .fsbac-offriamo-card-desc {
+            margin-top: 49px;
+            color: $neri-nero-chiaro;
+            font-family: $font-regular-OpenSans;
+            font-size: 18px;
+            line-height: 160%;
+        }
+        .fsbac-offriamo-card-link{
+            margin-top: 32px;
+        }
+    }
+
+}

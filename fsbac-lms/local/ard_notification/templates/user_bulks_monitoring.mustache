@@ -1,0 +1,119 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+<div class="path-local-ard_notification">
+    <!-- User -->
+    <h2>{{#str}}userinformation, local_ard_notification{{/str}}</h2>
+    <div class="table-responsive-lg table-striped">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">{{#str}}user{{/str}}</th>
+                    <th scope="col">{{#str}}email{{/str}}</th>
+                    <th scope="col">{{#str}}institution, local_ard_notification{{/str}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- User -->
+                    <td>
+                        <a href="{{ config.wwwroot }}/user/profile.php?id={{ user.id }}" title="{{ user.name }}" alt="{{ user.name }}">
+                            {{ user.name }}
+                        </a>
+                    </td>
+                    <!-- Email Address  -->
+                    <td>{{ user.email }}</td>
+                    <!-- Institution -->
+                    <td>{{ user.institution }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h2>{{#str}}userbulks, local_ard_notification{{/str}}</h2>
+    {{#hasuserbulks}}
+        <!-- Search Bar -->
+        {{> local_ard_notification/partials/searchbar_user_bulks }}
+        <!-- Pagination -->
+        {{> local_ard_notification/partials/pagination }}
+        <!-- User bulks -->
+        <div class="table-responsive-lg table-striped">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">{{#str}}bulkname, local_ard_notification{{/str}}</th>
+                        <th scope="col">{{#str}}message, local_ard_notification{{/str}}</th>
+                        <th scope="col">{{#str}}status{{/str}}</th>
+                        <th scope="col">{{#str}}statustime, local_ard_notification{{/str}}</th>
+                        <th scope="col">{{#str}}statusdescription, local_ard_notification{{/str}}</th>
+                        <th scope="col">{{#str}}actions{{/str}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#bulks}}
+                        <tr>
+                            <!-- Bulk Name -->
+                            <td>{{ bulkname }}</td>
+                            <!-- Message -->
+                            <td>
+                                <button type="button" class="btn btn-outline-primary my-2 my-sm-0" data-toggle="popover" title="{{ messagesubject }}" data-content="{{ messagebody }}" data-html="true">
+                                    {{#str}}preview{{/str}}
+                                </button>
+                            </td>
+                            <!-- Status -->
+                            <td>
+                                <span class="badge badge-{{ status.color }}">{{ status.label }}</span>
+                            </td>
+                            <!-- Status Time -->
+                            <td>{{ statustime }}</td>
+                            <!-- Status Description -->
+                            <td>
+                                <button type="button" class="btn btn-outline-primary my-2 my-sm-0" data-toggle="popover" title="{{#str}}statusdescription, local_ard_notification{{/str}}" data-content="{{ statusdescription }}" data-html="true">
+                                    {{#str}}view{{/str}}
+                                </button>
+                            </td>
+                            <!-- Actions -->
+                            <td>
+                                <!-- Send Now -->
+                                <a {{#enablesendnow}}href="{{ config.wwwroot }}/local/ard_notification/send_message_now.php?bulkid={{ bulkid }}&userid={{ userid }}&goto=userbulks"{{/enablesendnow}} class="bulk-action" title="{{#str}}sendnow, local_ard_notification{{/str}}" alt="{{#str}}sendnow, local_ard_notification{{/str}}">
+                                    <svg class="svg-icon {{#enablesendnow}}enabled{{/enablesendnow}}{{^enablesendnow}}disabled{{/enablesendnow}}">
+                                        <use xlink:href="{{ config.wwwroot }}/local/ard_notification/icons/sprite.svg#paper-plane"></use>
+                                    </svg>
+                                </a>
+                                <!-- Delete -->
+                                <a href="{{ config.wwwroot }}/local/ard_notification/delete_bulk_user.php?bulkid={{ bulkid }}&userid={{ userid }}&goto=userbulks" class="bulk-action" title="{{#str}}delete{{/str}}" alt="{{#str}}delete{{/str}}">
+                                    <svg class="svg-icon enabled">
+                                        <use xlink:href="{{ config.wwwroot }}/local/ard_notification/icons/sprite.svg#trash"></use>
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                    {{/bulks}}
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination -->
+        {{> local_ard_notification/partials/pagination }}
+    {{/hasuserbulks}}
+    <!-- No results -->
+    {{^hasuserbulks}}
+        <div class="row">
+            <div class="col-12 my-3">
+                {{#str}}nouserbulksfound, local_ard_notification{{/str}}
+            </div>
+        </div>
+    {{/hasuserbulks}}
+</div>

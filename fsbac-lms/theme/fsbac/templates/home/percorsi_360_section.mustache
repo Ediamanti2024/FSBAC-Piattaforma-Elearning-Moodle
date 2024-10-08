@@ -1,0 +1,76 @@
+<section class="fsbac-percorsi_360_section container">
+<div class="fsbac-percorsi_360_header">
+    <div class="fsbac-percorsi_360_navigation">
+         <button class="fsbac-percorsi_360-prev"><i class="fa fa-angle-left"></i></button>
+         <button class="fsbac-percorsi_360-next"><i class="fa fa-angle-right"></i></button>
+    </div>
+</div>
+
+<div class="fsbac-percorsi_360_container">
+        
+        <div class="fsbac-percorsi_360-text-description">
+            {{< theme_fsbac/components/title-section}}
+                {{$title}}{{#str}}home.percorsi_360_section, theme_fsbac{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+            <p>{{#str}}home.percorsi_360_section_text, theme_fsbac{{/str}}</p>
+            <div class="fsbac-percorsi_360-a"><a href="{{config.wwwroot}}/theme/fsbac/pages/paths.php" class="btn btn-primary">{{#str}}home.percorsi_360_section_button, theme_fsbac{{/str}} </a></div>
+           
+         </div> 
+         <div class="swiper fsbac-percorsi_360_swiper">
+            <div class="swiper-wrapper">  
+            {{#percorsi}}
+               <div class="swiper-slide">  {{> theme_fsbac/components/path-card/index}} </div>
+            {{/percorsi}}
+
+            </div>
+            
+         </div>
+
+</div>
+ <div class="fsbac-fsbac-percorsi_360_swiper_pagination"></div>
+</section>
+<script>
+ new Swiper('.fsbac-percorsi_360_swiper', {
+  loop: false,
+    slidesPerView: "auto",
+    spaceBetween: -100,
+    breakpoints: {
+    320: {
+      slidesPerView: 1,
+      centeredSlides:true,
+      centerInsufficientSlides:true,
+      spaceBetween: 0
+    },
+   
+    480: {
+      slidesPerView: 1,
+      centeredSlides:true,
+       spaceBetween: 0
+     
+    },
+   
+    820: {
+      slidesPerView: 'auto',
+      spaceBetween: -100,
+      
+       
+    }
+   
+  },
+  pagination: {
+    el: '.fsbac-fsbac-percorsi_360_swiper_pagination',
+    type: 'bullets',
+    clickable:true,
+    dynamicBullets:false,
+    dynamicMainBullets:1
+    
+
+  },
+
+  // Navigation arrows
+ navigation: {
+    nextEl: '.fsbac-percorsi_360-next',
+    prevEl: '.fsbac-percorsi_360-prev',
+  }
+});
+</script>

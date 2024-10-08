@@ -1,0 +1,27 @@
+
+<section class="fsbac-home_user-course_tendenza">
+   <div class="container fsbac-section-with-title">
+        <div class="fsbac-title-top white">
+            {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}home_user.section_course_tendenza, theme_fsbac{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+       
+        </div>
+        
+
+            <div class="fsbac-course_tendenza-container-courses">
+               
+                {{#corsiTendenze}}
+        
+                    {{< theme_fsbac/components/course-card/mini}} 
+                            {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                    {{/ theme_fsbac/components/course-card/mini}} 
+                  
+                {{/corsiTendenze}} 
+            
+            </div>
+
+        
+    </div>
+</section>
+

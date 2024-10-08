@@ -1,0 +1,90 @@
+.fsbac-percorsi_360_section {
+    margin-top: 201px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include media-breakpoint-down(md) {
+        margin-top: 56px;
+    }
+
+    .fsbac-percorsi_360_header {
+        display: flex;
+        justify-content: flex-end;
+
+        .fsbac-percorsi_360_navigation {
+            display: flex;
+            gap: 8px;
+
+            button {
+                background: transparent;
+                border: none;
+                color: $primary;
+
+                &:disabled {
+                    opacity: 0.4000000059604645;
+                }
+            }
+        }
+    }
+
+    .fsbac-percorsi_360_container {
+
+        display: flex;
+        gap: 20px;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+
+        .fsbac-percorsi_360-text-description {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 486px;
+
+            @include media-breakpoint-down(md) {
+                width: 100%
+            }
+
+            p {
+                color: $neri-nero-chiaro;
+                font-family: $font-regular-OpenSans;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 160%;
+            }
+        }
+
+        .fsbac-percorsi_360_swiper {
+            flex: 1;
+            height: 228px;
+
+            @include media-breakpoint-down(md) {
+                width: 100%
+            }
+
+
+        }
+    }
+
+    .fsbac-percorsi_360-a {
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
+
+    .fsbac-fsbac-percorsi_360_swiper_pagination {
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        @include media-breakpoint-down(md) {
+            display: flex;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: $primary;
+        }
+    }
+}

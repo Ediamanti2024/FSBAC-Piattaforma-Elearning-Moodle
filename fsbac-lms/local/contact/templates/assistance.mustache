@@ -1,0 +1,52 @@
+<p>{{#str}} bisognodiassistenzadesc, local_contact {{/str}}</p>
+
+<p>{{#str}} scaricaguidarapida, local_contact {{/str}}</p>
+<p>{{#str}} scaricaguidarapidadesc, local_contact {{/str}}</p>
+
+<form method="get" action="guida.pdf">
+   <button type="submit">{{#str}} scaricaguida, local_contact {{/str}}</button>
+</form>
+
+<p>{{#str}} domandefrequenti, local_contact {{/str}}</p>
+<p>{{#str}} domandefrequentidesc, local_contact {{/str}}</p>
+
+<p><button type="button" onclick="displayfaqform()">{{#str}} vaiadomandefrequenti, local_contact {{/str}}</button></p>
+<div id="faq" style="display:none">
+    <p>{{#str}} domanda1, local_contact {{/str}}</p>
+    <p>{{#str}} risposta1, local_contact {{/str}}</p>
+    <p>{{#str}} domanda2, local_contact {{/str}}</p>
+    <p>{{#str}} risposta2, local_contact {{/str}}</p>
+    <p>{{#str}} domanda3, local_contact {{/str}}</p>
+    <p>{{#str}} risposta3, local_contact {{/str}}</p>
+</div>
+
+<p>{{#str}} scriviciunmessaggio, local_contact {{/str}}</p>
+<p>{{#str}} scriviciunmessaggiodesc, local_contact {{/str}}</p>
+
+<p><button type="button" id="contact" onclick="displaycontactform()">{{#str}} richiestadiassistenza, local_contact {{/str}}</button></p>
+<form action="../contact/index.php" method="post" class="contact-us" id="contact-us" style="display:none">
+    <fieldset>
+        <input id="recipient" name="recipient" type="hidden" value="helpdesk"><br>
+        <label for="name" id="namelabel">{{#str}} name {{/str}}</label><br>
+        <input id="name" name="name" type="text" required="required" value="{{defaultname}}"><br>
+        <label for="email" id="emaillabel">{{#str}} email {{/str}}</label><br>
+        <input id="email" name="email" type="email" required="required" value="{{defaultemail}}"><br>
+        <label for="subject" id="subjectlabel">{{#str}} subject {{/str}}</label><br>
+        <input id="subject" name="subject" type="text" required="required"><br>
+        <label for="message" id="messagelabel">{{#str}} message {{/str}}</label><br>
+        <textarea id="message" name="message" required="required"></textarea><br>
+        <input type="hidden" id="sesskey" name="sesskey" value="{{sesskey}}">
+    </fieldset>
+    <div>
+        <input type="submit" name="submit" id="submit" value="{{#str}} submit {{/str}}">
+    </div>
+</form>
+
+<script>
+    function displaycontactform() {
+        document.getElementById("contact-us").style.display = "block";
+    }
+    function displayfaqform() {
+        document.getElementById("faq").style.display = "block";
+    }
+</script>

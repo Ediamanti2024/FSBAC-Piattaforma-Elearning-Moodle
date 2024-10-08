@@ -1,0 +1,34 @@
+.fsbac-title-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: fit-content;
+
+    .fsbac-title-arrow {
+        font-family: $font-bold-NunitoSans;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 130%;
+        color: $neri-nero-pieno;
+
+        @include media-breakpoint-down(md) {
+            font-size: 21px;
+        }
+    }
+
+    svg.fsbac-white-arrow {
+        @include media-breakpoint-down(md) {
+            width: 21px;
+        }
+
+        .svg-arrow-top {
+            fill: #FAFBFF;
+        }
+
+        .svg-arrow-bottom {
+            fill: #FAFBFF;
+        }
+    }
+
+}

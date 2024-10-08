@@ -1,0 +1,129 @@
+
+.fsbac-navbar {
+    background-color: $neri-grigio-chiaro;
+    border-bottom: 1px solid $neri-grigio-chiaro;
+    background: $white;
+    padding: 0px 40px;
+  
+    .fsbac-menu {
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+
+        .moremenu {
+            height: unset;
+
+            .nav-link {
+                font-family: $font-bold-NunitoSans;
+            }
+        }
+
+      
+    }
+    .fsbac-menu-nologin,  .fsbac-menu-login{
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+        .navigation {
+            height: unset;
+            ul{
+                gap: 16px;
+            }
+            .nav-link {
+                font-family: $font-bold-NunitoSans;
+                color: $neri-nero-pieno;
+                &.active{
+                   // border-bottom: 1px solid $primary ;
+                }
+            }
+        }
+    }
+
+    .fsbac-logo {
+        max-height: 40px;
+    }
+}
+
+
+.fsbac-notify{
+    
+    width: 100%;
+    height: 40px;
+    background-color: $secondari-chiaro;
+    position: fixed;
+    z-index: 1031;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-image: url([[pix:theme_fsbac|home/banner_notify]]);
+    background-repeat: no-repeat;
+    background-size: 173px 72px;
+    background-position: right;
+    
+
+    &::before{
+        content: '';
+        position: absolute;
+        top:0px;
+        background-image: url([[pix:theme_fsbac|home/banner_notify]]);
+        background-repeat: no-repeat;
+        background-size: 173px 72px;
+        background-position: left;
+        width: 173px;
+        height: 40px;
+        left: 0px;
+        transform: scaleX(-1);
+    }
+
+    span,a{
+        color: $white;
+        font-family:$font-bold-NunitoSans;
+        font-size: 16px;
+        line-height: 140%; 
+        z-index: 1;
+        @include media-breakpoint-down(md) {
+            font-size: 14px;
+        }
+    }
+    i{
+        margin-left: 16px;
+        z-index: 1;
+    }
+    button{
+        position: absolute;
+        right: 10px;
+        top: 9px;
+        background-color: transparent;
+        border: none;
+        color: $white;
+    }
+}
+
+body.notify{
+    .fsbac-navbar{
+        &.fixed-top{ 
+             padding-top: 40px;
+             height: calc(89px + 40px);
+         }
+    }
+    #page-content{
+        padding-top: 40px;
+    }
+
+    @include media-breakpoint-down(md) {
+        .fsbac-home_user_sections{
+            margin-top: 40px;
+        }
+    }
+   
+}
+
+.usermenu{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 40px;
+}

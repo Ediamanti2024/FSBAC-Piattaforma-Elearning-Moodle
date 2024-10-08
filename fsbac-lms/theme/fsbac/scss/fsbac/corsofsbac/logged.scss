@@ -1,0 +1,149 @@
+.secondary-navigation{
+    display: none;
+}
+.fsbac-header-logged-course{
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    div.container-title-course{
+        display: flex;
+        align-items: start;
+        gap: 10px;
+
+        h1.title-course{
+            color: $neri-nero-pieno;
+            font-family: $font-bold-NunitoSans;
+            font-size: 32px;
+            line-height: 130%;
+        }
+    }
+
+    p.subtitle-course{
+        color: $neri-nero-pieno;
+        font-family: $font-regular-OpenSans;
+        font-size: 22px;    
+        line-height: 140%
+    }
+  
+}
+
+.button-course-logged{
+    margin-top: 24px;
+    margin-bottom: 40px;
+    padding: 12px 16px;
+}
+
+
+.course-fsbac-information.logged{
+    padding-top: 50px;
+    display: flex;
+    flex-direction:column;
+    gap: 16px;
+    margin-top: 0px;
+
+ 
+    .buttons-logged-top{
+        display: flex;
+        gap: 8px;
+        button{
+            flex: auto;
+          
+        }
+        .nofavorite,.favorite{
+            display: none;
+        }
+    } 
+    .box-data-logged{
+        border-radius: 8px;
+        background: $neri-grigio-chiarissimo;
+        padding: 28px 24px 15px 24px;
+    }
+    .section-progress{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        .label-info{
+            color: $neri-nero-pieno;
+            font-family: $font-bold-NunitoSans;
+            font-size: 21px;
+            line-height: 135%;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            .circle-green{
+                width: 9px;
+                height: 9px;
+                background-color: #64BB20;
+                border-radius: 100%;
+                
+            }
+        }
+        .progress {
+            flex:1;
+            background-color: $primari-10;
+            height: 8px;
+            border-radius: 100px;
+
+            .progress-bar {
+                border-radius: 100px;
+                background: linear-gradient(270deg, #6B30BB 28.42%, #0F4290 99.99%, rgba(126, 101, 160, 0.00) 100%);
+
+            }
+        }
+
+        .numberInfo{
+            i{
+                color: #64BB20;
+            }
+            span{
+                color: $neri-grigio-scuro;
+                font-family: $font-bold-NunitoSans;
+                font-size: 14px;
+                line-height: 140%;
+            }
+        }
+    }
+
+
+}
+
+.bartab-course{
+    width: 100%;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 40px;
+
+    .item-tab{
+        background-color: transparent;
+        border: none;
+        padding: 0px 10px 14px;
+        color: $neri-grigio-medio;
+        text-align: center;
+        font-family:$font-bold-NunitoSans;
+        font-size: 14px;
+        line-height: 140%;
+
+        &.current-tab{
+            color: $primary;
+            border-bottom:4px solid $primary;
+        }
+        
+    }
+
+}
+
+.content-tab-course{
+        display: none;
+        width: 100%;
+
+        .course-desc{
+            color: $neri-nero-chiaro;
+            font-family: $font-regular-OpenSans;
+            font-size: 16px;
+        }
+}
+
+.drawer-toggler{
+    display: none;
+}

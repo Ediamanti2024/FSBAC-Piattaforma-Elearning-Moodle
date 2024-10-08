@@ -1,0 +1,198 @@
+.fsbac-card-course {
+    max-width: 411px;
+    width: 100%;
+    height: 371px;
+    border-radius: 6px;
+    border: 1px solid $neri-grigio-chiaro;
+    background: $white;
+
+    .fsbac-card-course-image {
+        width: 100%;
+        height: 166px;
+        border-radius: 6px 6px 0px 0px;
+        background-color: $primary;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .fsbac-live-date {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-radius: 6px 0px;
+            background: $neri-nero-pieno;
+            padding: 9px;
+            color: $white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            span.day {
+                font-family: $font-bold-NunitoSans;
+                font-size: 21px;
+                line-height: 140%;
+            }
+
+            .span.time {
+                color: $neri-grigio-chiarissimo;
+                font-family: $font-bold-NunitoSans;
+                font-size: 16.571px;
+                line-height: 140%;
+            }
+
+            i {
+                font-size: 22px;
+            }
+        }
+
+        .fsbac-favorite-button {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            background-color: #f2eff5;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: #ccced9;
+            font-size: 23px;
+
+            &.favourite {
+                color: red;
+
+                i {
+                    animation: pulse 1s 1;
+                }
+
+
+            }
+
+        }
+
+        .fsbac-card-course-type {
+            bottom: -13px;
+            left: 25px;
+        }
+
+    }
+
+    .fsbac-card-course-container {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 16px 17px 16px;
+
+        .fsbac-card-course-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid $neri-grigio-chiaro;
+
+            p {
+                padding: 0px;
+                margin: 0px;
+            }
+
+            .fsbac-card-course-fullname {
+                color: $neri-nero-pieno;
+                font-family: $font-bold-NunitoSans;
+                font-size: 21px;
+                line-height: 135%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .fsbac-card-course-description {
+                color: $neri-nero-pieno;
+                font-family: $font-regular-OpenSans;
+                font-size: 18px;
+                line-height: 140%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .fsbac-card-course-author {
+                color: $neri-nero-chiaro;
+                font-family: $font-regular-NunitoSans;
+                font-size: 14px;
+                font-style: normal;
+                line-height: 140%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+            }
+
+        }
+
+        .fsbac-card-course-links {
+            display: flex;
+            justify-content: flex-end;
+
+            &.with-progress {
+                justify-content: space-between;
+
+              
+
+
+            }
+
+            .btn {
+                i {
+                    padding-left: 8px;
+                }
+            }
+        }
+    }
+
+}
+
+.fsbac-card-course-type {
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    position: absolute;
+    border-radius: 4px;
+    background: $secondari-chiaro;
+    color: $neri-grigio-chiarissimo;
+
+    background-repeat: no-repeat;
+    padding-left: 21px;
+    background-position: center left 2px;
+
+    &.live {
+        background-image: url([[pix:theme_fsbac|svg/typecourse/live]]);
+    }
+
+    &.corsi_multimediali {
+        background-image: url([[pix:theme_fsbac|svg/typecourse/corsi_multimediali]]);
+    }
+
+    &.video_ondemand {
+        background-image: url([[pix:theme_fsbac|svg/typecourse/video_ondemand]]);
+    }
+
+    &.podcast {
+        background-image: url([[pix:theme_fsbac|svg/typecourse/podcast]]);
+    }
+
+    span {
+        text-align: center;
+        font-family: $font-bold-NunitoSans;
+        font-size: 12px;
+        line-height: 140%;
+    }
+}
+
+@keyframes pulse {
+    10% {
+        transform: scale(1.1)
+    }
+}

@@ -1,0 +1,74 @@
+.fsbac-dicolab-banner {
+    margin-top: 111px;
+    width: 100%;
+    background-color: #fdcf00;
+    height: 455px;
+    @include media-breakpoint-down(md) {
+        padding: 20px 15px;
+        height: auto;
+     }
+
+    .fsbac-dicolab-banner-container {
+        display: flex;
+        height: 100%;
+        background-image: url([[pix:theme_fsbac|dicolab/bannergiallo]]);
+        background-size: 375px;
+        background-repeat: no-repeat;
+        background-position: center right;
+        @include media-breakpoint-down(md) {
+            background-image:unset;
+         }
+
+        .fsbac-dicolab-banner-container-text {
+            flex: 0.5;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            @include media-breakpoint-down(md) {
+                flex: unset;
+                width: 100%;
+             }
+
+            h2.fsbac-dicolab-banner-container-title {
+                color: #000;
+                font-family: $font-bold-NunitoSans;
+                font-size: 38px;
+                line-height: 140%;
+                margin: 0px 0px 24px 0px;
+                @include media-breakpoint-down(md) {
+                    font-size: 24px;
+                 }
+            }
+
+            .fsbac-dicolab-banner-container-desc {
+                color: #000;
+                font-family: $font-regular-OpenSans;
+                font-size: 18px;
+                line-height: 160%
+            }
+
+            .fsbac-dicolab-banner-container-buttons{
+                margin-top: 40px ;
+                display: flex;
+                gap: 12px;
+                @include media-breakpoint-down(md) {
+                   flex-direction: column;
+                   button{
+                    width: 100%;
+                   }
+                 }
+                .btn-primary{
+                    background-color: #fff;
+                    border-color:#fff ;
+                    color: #000;
+                }
+                .btn-secondary{
+                    background-color: transparent;
+                    border-color:#000;
+                    border: 1px solid #000;
+                    color: #000;
+                }
+            }
+        }
+    }
+}

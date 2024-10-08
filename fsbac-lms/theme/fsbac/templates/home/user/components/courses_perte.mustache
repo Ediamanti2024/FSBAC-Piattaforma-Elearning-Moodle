@@ -1,0 +1,61 @@
+<div class="fsbac-coursesperte">
+    <div class="fsbac-coursesperte-header">
+       {{< theme_fsbac/components/title-section}}
+                {{$title}}{{#str}}home.coursesperte, theme_fsbac{{/str}}{{/title}}
+      {{/ theme_fsbac/components/title-section}}
+      <div class="fsbac-coursesperte-header-arrow">
+         <button class="fsbac-coursesperte-header-arrow-prev"><i class="fa fa-angle-left"></i></button>
+         <button class="fsbac-coursesperte-header-arrow-next"><i class="fa fa-angle-right"></i></button>
+      </div>
+    </div>
+
+    <div class="swiper fsbac-coursesperte-container-courses">
+          <div class="swiper-wrapper ">   
+          {{#corsiPerTe}}
+              <div class="swiper-slide">
+                      {{< theme_fsbac/components/course-card/index}} 
+                              {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                      {{/ theme_fsbac/components/course-card/index}} 
+              </div>    
+          {{/corsiPerTe}} 
+    
+          </div>
+    </div>
+
+</div>
+
+<script>
+ new Swiper('.fsbac-coursesperte-container-courses', {
+ 
+  slidesPerView: "auto",
+     spaceBetween: -210,
+    breakpoints: {
+        320: {
+        slidesPerView: 1,
+        centeredSlides:true,
+        centerInsufficientSlides:true,
+        spaceBetween: 0
+        },
+    
+        480: {
+        slidesPerView: 1,
+        centeredSlides:true,
+        spaceBetween: 0
+        
+        },
+    
+        820: {
+        slidesPerView: 'auto',
+        spaceBetween: -210,
+        
+        
+        }
+    },
+
+
+ navigation: {
+    nextEl: '.fsbac-coursesperte-header-arrow-next',
+    prevEl: '.fsbac-coursesperte-header-arrow-prev',
+  }
+});
+</script>

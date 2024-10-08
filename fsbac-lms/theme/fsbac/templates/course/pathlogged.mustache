@@ -1,0 +1,285 @@
+
+
+<div class="path-fsbac-body container">
+
+    <div class="fsbac-header-path-sections">
+
+        {{> theme_fsbac/course/header_logged }}
+
+
+        {{^coursebuttonlabel}}
+             <button class="btn btn-primary button-enrol  button-course-logged">{{#str}}path.button_enrol, theme_fsbac{{/str}} <i>{{> theme_fsbac/icons_svg/play-square-fill}}</i></button>
+        {{/coursebuttonlabel}}
+        {{#coursebuttonlabel}}
+            <a class="btn btn-primary button-course-logged" href="{{coursebuttonlink}}">
+                {{coursebuttonlabel}} <i>{{> theme_fsbac/icons_svg/play-square-fill}}</i>
+            </a>
+        {{/coursebuttonlabel}}
+
+        <nav class="bartab-course">
+            <button class="item-tab current-tab" data-id="content-path">
+                {{#str}}path.tab.path, theme_fsbac{{/str}}
+            </button>
+             <button class="item-tab" data-id="content-similarpath">
+                {{#str}}path.tab.similarpath, theme_fsbac{{/str}}
+            </button>
+            <button class="item-tab" data-id="content-reviews">
+                {{#str}}path.tab.reviews,theme_fsbac{{/str}}
+            </button>
+        </nav>
+        <div class="content-tab-course" id='content-similarpath'>
+            {{< theme_fsbac/course/slider_in_course }}
+                {{$id}}percosi_simili{{/id}}
+                {{$spaceBetween}}-150{{/spaceBetween}}
+                {{$title}}{{#str}}path.section.similarpath,theme_fsbac{{/str}} {{/title}}
+                {{$cards}}
+                {{#percorsiSimili}}
+                 <div class="swiper-slide">  {{> theme_fsbac/components/path-card/index}} </div>
+                {{/percorsiSimili}}
+                {{^percorsiSimili}}
+                    <p>{{#str}}path_similar_empty_title,theme_fsbac{{/str}}</p>
+                {{/percorsiSimili}}
+                {{/cards}}
+            {{/ theme_fsbac/course/slider_in_course }}
+
+            {{< theme_fsbac/course/slider_in_course }}
+                {{$id}}corsi_simili{{/id}}
+                  {{$spaceBetween}}-470{{/spaceBetween}}
+                {{$title}}{{#str}}path.section.similarcourses,theme_fsbac{{/str}}{{/title}}
+                {{$cards}}
+                    {{#corsiSimili}}
+                    <div class="swiper-slide">
+                    {{< theme_fsbac/components/course-card/index}}
+                        {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                {{/ theme_fsbac/components/course-card/index}}
+                    </div>
+                    {{/corsiSimili}}
+                {{^corsiSimili}}
+                    <p>{{#str}}course_similar_empty_title,theme_fsbac{{/str}}</p>
+                {{/corsiSimili}}
+                {{/cards}}
+            {{/ theme_fsbac/course/slider_in_course }}
+
+
+      
+
+        </div>
+        <div class="content-tab-course" id='content-path'>
+           {{#course_descr}}
+              <div class="course-desc">{{{course_descr}}}</div>
+           {{/course_descr}}
+
+
+
+
+      <section class="fsbac-header-path-section fsbac-program">
+
+            {{< core_courseformat/local/content }}
+            {{$ core_courseformat/local/content/section }}
+                {{> format_percorsofsbac/local/content/section }}
+            {{/ core_courseformat/local/content/section }}
+          {{/ core_courseformat/local/content }}
+
+              <section class="fsbac-header-path-section fsbac-section-courses">
+                {{< theme_fsbac/components/title-section}}
+                                {{$title}}{{#str}}path.sections_courses_title, theme_fsbac,{{subcoursesCount}}{{/str}}{{/title}}
+                {{/ theme_fsbac/components/title-section}}
+
+                    <div class="fsbac-grid-courses">
+                        {{#subcourses}}
+                        {{#subcoursesinfo}}
+                                {{< theme_fsbac/components/course-card/index}}
+                                    {{$labelButton}}{{#str}}path.ctaCourse, theme_fsbac{{/str}}{{/labelButton}}
+                                {{/ theme_fsbac/components/course-card/index}}
+                        {{/subcoursesinfo}}
+                        {{/subcourses}}
+                    </div>
+                    <button class="btn btn-secondary addShowMoreCourses mt-3">{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+                 </section>
+
+
+         </section>
+       {{#coursesinsight}}
+        <section class="fsbac-header-path-section fsbac-section-coursesinsight">
+           {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}path.readmorecourse, theme_fsbac{{/str}}{{/title}}
+          {{/ theme_fsbac/components/title-section}}
+            <div class="fsbac-grid-coursesinsight">
+            {{#coursesinsight}}
+                {{#coursesinsightinfo}}
+                  {{> theme_fsbac/components/course-card/mini}}
+                 {{/coursesinsightinfo}}
+            {{/coursesinsight}}
+            </div>
+            <button class="btn btn-secondary addcoursesinsight mt-3" >{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+         </section>
+          {{/coursesinsight}}
+        </div>
+        <div class="content-tab-course" id='content-reviews'>
+           {{#reviews}}
+              <div class="course-desc">{{{reviews}}}</div>
+           {{/reviews}}
+           {{^reviews}}
+             {{> theme_fsbac/components/no_reviews}}
+           {{/reviews}}
+        </div>
+
+
+    </div>
+
+
+    <!--General Info-->
+     <div class="path-fsbac-information logged">
+           <div class="buttons-logged-top">
+                <button class="btn btn-secondary button-shared" data-toggle="tooltip" data-html="true" title="{{< theme_fsbac/components/shared}}{{$url}}{{{link}}}{{/url}}{{/ theme_fsbac/components/shared}}">{{#str}}path.button_shared, theme_fsbac{{/str}} <i class="fas fa-share-alt"></i></button>
+               {{#followpathlabel}} <button class=" followed btn  {{#followed}}btn-primary{{/followed}} {{^followed}}btn-secondary{{/followed}}"  id="followpath"> <div id="followpathlabel">{{followpathlabel}}</div> <i class="fas fa-plus"></i> <i class="fas fa-minus"></i></button>{{/followpathlabel}}
+           </div>
+        {{#coursecompletioninfo}}
+            <div class="section-progress box-data-logged">
+                <label class="label-info"><div class="circle-green"></div> {{courseprogressstate}}</label>
+                <div class="progress-data">
+                    <div class="progress">
+                        <div class="progress-bar" style="width:{{^courseprogressperc}}0{{/courseprogressperc}}{{#courseprogressperc}}{{courseprogressperc}}{{/courseprogressperc}}%" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="numberInfo"><i>{{> theme_fsbac/icons_svg/check-circle-fill}}</i> <span>{{completedmodules}}/{{totalmodules}}</span></div>
+                </div>
+            </div>
+        {{/coursecompletioninfo}}
+
+        <div class="path-fsbac-information-general">
+         <h4 class="title-info">{{#str}}path.genaral_information, theme_fsbac{{/str}}</h4>
+         {{#generalinfo}}
+            <ul>
+                {{#programma}}<li><span>{{#str}}path.program, theme_fsbac{{/str}}:</span> {{programma}}{{/programma}}
+                {{#destinato_a}}<li><span>{{#str}}path.info_interest, theme_fsbac{{/str}}:</span> {{destinato_a}}{{/destinato_a}}
+                {{#level}}<li><span>{{#str}}path.info_level, theme_fsbac{{/str}}:</span> {{level}}{{/level}}
+                {{#tags}} <li><span>{{#str}}path.info_tag, theme_fsbac{{/str}}:</span> {{tags}}{{/tags}}
+                {{#duration}}<li><span>{{#str}}path.info_duration, theme_fsbac{{/str}}:</span> {{duration}}{{/duration}}
+            </ul>
+          {{/generalinfo}}
+
+        </div>
+
+      {{#competenze}}
+         <div class="box-data-accordion box-data-logged">
+           <label>{{#str}} path.competenze-title, theme_fsbac {{/str}}</label>
+            <p>{{#str}} path.competenze-msg, theme_fsbac {{/str}}</p>
+            <button class="buttonAccordion"><i class="fas fa-chevron-down"></i></button>
+            <div class='accordion-data'>
+                 {{competenze}}
+            </div>
+        </div>
+      {{/competenze}}
+
+    {{#consequentialpaths}}
+          <div class="box-data-accordion  box-data-logged">
+          <label>{{#str}} path.includepath, theme_fsbac {{/str}}</label>
+          <p>
+            {{#multipleconsequentialpaths}}
+                                    {{#str}} path.paths, theme_fsbac,{{number}} {{/str}}
+            {{/multipleconsequentialpaths}}
+            {{^multipleconsequentialpaths}}
+                                    {{#str}} path.path, theme_fsbac,{{number}} {{/str}}
+                {{/multipleconsequentialpaths}}
+         </p>
+          <button class="buttonAccordion"><i class="fas fa-chevron-down"></i></button>
+            <div class='accordion-data'>
+             {{#consequentialpathsinfo}}
+                {{< theme_fsbac/components/path_course_minicard }}
+                      {{$id}}{{id}}{{/id}}
+                      {{$image}}{{image}}{{/image}}
+                      {{$title}}{{pathname}}{{/title}}
+                      {{$subtitle}}{{sottotitolo}}{{/subtitle}}
+                      {{$level}}{{level}}{{/level}}
+                      {{$duration}}{{duration}}{{/duration}}
+                  {{/theme_fsbac/components/path_course_minicard }}
+                  <div class="fsbac-path_course_minicard-divider"></div>
+              {{/consequentialpathsinfo}}
+            </div>
+          </div>
+    {{/consequentialpaths}}
+
+     {{^emptydicolabcourses}}
+            <div class="box-data-accordion  box-data-accordion-dicolab box-data-logged open">
+                <p>
+                    {{#str}} dicolabcoursesforyou, theme_fsbac {{/str}}
+                </p>
+                {{#dicolabcourses}}
+                    <button class="buttonAccordion"><i class="fas fa-chevron-down"></i></button>
+                        <div class='accordion-data'>
+                            {{> theme_fsbac/components/course-card/mini }}
+                            <div class="fsbac-path_course_minicard-divider"></div>
+                        </div>
+                {{/dicolabcourses}}
+            </div>
+        {{/emptydicolabcourses}}
+
+
+
+    {{#totalcertificates}}
+           <div class="box-data-accordion box-data-logged">
+                <label>{{#str}} path.customcertid-label, theme_fsbac {{/str}}</label>
+                <p>{{#multipletotalcertificates}}{{#str}}   path.customcertes, theme_fsbac,{{number}}{{/str}} {{/multipletotalcertificates}}
+                {{^multipletotalcertificates}}{{#str}} path.customcerte, theme_fsbac,{{number}}{{/str}} {{/multipletotalcertificates}}
+                </p>
+
+          </div>
+    {{/totalcertificates}}
+
+    </div>
+
+
+</div>
+
+
+ {{#js}}
+require(
+[
+    'jquery'
+],
+function(
+    $
+) {
+    $('.button-enrol, .enrol-link').click(()=>{
+      $('form').submit();
+    })
+
+    $('.bartab-course .item-tab').on('click',(e)=>{
+        const id = $(e.currentTarget).data('id');
+        const classCurrent = 'current-tab'
+        $('.bartab-course .item-tab').removeClass(classCurrent);
+        $(e.currentTarget).addClass(classCurrent);
+        $('.content-tab-course').hide();
+        $(`#${id}`).show();
+    })
+     $('.bartab-course .item-tab')[0].click()
+
+   $('.box-data-accordion .buttonAccordion').on('click',(e)=>{
+      const divParent = $(e.currentTarget).parent();
+      const isOpen = $(divParent).hasClass('open');
+      isOpen ? $(divParent).removeClass('open'): $(divParent).addClass('open');
+
+    })
+ function showMore(section,button){
+        button.hide();
+        const courses = section;
+        if(courses.length > 4){
+        button.show();
+            courses.each(function( index ) {
+                if(index > 3){
+                    $( this ).hide()
+                }
+            });
+        }
+        button.on('click',()=>{
+            button.hide();
+           courses.each(function( index ) {
+                  $( this ).show()
+            });
+        })
+    }
+    showMore($('.fsbac-grid-courses .fsbac-card-course'), $('.addShowMoreCourses'))
+     showMore($('.fsbac-grid-coursesinsight .fsbac-card-course-mini'), $('.addcoursesinsight'))
+
+     })
+{{/js}}

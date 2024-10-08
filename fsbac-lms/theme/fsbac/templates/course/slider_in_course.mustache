@@ -1,0 +1,51 @@
+<section class='fsbac-slider_in_course'>
+
+    <div class="fsbac-slider_in_course_header">
+        <h4>{{$title}}{{title}}{{/title}}</h4>
+      <div class="fsbac-slider_in_course_header_navigation">
+         <button class="{{$id}}{{id}}{{/id}}-prev"><i class="fa fa-angle-left"></i></button>
+         <button class="{{$id}}{{id}}{{/id}}-next"><i class="fa fa-angle-right"></i></button>
+     </div>
+    </div>
+     <div class="swiper {{$id}}{{id}}{{/id}}_swiper" style="width:800px">
+            <div class="swiper-wrapper">  
+                 {{$cards}}{{cards}}{{/cards}} 
+           </div>
+    </div>
+</section>
+
+<script>
+ new Swiper('.{{$id}}{{id}}{{/id}}_swiper', {
+  loop: false,
+    slidesPerView: 'auto',
+    spaceBetween:{{$spaceBetween}}{{spaceBetween}}{{/spaceBetween}},
+    breakpoints: {
+    320: {
+      slidesPerView: 1,
+      centeredSlides:true,
+      centerInsufficientSlides:true,
+      spaceBetween: 0
+    },
+   
+    480: {
+      slidesPerView: 1,
+      centeredSlides:true,
+       spaceBetween: 0
+     
+    },
+   
+    820: {
+ 
+      spaceBetween:{{$spaceBetween}}{{spaceBetween}}{{/spaceBetween}},
+       
+    }
+   
+  },
+ 
+  // Navigation arrows
+ navigation: {
+    nextEl: '.{{$id}}{{id}}{{/id}}-next',
+    prevEl: '.{{$id}}{{id}}{{/id}}-prev',
+  }
+});
+</script>

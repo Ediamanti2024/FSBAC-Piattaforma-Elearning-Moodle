@@ -1,0 +1,16 @@
+    <div class="fsbac-certificate-container">
+        <div class="fsbac-certificate-header">
+            <div class="fsbac-icon-cup"><i class="fas fa-trophy"></i></div>
+            <p>{{#str}}course.certificate, theme_fsbac{{/str}}</p>
+        </div>
+        {{^isenrolled}} 
+            <div class="fsbac-certificate-desc">
+            {{#str}}course.certificate_desc, theme_fsbac{{/str}}
+            </div>
+         {{/isenrolled}}
+        {{#isenrolled}}
+        <div>
+            <a href="{{wwwroot}}/mod/certificate/view.php?id={{customcertid}}&downloadown=1" class="btn btn-secondary button-certificate">{{#str}}course.certificate_download, theme_fsbac{{/str}} <i class="fas fa-download"></i></a>
+        </div>
+        {{/isenrolled}}
+    </div>

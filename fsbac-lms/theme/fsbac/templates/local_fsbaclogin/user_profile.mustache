@@ -1,0 +1,65 @@
+
+<div class="container">
+    <h1 class="title-profile">{{#str}}profile.title,theme_fsbac{{/str}}</h1>
+    <div class="fsbac-container-data-profile">
+        <div class="fsbac-container-left">
+         <p>{{#str}}profile.desc_page,theme_fsbac{{/str}}</p>
+        </div>
+        <div class="fsbac-container-right">
+            <div class="box-section-profile">
+               <div class="box-section-header">
+                 <p class="section-profile-title">{{#str}}profile.section.sectiondata,theme_fsbac{{/str}}</p>
+                 <a class="btn btn-secondary" href="{{changegeneralfieldslink}}" target="_blank"><i class="fas fa-pencil-alt"></i> {{#str}}profile.section.edit_accessData,theme_fsbac{{/str}}</a>
+                </div>
+              
+                <div class="row">
+                {{#generalfields}}
+                    <div class="col-md-6 mt-2">
+                            {{< theme_fsbac/components/read-only}}
+                                {{$label}}{{name}}{{/label}}
+                                {{$value}}{{value}}{{/value}}
+                        {{/ theme_fsbac/components/read-only}}
+                    </div>
+                {{/generalfields}}
+                </div>
+            </div>
+
+             <div class="box-section-profile">
+                <div class="box-section-header">
+                 <p class="section-profile-title">{{#str}}profile.section.other_data,theme_fsbac{{/str}}</p>
+                 <a class="btn btn-secondary" href="{{changeadditionalfieldslink}}" target="_blank"><i class="fas fa-pencil-alt"></i> {{#str}}profile.section.edit_otherData,theme_fsbac{{/str}}</a>
+                </div>
+               
+                <div class="row">
+                {{#additionalfields}}
+                    <div class="col-md-6 mt-2">
+                            {{< theme_fsbac/components/read-only}}
+                                {{$label}}{{name}}{{/label}}
+                                {{$value}}{{value}}{{/value}}
+                        {{/ theme_fsbac/components/read-only}}
+                    </div>
+                {{/additionalfields}}
+                </div>
+            </div>
+            
+            <div class="box-section-profile">
+               <div class="box-section-header">
+                 <p class="section-profile-title">{{#str}}profile.section.preferences,theme_fsbac{{/str}}</p>
+                 <a class="btn btn-secondary" href="{{changepreferenceslink}}" target="_blank"><i class="fas fa-pencil-alt"></i> {{#str}}profile.section.edit_preferences,theme_fsbac{{/str}}</a>
+                </div>
+              
+                <div class="data-preferences">
+                  {{#preferences}}
+                            <div class="fsbac-preference">
+                                {{tag}}
+                            </div>
+                   {{/preferences}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+

@@ -1,0 +1,59 @@
+.fsbac-certificate-container {
+    width: 100%;
+    height: fit-content;
+    padding: 24px;
+    max-width: 848px;
+    border-radius: 8px;
+    background: $secondari-chiaro;
+    background-image: url([[pix:theme_fsbac|course/backgroung_certificate]]);
+    display: flex;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+    flex-direction: column;
+    gap: 24px;
+
+    .fsbac-certificate-header {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        color: $white;
+
+        .fsbac-icon-cup {
+            width: 43px;
+            height: 43px;
+            border-radius: 4px;
+            background: transparentize($neri-grigio-chiarissimo, .8);
+
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        p {
+            padding: 0px;
+            margin: 0px;
+            font-family: $font-bold-NunitoSans;
+            font-size: 21px;
+            line-height: 135%;
+        }
+    }
+
+    .fsbac-certificate-desc {
+        color: $neri-grigio-chiarissimo;
+        font-family: $font-regular-OpenSans;
+        font-size: 16px;
+        line-height: 27.2px;
+        max-width: 590px;
+
+    }
+
+    a.button-certificate {
+        color: $secondari-chiaro;
+        background-color: transparentize($white, .6);
+    }
+
+}

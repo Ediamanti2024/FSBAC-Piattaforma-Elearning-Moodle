@@ -1,0 +1,154 @@
+<div class="fsbac-badges-tab" >
+  {{^no_activity}}
+
+    <section class="fsbac-badges-section-certificate">
+   {{#yourCertificate_show}}
+        {{< theme_fsbac/components/title-section}}
+                    {{$title}}
+                        {{#yourCertificate_multiple}}
+                            {{#str}}my.tab3_your_certificates, theme_fsbac,{{yourCertificate_num}}{{/str}}
+                        {{/yourCertificate_multiple}}
+                        {{^yourCertificate_multiple}}
+                            {{#str}}my.tab3_your_certificate, theme_fsbac,{{yourCertificate_num}}{{/str}}
+                        {{/yourCertificate_multiple}}
+                  {{/title}}
+        {{/ theme_fsbac/components/title-section}}
+
+        <div class="fsbac-badges-section-certificate-list certificate-list-completed">
+                {{#yourCertificate}}
+                  {{<theme_fsbac/components/course-card/mini-buttons-card }}
+                         {{$contentRight}}
+                            <div class="fsbac-badges-section-certificate-buttons">
+                           {{{buttonDownloadCerticate}}}
+                             <!--button class="btn btn-secondary">{{> theme_fsbac/icons_svg/eye-fill}}</button>
+                             <button class="btn btn-secondary" data-toggle="tooltip" data-html="true" title="{{< theme_fsbac/components/shared}}{{$url}}{{{viewurl}}}{{/url}}{{/ theme_fsbac/components/shared}}"><i class="fas fa-share-alt"></i></button-->
+                          
+                             </div>
+                         {{/contentRight}}
+                {{/theme_fsbac/components/course-card/mini-buttons-card }}
+                {{/yourCertificate}}
+            
+        </div>
+        <button class="btn btn-secondary certificateListButton mt-3">{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+      {{/yourCertificate_show}}
+      {{^yourCertificate_show}}
+          {{< theme_fsbac/mydashboard/empty-message}}
+              {{$title}}{{#str}}my.tab3_your_certificates_no_title,theme_fsbac{{/str}}{{/title}} 
+              {{$message}}{{#str}}my.tab3_your_certificates_no,theme_fsbac{{/str}}{{/message}}
+              {{$linkLabel}}{{#str}}my.tab3_your_certificates_no_linkLabel,theme_fsbac{{/str}}{{/linkLabel}}
+              {{$link}}{{config.wwwroot}}/theme/fsbac/pages/paths.php{{/link}}
+           {{/ theme_fsbac/mydashboard/empty-message}}
+     {{/yourCertificate_show}}
+    </section>
+
+
+   <section  class="fsbac-badges-section-badges">   
+         {{< theme_fsbac/components/title-section}} 
+                {{$title}} {{#str}}my.tab3_your_badges, theme_fsbac,{{badgesNum}}{{/str}}{{/title}}
+        {{/ theme_fsbac/components/title-section}}
+       {{{badges}}}
+    </section>
+
+
+
+ 
+
+     <section class="fsbac-badges-section-certificate-inclopleted">
+        {{#yourCertificateIncompleted_show}}
+        {{< theme_fsbac/components/title-section}}
+                    {{$title}}
+                        {{#yourCertificateIncompleted_multiple}}
+                            {{#str}}my.tab3_your_incompleted_certificates, theme_fsbac,{{yourCertificateIncompleted_num}}{{/str}}
+                        {{/yourCertificateIncompleted_multiple}}
+                        {{^yourCertificateIncompleted_multiple}}
+                            {{#str}}my.tab3_your_incompleted_certificate, theme_fsbac,{{yourCertificateIncompleted_num}}{{/str}}
+                        {{/yourCertificateIncompleted_multiple}}
+                    {{/title}}
+        {{/ theme_fsbac/components/title-section}}
+
+        <div class="fsbac-badges-section-certificate-list certificate-list-inprogress">
+                {{#yourCertificateIncompleted}}
+                  {{<theme_fsbac/components/course-card/mini-buttons-card }}
+                         {{$contentRight}}
+                            <div>
+                              <a class="btn btn-secondary" href="{{{viewurl}}}">{{#str}}my.tab3_detailsCourse, theme_fsbac{{/str}}<i class="fas fa-arrow-right"></i></a>
+                             </div>
+                         {{/contentRight}}
+                {{/theme_fsbac/components/course-card/mini-buttons-card }}
+                {{/yourCertificateIncompleted}}
+            
+        </div>
+       <button class="btn btn-secondary certificateListProgressButton mt-3">{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+      {{/yourCertificateIncompleted_show}}
+
+    {{^yourCertificateIncompleted_show}}
+          {{< theme_fsbac/mydashboard/empty-message}}
+              {{$title}}{{#str}}my.tab3_your_incompleted_certificates_no_title,theme_fsbac{{/str}}{{/title}} 
+              {{$message}}{{#str}}my.tab3_your_incompleted_certificates_no,theme_fsbac{{/str}}{{/message}}
+              {{$linkLabel}}{{#str}}my.tab3_your_incompleted_certificates_no_linkLabel,theme_fsbac{{/str}}{{/linkLabel}}
+              {{$link}}{{config.wwwroot}}/theme/fsbac/pages/paths.php{{/link}}
+           {{/ theme_fsbac/mydashboard/empty-message}}
+     {{/yourCertificateIncompleted_show}}
+    </section>
+
+   
+  {{/no_activity}}
+
+
+     {{#no_activity}}
+       {{< theme_fsbac/mydashboard/empty-message-all}}
+               {{$icon}}{{> theme_fsbac/icons_svg/trophy2-fill }}{{/icon}}
+              {{$title}}{{#str}}my.tab3_no_activity,theme_fsbac{{/str}}{{/title}} 
+              {{$message}}{{#str}}my.tab3_no_activity_message,theme_fsbac{{/str}}{{/message}}
+              {{$linkLabel}}{{#str}}my.tab3_no_activity_link,theme_fsbac{{/str}}{{/linkLabel}}
+              {{$link}}{{config.wwwroot}}/theme/fsbac/pages/courses.php{{/link}}
+        {{/ theme_fsbac/mydashboard/empty-message-all}}
+    {{/no_activity}}
+</div>
+
+
+
+{{#js}}
+
+    function showMore(section,button,num=4){
+        button.hide();
+        const courses = section;
+        const divider = $(section).parent().find('.fsbac-divider');
+
+        if(courses.length > num){
+        button.show();
+            courses.each(function( index ) {
+                if(index > (num-1)){
+                    $( this ).hide();
+                    $(divider[index]).hide();
+                }
+            });
+        }
+        button.on('click',()=>{
+            button.hide();
+           courses.each(function( index ) {
+                  $( this ).show();
+                  $(divider[index]).show();
+            });
+        })
+    }
+    showMore($('.certificate-list-completed .fsbac-mini-buttons-card'), $('.certificateListButton'));
+    showMore($('.certificate-list-inprogress .fsbac-mini-buttons-card'), $('.certificateListProgressButton'));
+
+
+   $('ul.badges li').each((index,elm)=>{
+      const li = elm;
+       const a =  $(li).find('a');
+       $(a).each((index,elmA)=>{
+        
+        const href = $(elmA).attr('href');
+        if(href.substr(0,9) == 'badge.php' || href.substr(0,12) == 'mybadges.php' ){
+            $(elmA).attr('href',`{{config.wwwroot}}/badges/${href}`);
+        }
+    
+       
+       })
+     
+    })
+
+ {{/js}}

@@ -1,0 +1,29 @@
+<div class="fsbac-card-path">
+    <div class="fsbac-card-path-img" {{#image}}style="background-image:url({{image}})"{{/image}}></div>
+    <div class="fsbac-card-path-body">
+      <div class="fsbac-card-path-info">
+        <a href="{{{viewurl}}}"><p class="fsbac-card-path-title" title="{{fullname}}">{{fullname}}</p></a>
+        <p class="fsbac-card-path-subtitle" title="{{{sottotitolo}}}" >{{sottotitolo}}&nbsp;</p>
+        <div class="fsbac-card-path-container-icons">
+            <div class="fsbac-card-path-icons">
+              <i class="fas fa-trophy"></i> {{livelloLabel}}
+            </div>
+             <div class="fsbac-card-path-icons">
+              <i class="fas fa-calendar"></i> {{{durata}}} 
+            </div>
+           
+        </div>
+      </div>
+    <div class="fsbac-card-path-links {{#progressShow}}with-progress{{/progressShow}}">
+            {{#progressShow}}
+              <div class="fsbac-progress-container {{#progressComplete}}complete{{/progressComplete}}" >
+                            <p>{{#str}}card.progress,theme_fsbac,{{progress}}{{/str}}</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width:{{progress}}%" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+              </div>
+            {{/progressShow}}
+         <a href="{{{viewurl}}}" class="btn btn-secondary">{{#str}}common.coursecard_link,theme_fsbac{{/str}} <i class="fa fa-arrow-right"></i></a>
+      </div>
+    </div>
+</div>

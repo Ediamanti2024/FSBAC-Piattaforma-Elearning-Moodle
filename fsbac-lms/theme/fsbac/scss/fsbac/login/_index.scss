@@ -1,0 +1,144 @@
+.fsbac-login-fixed {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+
+    .fsbac-login-section-form {
+        flex: 0.5;
+        height: 100%;
+        background-color: $white;
+
+        @include media-breakpoint-down(md) {
+            flex: 1;
+        }
+
+        &.scroll-form {
+            .fsbac-form-container {
+                overflow-y: auto;
+                padding-top: 96px;
+                height: calc(100% - 36px);
+
+
+                .fsbac-form-header {
+                    position: fixed;
+                    z-index: 2;
+                }
+            }
+
+            .fsbac-form-wrapper {
+                position: absolute;
+                top: 96px;
+                padding-bottom: 200px;
+
+                .fsbac-signup-data {
+                    height: unset;
+                }
+            }
+
+
+
+            .fsbac-login-footer {
+                position: fixed !important;
+            }
+        }
+
+        .fsbac-form-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            .fsbac-form-header {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                padding: 24px;
+                background-color: $white;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .fsbac-logo {
+                    img {
+                        width: 143px;
+                    }
+                }
+
+                .fsbac-lang {}
+            }
+
+            .fsbac-form-wrapper {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-width: 416px;
+                min-height: 200px;
+
+                @include media-breakpoint-down(md) {
+                    padding: 15px 15px 35px 15px;
+                }
+
+            }
+
+            .fsbac-login-footer {
+                position: absolute;
+                left: 0px;
+                bottom: 20px;
+                color: $neri-grigio-medio;
+                text-align: center;
+                font-family: $font-regular-OpenSans;
+                font-size: 12px;
+                line-height: 140%;
+                width: 100%;
+
+                @include media-breakpoint-down(md) {
+                    padding: 15px 15px;
+                    bottom: 0px;
+                    background: $white;
+                }
+
+            }
+        }
+
+    }
+
+    .fsbac-login-section-image {
+        flex: 0.5;
+        background-color: $primary;
+        height: 100%;
+
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+
+        &.fsbac-image-login {
+            background-image: url([[pix:theme_fsbac|login/login]]);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+
+
+
+
+}
+
+@import 'login.scss';
+@import 'signup.scss';
+@import 'signup-data.scss';
+@import 'password_email.scss';
+@import 'reset_password.scss';
+@import 'confirm.scss';
+@import 'completed_dicolab_course.scss';
+@import 'completed_fsbac_course.scss';

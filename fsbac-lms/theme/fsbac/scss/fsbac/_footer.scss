@@ -1,0 +1,172 @@
+#page-footer {
+    width: 100%;
+    padding: 93px 0px 20px 0px;
+    background: $neri-grigio-chiarissimo;
+    margin-top: 30px;
+
+    .fsbac-container-footer {
+        width: 100%;
+        margin: 0px auto;
+        max-width: 1281px;
+        padding-bottom: 76px;
+        display: flex;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            width: calc(100% - 24px);
+        }
+
+
+
+    }
+
+    .fsbac-container-logos {
+        width: 520px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+		padding-right: 15px;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img.fsbac-logo-footer {
+            width: 185px;
+        }
+
+
+        p {
+            color: $neri-nero-chiaro;
+            font-family: $font-regular-OpenSans;
+            font-size: 16px;
+            padding: 0px;
+            margin: 0px;
+            line-height: 160%;
+
+            @include media-breakpoint-down(md) {
+                text-align: center;
+            }
+        }
+
+        .fsbac-institution-logo {
+            display: flex;
+            gap: 43px;
+            align-items: center;
+
+            @include media-breakpoint-down(md) {
+                justify-content: space-between;
+            }
+
+            img.fsbac-mic {
+                width: 53px;
+            }
+
+            img.fsbac-euro {
+                width: 55px;
+                height: 42px;
+            }
+
+            img.fsbac-repubblica {
+                width: 46px;
+            }
+            img.fsbac-loghi_istituzionali {
+                width: 100%;
+            }
+
+		
+		}
+    }
+
+    .fsbac-container-section-footer {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+
+        .fsbac-container-section-sede {
+            text-align: right;
+        }
+
+        @include media-breakpoint-down(md) {
+            display: grid;
+            grid-template-columns: auto auto;
+
+
+            .fsbac-container-section-sede {
+                grid-column: auto / span 2;
+                text-align: left;
+
+                .fsbac-social-icons {
+                    display: flex;
+                    margin-top: 32px;
+                    align-items: center;
+                    gap: 34px;
+                    justify-content: center;
+                }
+            }
+        }
+
+    }
+
+    .fsbac-section-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include media-breakpoint-down(md) {
+            margin-top: 40px;
+        }
+
+        .fsbac-section-footer-title {
+            color: $neri-nero-pieno;
+            font-family: $font-bold-NunitoSans;
+            font-size: 21px;
+            line-height: normal;
+            padding-bottom: 14px;
+
+            @include media-breakpoint-down(md) {
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+
+        .fsbac-section-footer-link {
+            color: $neri-nero-chiaro;
+            font-family: $font-regular-OpenSans;
+            font-size: 18px;
+            line-height: normal;
+            text-decoration: none;
+            margin: 0px;
+            padding: 0px;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+
+    }
+
+    .fsbac-footer-label-bottom {
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        text-align: center;
+        color: $neri-nero-chiaro;
+        text-align: center;
+        /* AAA Corpi/Corpo mini */
+        font-family: $font-regular-OpenSans;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        opacity: 0.30000001192092896;
+
+        @include media-breakpoint-down(md) {
+            width: calc(100% - 24px);
+            margin: 0px auto;
+        }
+    }
+}

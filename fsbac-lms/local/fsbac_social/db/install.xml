@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/fsbac_social/db" VERSION="20210211" COMMENT="XMLDB file for Moodle ARIADNE tracksource plugin"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="fsbac_data" COMMENT="">
+      <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="session_key" TYPE="text" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="utm_source" TYPE="text" LENGTH="50" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="utm_medium" TYPE="text" LENGTH="50" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="utm_campaign" TYPE="text" LENGTH="50" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="user_id" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT=""/>
+        <FIELD NAME="course_id_source" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT=""/>
+        <FIELD NAME="action" TYPE="text" LENGTH="50" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="course_id_enrol" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT=""/>
+        <FIELD NAME="created_at" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT=""/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+  
+</XMLDB>

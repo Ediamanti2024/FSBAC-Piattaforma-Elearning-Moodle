@@ -1,0 +1,148 @@
+<section class="fsbac-home_user-course_new">
+   <div class="container fsbac-section-with-title">
+        <div class="fsbac-title-top">
+            {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}home_user.section_course_new, theme_fsbac{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+            <!--div class="fsbac-header-arrow-swiper">
+                <button class="fsbac-course_new-arrow-prev"><i class="fa fa-angle-left"></i></button>
+                <button class="fsbac-course_new-arrow-next"><i class="fa fa-angle-right"></i></button>
+            </div-->
+        </div>
+        
+        <div class="fsbac-home_user-course_new-tabs">
+            <button class="buttonTab current"  data-attr="tab_1">
+                {{#str}}home_user.section_course_new_tab1, theme_fsbac,{{corsiNew.nuoviC}}{{/str}} 
+            </button>
+              <button class="buttonTab"  data-attr="tab_2">
+                 {{#str}}home_user.section_course_new_tab2, theme_fsbac,{{corsiNew.inarrivoC}}{{/str}} 
+            </button>
+        </div>
+        <div class="course_new-tab course_new-tab_1">
+            <div class="course_new-tab-arrow-swiper">
+                <button class="fsbac-course_new-tab1-arrow-prev"><i class="fa fa-angle-left"></i></button>
+                <button class="fsbac-course_new-tab1-arrow-next"><i class="fa fa-angle-right"></i></button>
+            </div>
+            <div class="swiper course_new-swiper_1">
+                <div class="swiper-wrapper ">   
+                {{#corsiNew.nuovi}}
+                    <div class="swiper-slide">
+                            {{< theme_fsbac/components/course-card/index}} 
+                                    {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                            {{/ theme_fsbac/components/course-card/index}} 
+                    </div>    
+                {{/corsiNew.nuovi}} 
+                </div>
+            </div>
+        </div>
+         <div class="course_new-tab course_new-tab_2">
+           <div class="course_new-tab-arrow-swiper">
+                <button class="fsbac-course_new-tab2-arrow-prev"><i class="fa fa-angle-left"></i></button>
+                <button class="fsbac-course_new-tab2-arrow-next"><i class="fa fa-angle-right"></i></button>
+            </div>
+          <div class="swiper course_new-swiper_2">
+            <div class="swiper-wrapper "> 
+            {{#corsiNew.inarrivo}}
+                <div class="swiper-slide">
+                        {{< theme_fsbac/components/course-card/index}} 
+                                {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                        {{/ theme_fsbac/components/course-card/index}} 
+                </div>    
+            {{/corsiNew.inarrivo}} 
+            </div>
+        </div>
+        </div>
+
+        
+    </div>
+</section>
+
+{{#js}}
+require(
+[
+    'jquery',
+],
+function(
+    $
+) {
+
+  $('.buttonTab').on('click',(e)=>{
+    const tab = $(e.currentTarget).attr('data-attr')
+    $('.course_new-tab').hide();
+    $('.course_new-'+tab).show();
+    $('.buttonTab').removeClass('current')
+    $(e.currentTarget).addClass('current')
+  })
+  $('.buttonTab')[0].click()
+
+});
+{{/js}}
+<script>
+ new Swiper('.course_new-swiper_1', {
+
+  loop: false,
+  slidesPerView:3,
+  spaceBetween: 24,
+  centeredSlides:false,
+    breakpoints: {
+     320: {
+      slidesPerView: 1,
+      centeredSlides:true,
+      centerInsufficientSlides:true,
+    },
+   
+    480: {
+      slidesPerView: 1,
+      centeredSlides:true,
+     
+    },
+   
+    820: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+       
+    }
+     
+    },
+ navigation: {
+    nextEl: '.fsbac-course_new-tab1-arrow-next',
+    prevEl: '.fsbac-course_new-tab1-arrow-prev',
+  }
+
+
+});
+
+new Swiper('.course_new-swiper_2', {
+
+  loop: false,
+  slidesPerView:3,
+  spaceBetween: 24,
+  centeredSlides:false,
+    breakpoints: {
+     320: {
+      slidesPerView: 1,
+      centeredSlides:true,
+      centerInsufficientSlides:true,
+    },
+   
+    480: {
+      slidesPerView: 1,
+      centeredSlides:true,
+     
+    },
+   
+    820: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+       
+    }
+     
+    },
+ navigation: {
+    nextEl: '.fsbac-course_new-tab2-arrow-next',
+    prevEl: '.fsbac-course_new-tab2-arrow-prev',
+  }
+
+
+});
+</script>

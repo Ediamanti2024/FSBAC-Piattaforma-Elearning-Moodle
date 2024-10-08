@@ -1,0 +1,100 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_fsbac/footer
+
+    Page footer.
+
+    Example context (json):
+    {
+        "output": {
+            "page_doc_link": "Help and documentation",
+            "supportemail": "<a href=\"#\">Contact site support</a>",
+            "has_popover_links": true,
+            "services_support": "Services and support",
+            "login_info": "You are logged in as cute kitten",
+            "moodle_release": "90210"
+        }
+    }
+}}
+
+<footer id="page-footer" >
+    <div  class="fsbac-container-footer">
+         <div class="fsbac-container-logos">
+            <!-- <img src="{{output.get_compact_logo_url}}" class="fsbac-logo-footer" alt="{{sitename}}"> -->
+            <!--  <p>{{#str}}footer.label_logo,theme_fsbac{{/str}}</p> -->
+			
+             <div class="fsbac-institution-logo">
+             {{#imagesFooter}}
+                <!-- <img src="{{mic}}" class="fsbac-mic" >
+                 <img src="{{euro}}" class="fsbac-euro">
+                 <img src="{{repubblica}}" class="fsbac-repubblica"> -->
+				 <img src="{{loghi_istituzionali}}" class="fsbac-loghi_istituzionali">
+             {{/imagesFooter}}
+             </div>
+			 <p style="font-size:14px">{{#str}}footer.label_loghi,theme_fsbac{{/str}}</p>  
+         </div>
+         <div class="fsbac-container-section-footer">
+            <div class="fsbac-section-footer"> 
+                <div  class="fsbac-section-footer-title">{{#str}}footer.menu,theme_fsbac{{/str}}</div>
+                <a href='{{config.wwwroot}}' class="fsbac-section-footer-link">{{#str}}footer.menu.home,theme_fsbac{{/str}}</a>
+                <a href='{{config.wwwroot}}/theme/fsbac/pages/courses.php' class="fsbac-section-footer-link">{{#str}}footer.menu.corsi,theme_fsbac{{/str}}</a>
+                <a href='{{config.wwwroot}}/theme/fsbac/pages/paths.php' class="fsbac-section-footer-link">{{#str}}footer.menu.percorsi,theme_fsbac{{/str}}</a>
+                <a href='{{config.wwwroot}}/theme/fsbac/pages/dicolab.php' class="fsbac-section-footer-link">{{#str}}footer.menu.dicolab,theme_fsbac{{/str}}</a>
+                <a href='{{config.wwwroot}}/theme/fsbac/pages/chisiamo.php' class="fsbac-section-footer-link">{{#str}}footer.menu.chisiamo,theme_fsbac{{/str}}</a>
+            </div>
+            <div class="fsbac-section-footer"> 
+                <div  class="fsbac-section-footer-title">{{#str}}footer.help,theme_fsbac{{/str}}</div>
+                <a class="fsbac-section-footer-link" href="{{config.wwwroot}}/local/contact/assistance.php#faq">{{#str}}footer.help.faq,theme_fsbac{{/str}}</a>
+                <a class="fsbac-section-footer-link" href="{{config.wwwroot}}/local/contact/assistance.php">{{#str}}footer.help.assistenza,theme_fsbac{{/str}}</a>
+                <a class="fsbac-section-footer-link" href="{{config.wwwroot}}/theme/fsbac/docs/Termini_e_Condizioni.pdf" target='_blank'>{{#str}}footer.help.termini,theme_fsbac{{/str}}</a>
+                <a class="fsbac-section-footer-link" href="{{config.wwwroot}}/theme/fsbac/docs/InformativaBase.pdf" target='_blank'>{{#str}}footer.help.privacy,theme_fsbac{{/str}}</a>
+                <a class="fsbac-section-footer-link" href="{{config.wwwroot}}/theme/fsbac/docs/InformativaAttivitàformativeFSBAC.pdf" target='_blank'>{{#str}}footer.help.policy_fondazione,theme_fsbac{{/str}}</a>
+                <a class="fsbac-section-footer-link" href="{{config.wwwroot}}/theme/fsbac/docs/InformativaAttivitàformativeDicolab.pdf" target='_blank'>{{#str}}footer.help.policy_dicolab,theme_fsbac{{/str}}</a>
+                <a class="fsbac-section-footer-link" href="{{config.wwwroot}}/mod/page/view.php?id=6667" target='_blank'>{{#str}}footer.help.cookiepolicy,theme_fsbac{{/str}}</a>
+                <a class="fsbac-section-footer-link" href="https://urlsand.esvalabs.com/?u=https%3A%2F%2Fform.agid.gov.it%2Fview%2F7ca5abb0-773c-11ef-8415-4940954a7b35&e=bf316f7d&h=8d2a8016&f=n&p=y" target='_blank'>{{#str}}footer.help.accessibility,theme_fsbac{{/str}}</a>
+            </div>
+            <div class="fsbac-section-footer fsbac-container-section-sede"> 
+                <div  class="fsbac-section-footer-title">{{#str}}footer.location,theme_fsbac{{/str}}</div>
+                <p class="fsbac-section-footer-link">{{#str}}footer.location.name,theme_fsbac{{/str}}</p>
+                <p class="fsbac-section-footer-link">{{#str}}footer.location.street,theme_fsbac{{/str}}</p>
+                <!-- <p class="fsbac-section-footer-link">helpdesk@fondazionescuolapatrimonio.it</p> -->
+                <div class="fsbac-social-icons">
+                    {{#linksSocialFooter}}
+                       {{#facebooklink}} <a href="{{facebooklink}}" target='_blanck' > {{> theme_fsbac/social_icons/facebook }}</a>{{/facebooklink}} 
+                        {{#linkedinlink}}  <a href="{{linkedinlink}}" target='_blanck' > {{> theme_fsbac/social_icons/linkedin }}</a>{{/linkedinlink}} 
+                        {{#twitterlink}}  <a href="{{twitterlink}}" target='_blanck' > {{> theme_fsbac/social_icons/twitter }}</a>{{/twitterlink}} 
+                         {{#instagramlink}}  <a href="{{instagramlink}}" target='_blanck' >  {{> theme_fsbac/social_icons/instagram }}</a>{{/instagramlink}} 
+                    {{/linksSocialFooter}}
+               
+                
+                </div>
+            </div>
+         </div>
+
+        
+    </div>
+     <p class="fsbac-footer-label-bottom">{{#str}}footer.label_bottom,theme_fsbac{{/str}}</p>
+
+      
+</footer>
+{{{ output.standard_end_of_body_html }}}
+{{#js}}
+require(['theme_fsbac/footer-popover'], function(FooterPopover) {
+    FooterPopover.init();
+});
+{{/js}}

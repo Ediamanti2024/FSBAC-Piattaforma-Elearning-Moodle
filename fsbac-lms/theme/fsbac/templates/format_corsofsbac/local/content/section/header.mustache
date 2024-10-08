@@ -1,0 +1,47 @@
+{{#sectionbulk}}
+{{$ core_courseformat/local/content/section/bulkselect }}
+    {{> core_courseformat/local/content/section/bulkselect }}
+{{/ core_courseformat/local/content/section/bulkselect }}
+{{/sectionbulk}}
+{{#headerdisplaymultipage}}
+    <h3 id="sectionid-{{id}}-title" class="sectionname">
+        {{{title}}}
+    </h3>
+{{/headerdisplaymultipage}}
+{{^headerdisplaymultipage}}
+    {{#sitehome}}
+        <h2 id="sectionid-{{id}}-title" class="sectionname">
+            {{{title}}}
+        </h2>
+    {{/sitehome}}
+    {{^sitehome}}
+        <div class="d-flex align-items-start position-relative">
+            <a role="button"
+                data-toggle="collapse"
+                data-for="sectiontoggler"
+                href="#coursecontentcollapse{{num}}"
+                id="collapssesection{{num}}"
+                aria-expanded="{{^contentcollapsed}}true{{/contentcollapsed}}{{#contentcollapsed}}false{{/contentcollapsed}}"
+                aria-controls="coursecontentcollapse{{num}}"
+                class="btn btn-icon mr-1 icons-collapse-expand justify-content-center
+                    {{^editing}} stretched-link {{/editing}}
+                    {{#contentcollapsed}} collapsed {{/contentcollapsed}}"
+                aria-label="{{name}}">
+            <span class="expanded-icon icon-no-margin p-2" title="{{#str}} collapse, core {{/str}}">
+                <i class="icon fa fa-arrow-down fa-fw" aria-hidden="true"></i>
+            </span>
+            <span class="collapsed-icon icon-no-margin p-2" title="{{#str}} expand, core {{/str}}">
+                <span class="dir-rtl-hide"><i class="icon fa fa-arrow-right fa-fw " aria-hidden="true"></i></span>
+                <span class="dir-ltr-hide"><i class="icon fa fa-arrow-down fa-fw" aria-hidden="true"></i></span>
+            </span>
+            </a>
+            <h3 class="sectionname course-content-item d-flex align-self-stretch align-items-center mb-0"
+                id="sectionid-{{id}}-title" data-for="section_title" data-id="{{id}}" data-number="{{num}}">
+                {{{title}}}
+                {{#iscoursesectioncomplete}}
+                    {{#str}} completed, format_corsofsbac {{/str}}
+                {{/iscoursesectioncomplete}}
+            </h3>
+        </div>
+    {{/sitehome}}
+{{/headerdisplaymultipage}}

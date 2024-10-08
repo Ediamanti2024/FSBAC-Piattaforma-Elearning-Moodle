@@ -1,0 +1,82 @@
+
+<div class="fsbac-filters-container-inputs">
+<div class="closeMobile"><button class='showFilters'><i class="fas fa-times"></i></button></div>
+<div class="fsbac-filters-courses">
+   <div class="form-group fsbac-select-fiters">
+            <label for="tag">{{#str}}filter.tag,theme_fsbac{{/str}}</label>
+            <select  class="form-control" id="tag" data-type='tag'>
+                <option value='-'>-</option>
+                {{#tags}}
+                  <option value="{{value}}">{{label}}</option>
+                {{/tags}}
+            </select>
+    </div>
+     <div class="form-group fsbac-select-fiters">
+            <label for="program">{{#str}}filter.program,theme_fsbac{{/str}}</label>
+            <select  class="form-control" id="program" data-type='program'>
+               <option value='-'>-</option>
+                {{#program}}
+                  <option value="{{value}}">{{label}}</option>
+                {{/program}}
+            </select>
+     </div>
+    <div class="form-group fsbac-select-fiters">
+            <label for="teachers">{{#str}}filter.author,theme_fsbac{{/str}}</label>
+            <select  class="form-control" id="teachers" data-type='teachers'>
+                <option value='-'>-</option>
+                {{#teachers}}
+                  <option value="{{value}}">{{label}}</option>
+                {{/teachers}}
+            </select>
+    </div>
+    <div class="form-group fsbac-select-fiters">
+            <label for="typeCourses">{{#str}}filter.typeCourse,theme_fsbac{{/str}}</label>
+            <select  class="form-control" id="typeCourses" data-type='type'>
+               <option value='-'>-</option>
+                {{#typeCourses}}
+                  <option value="{{value}}">{{label}}</option>
+                {{/typeCourses}}
+            </select>
+    </div>
+    <div class="form-group fsbac-select-fiters">
+            <label for="scadenza">{{#str}}filter.expiration,theme_fsbac{{/str}}</label>
+            <select  class="form-control" id="scadenza" data-type='time'>
+             <option value='-'>-</option>
+                {{#scadenza}}
+                  <option value="{{value}}">{{label}}</option>
+                {{/scadenza}}
+            </select>
+    </div>
+    <div class="form-group fsbac-select-fiters">
+            <label for="paths">{{#str}}filter.path,theme_fsbac{{/str}}</label>
+            <select  class="form-control" id="paths" data-type='paths'>
+             <option value='-'>-</option>
+                {{#paths}}
+                  <option value="{{value}}">{{label}}</option>
+                {{/paths}}
+            </select>
+    </div>
+
+    <div class="form-group fsbac-select-fiters range-filter">
+       
+         {{< theme_fsbac/components/filters/range_slider_duration}}
+           {{$label}}{{#str}}filter.duration_course,theme_fsbac{{/str}}{{/label}}
+           {{$maxDuration}}600{{/maxDuration}}
+         {{/ theme_fsbac/components/filters/range_slider_duration}}
+    </div>
+ </div>
+ <div class="fsbac-certicate-section-filter">
+  <div class="fsbac-filter-section-title">{{#str}}filter.label_course_show,theme_fsbac{{/str}}</div>
+   <div class="form-group form-check fsbac-filters-checkbox">
+    <input type="checkbox" class="form-check-input" id="certificate" data-type='certificate'>
+    <label class="form-check-label" for="certificate">{{#str}}filter.onlycerticate,theme_fsbac{{/str}}</label>
+  </div>
+ </div>
+
+ <div class="mobileSearch fsbac-filters-input-search">
+ <button type="button" class="btn btn-primary submit-filter">{{#str}}search,theme_fsbac{{/str}}</button>
+</div>
+</div>
+
+
+

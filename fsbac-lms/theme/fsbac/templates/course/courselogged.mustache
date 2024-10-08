@@ -1,0 +1,300 @@
+
+
+<div class="course-fsbac-body container">
+    <div class="fsbac-header-course-sections">
+        {{> theme_fsbac/course/header_logged }}
+
+        {{#coursebuttonlabel}}
+            {{^isCompleted}}
+                <a class="btn btn-primary button-course-logged" href="{{coursebuttonlink}}">
+                {{coursebuttonlabel}} <i>{{> theme_fsbac/icons_svg/play-square-fill}}</i>
+                </a>
+             {{/isCompleted}}
+             {{#isCompleted}}
+               <button class="btn btn-primary button-course-logged" data-toggle="tooltip" data-html="true" title="{{< theme_fsbac/components/shared}}{{$url}}{{{link}}}{{/url}}{{/ theme_fsbac/components/shared}}" >
+                 {{coursebuttonlabel}} <i class="fas fa-share-alt"></i>
+               </button>
+             {{/isCompleted}}
+             {{#isfsbacormetaenrolled}}
+                <button class="btn btn-primary button-unenrol button-course-logged">
+                    {{#str}}course.button_unenrol, theme_fsbac{{/str}} <i>{{> theme_fsbac/icons_svg/play-square-fill}}</i>
+                </button>
+             {{/isfsbacormetaenrolled}}
+        {{/coursebuttonlabel}}
+
+        {{#completedcourseredirecturl}}
+            <span id="completedcourseredirecturl" style="display:none">{{completedcourseredirecturl}}</span>
+        {{/completedcourseredirecturl}}
+
+        <span id="isloggedinandnotguest" style="display:none">{{isloggedinandnotguest}}</span>
+        <span id="ispolicycurrentversionaccepted" style="display:none">{{ispolicycurrentversionaccepted}}</span>
+        <a id="acceptpolicymessage" style="display:none" href="{{config.wwwroot}}/local/fsbaclogin/blocked_course_enrollment.php?policyid={{policyid}}&courseid={{courseid}}"></a>
+
+        {{^coursebuttonlabel}}
+            <button class="btn btn-primary button-enrol button-course-logged">{{#str}}course.button_enrol, theme_fsbac{{/str}} <i>{{> theme_fsbac/icons_svg/play-square-fill}}</i></button>
+        {{/coursebuttonlabel}}
+
+        <nav class="bartab-course">
+        <button class="item-tab current-tab" data-id="content-course">
+             {{#str}}course.tab.course, theme_fsbac{{/str}}
+        </button>
+         <button class="item-tab" data-id="content-similarcourse">
+                {{#str}}course.tab.similarcourse, theme_fsbac{{/str}}
+            </button>
+         <button class="item-tab" data-id="content-reviews">
+              {{#str}}course.tab.reviews,theme_fsbac{{/str}}
+        </button>
+        </nav>
+
+        <div class="content-tab-course" id='content-course'>
+           {{#course_descr}}
+              <div class="course-desc">{{{course_descr}}}</div>
+           {{/course_descr}}
+            <section class="fsbac-header-course-section fsbac-program">
+
+                    {{< core_courseformat/local/content }}
+                    {{$ core_courseformat/local/content/section }}
+                        {{> format_corsofsbac/local/content/section }}
+                    {{/ core_courseformat/local/content/section }}
+                    {{/ core_courseformat/local/content }}
+                {{#iscustomcertavailable}}
+                {{> theme_fsbac/course/certificate }}
+                {{/iscustomcertavailable}}
+
+
+             </section>
+        </div>
+
+            <div class="content-tab-course" id='content-similarcourse'>
+
+            {{< theme_fsbac/course/slider_in_course }}
+                {{$id}}corsi_simili{{/id}}
+                  {{$spaceBetween}}-470{{/spaceBetween}}
+                {{$title}}{{#str}}course.section.similarcourses,theme_fsbac{{/str}}{{/title}}
+                {{$cards}}
+                {{#corsiSimili}}
+                 <div class="swiper-slide">
+                {{< theme_fsbac/components/course-card/index}}
+                       {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+               {{/ theme_fsbac/components/course-card/index}}
+                  </div>
+                {{/corsiSimili}}
+                {{^corsiSimili}}
+                    <p>{{#str}}course_similar_empty_title,theme_fsbac{{/str}}</p>
+                {{/corsiSimili}}
+                {{/cards}}
+            {{/ theme_fsbac/course/slider_in_course }}
+
+            {{< theme_fsbac/course/slider_in_course }}
+                {{$id}}percosi_simili{{/id}}
+                {{$spaceBetween}}-150{{/spaceBetween}}
+                {{$title}}{{#str}}course.section.similarpath,theme_fsbac{{/str}} {{/title}}
+                {{$cards}}
+                    {{#percorsiSimili}}
+                    <div class="swiper-slide">  {{> theme_fsbac/components/path-card/index}} </div>
+                    {{/percorsiSimili}}
+                    {{^percorsiSimili}}
+                        <p>{{#str}}path_similar_empty_title,theme_fsbac{{/str}}</p>
+                    {{/percorsiSimili}}
+                {{/cards}}
+            {{/ theme_fsbac/course/slider_in_course }}
+
+
+        </div>
+
+         <div class="content-tab-course" id='content-reviews'>
+            {{#reviews}}
+              <div class="course-desc">{{{reviews}}}</div>
+           {{/reviews}}
+           {{^reviews}}
+             {{> theme_fsbac/components/no_reviews}}
+           {{/reviews}}
+        </div>
+
+
+
+    </div>
+     <div class="course-fsbac-information logged">
+            <div class="buttons-logged-top">
+                <button class="btn btn-secondary button-shared" data-toggle="tooltip" data-html="true" title="{{< theme_fsbac/components/shared}}{{$url}}{{{link}}}{{/url}}{{/ theme_fsbac/components/shared}}">{{#str}}course.button_shared, theme_fsbac{{/str}} <i class="fas fa-share-alt"></i></button>
+                <button data-courseid="{{courseid}}" class="btn btn-primary fsbac-favorite-button favorite" >{{#str}}course.favorite, theme_fsbac{{/str}}<i class="fas fa-heart"></i></button>
+                <button data-courseid="{{courseid}}" class="btn btn-secondary fsbac-favorite-button nofavorite" >{{#str}}course.nofavorite, theme_fsbac{{/str}}<i class="fas fa-heart"></i></button>
+
+            </div>
+
+        {{#coursecompletioninfo}}
+            <div class="section-progress box-data-logged">
+                <label class="label-info"><div class="circle-green"></div> {{courseprogressstate}}</label>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width:{{^courseprogressperc}}0{{/courseprogressperc}}{{#courseprogressperc}}{{courseprogressperc}}{{/courseprogressperc}}%" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="numberInfo"><i>{{> theme_fsbac/icons_svg/check-circle-fill}}</i> <span>{{completedmodules}}/{{totalmodules}}</span></div>
+
+            </div>
+        {{/coursecompletioninfo}}
+
+         <div class="course-fsbac-information-general box-logged">
+                <h4 class="title-info">{{#str}}course.genaral_information, theme_fsbac{{/str}}</h4>
+                {{#generalinformation}}
+                    <ul>
+                        {{#codicecorso}}<li> <span>{{#str}} course.code, theme_fsbac {{/str}}:</span> {{codicecorso}}</li>{{/codicecorso}}
+                        {{#teacherslist}}<li><span>{{#str}}course.author, theme_fsbac{{/str}}:</span> {{teacherslist}}{{/teacherslist}}
+                        {{#mode}}<li><span>{{#str}}course.typology, theme_fsbac{{/str}}:</span> {{mode}}{{/mode}}
+                        {{#programma}}<li><span>{{#str}}course.category, theme_fsbac{{/str}}:</span> {{programma}}{{/programma}}
+                        {{#tags}} <li><span>{{#str}}course.tag, theme_fsbac{{/str}}:</span> {{tags}}{{/tags}}
+                        {{#duration}}<li><span>{{#str}}course.duration, theme_fsbac{{/str}}:</span> {{duration}}{{/duration}}
+                        {{#expiration}}<li><span>{{#str}}course.courseexpiration, theme_fsbac {{/str}}:</span> {{expiration}}{{/expiration}}
+                    </ul>
+                {{/generalinformation}}
+         </div>
+            {{#customcertid}}
+              <div class="box-data-accordion box-data-logged">
+                <label>{{#str}} course.customcertid-label, theme_fsbac {{/str}}</label>
+                <p>{{#str}} course.customcertid-msg, theme_fsbac {{/str}}</p>
+              </div>
+            {{/customcertid}}
+
+    {{#paths}}
+        <div class="box-data-accordion  box-data-logged">
+          <label>{{#str}} course.includepath, theme_fsbac {{/str}}</label>
+            <p>
+             {{#multiplepaths}}
+                {{#str}} course.includepath.paths, theme_fsbac,{{number}} {{/str}}
+             {{/multiplepaths}}
+             {{^multiplepaths}}
+                {{#str}} course.includepath.path, theme_fsbac,{{number}} {{/str}}
+             {{/multiplepaths}}
+            </p>
+            <button class="buttonAccordion"><i class="fas fa-chevron-down"></i></button>
+            <div class='accordion-data'>
+                {{#pathsinfo}}
+                   {{< theme_fsbac/components/path_course_minicard }}
+                      {{$id}}{{id}}{{/id}}
+                      {{$image}}{{img_url}}{{/image}}
+                      {{$title}}{{pathname}}{{/title}}
+                      {{$subtitle}}{{sottotitolo}}{{/subtitle}}
+                      {{$level}}{{level}}{{/level}}
+                      {{$duration}}{{duration}}{{/duration}}
+                  {{/theme_fsbac/components/path_course_minicard }}
+                   <div class="fsbac-path_course_minicard-divider"></div>
+                {{/pathsinfo}}
+            </div>
+        </div>
+    {{/paths}}
+
+
+
+        {{^emptydicolabcourses}}
+            <div class="box-data-accordion  box-data-accordion-dicolab box-data-logged open">
+                <p>
+                    {{#str}} dicolabcoursesforyou, theme_fsbac {{/str}}
+                </p>
+                {{#dicolabcourses}}
+                    <button class="buttonAccordion"><i class="fas fa-chevron-down"></i></button>
+                        <div class='accordion-data'>
+                            {{> theme_fsbac/components/course-card/mini }}
+                            <div class="fsbac-path_course_minicard-divider"></div>
+                        </div>
+                {{/dicolabcourses}}
+            </div>
+        {{/emptydicolabcourses}}
+
+    </div>
+</div>
+
+{{#js}}
+require(
+[
+    'jquery',
+    'block_myoverview/repository',
+    'core/notification'
+],
+function(
+    $,
+    Repository,
+    Notification
+) {
+    $('.bartab-course .item-tab').on('click',(e)=>{
+        const id = $(e.currentTarget).data('id');
+        const classCurrent = 'current-tab'
+        $('.bartab-course .item-tab').removeClass(classCurrent);
+        $(e.currentTarget).addClass(classCurrent);
+        $('.content-tab-course').hide();
+        $(`#${id}`).show();
+    });
+
+      $('.box-data-accordion .buttonAccordion').on('click',(e)=>{
+      const divParent = $(e.currentTarget).parent();
+      const isOpen = $(divParent).hasClass('open');
+      isOpen ? $(divParent).removeClass('open'): $(divParent).addClass('open');
+
+    });
+
+    $('.fsbac-favorite-button').off('click').on('click', function(e) {
+        const courseid = $(e.currentTarget).data('courseid');
+        const status = !$(e.currentTarget).hasClass('btn-primary');
+
+       Repository.setFavouriteCourses({
+        courses: [
+            {
+                'id': courseid,
+                'favourite': status
+            }
+        ]
+        }).then(result => {
+            if (result.warnings.length === 0) {
+
+                $('.fsbac-favorite-button').each(function( index ) {
+                    if($(this).data('courseid') === courseid){
+                        if(status){
+                             $('.favorite').show()
+                             $('.nofavorite').hide()
+                        }else{
+                             $('.nofavorite').show()
+                             $('.favorite').hide()
+                        }
+
+                    }
+                });
+
+
+                return true;
+            } else {
+
+                return false;
+            }
+        }).catch(Notification.exception);
+  });
+    $('.bartab-course .item-tab')[0].click()
+
+    {{#isfavourite}}
+     $('.favorite').show()
+     $('.nofavorite').hide()
+    {{/isfavourite}}
+    {{^isfavourite}}
+       $('.nofavorite').show()
+       $('.favorite').hide()
+    {{/isfavourite}}
+
+    {{^coursebuttonlabel}}
+      $($('#region-main form')[0]).hide();
+
+    $('.button-enrol').click(()=>{
+        if (document.getElementById("isloggedinandnotguest")?.innerHTML == true) {
+            if (document.getElementById("ispolicycurrentversionaccepted").innerHTML == 1) {
+                $('form').submit();
+            } else {
+                window.open(document.getElementById("acceptpolicymessage").href);
+            }
+        } else {
+            $('form').submit();
+        }
+    })
+   {{/coursebuttonlabel}}
+
+    {{#completedcourseredirecturl}}
+        window.location.href = document.getElementById("completedcourseredirecturl").innerHTML;
+    {{/completedcourseredirecturl}}
+});
+{{/js}}

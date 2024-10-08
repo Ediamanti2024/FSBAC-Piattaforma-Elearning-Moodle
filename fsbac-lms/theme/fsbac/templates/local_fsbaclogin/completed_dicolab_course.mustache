@@ -1,0 +1,72 @@
+<div class='fsbac-login-fixed fsbac-completed_dicolab_course-container'>
+
+    <div class="fsbac-completed_dicolab_course-card">
+        <h1 class="congratulation"> {{#str}}dicolab.completed_dicolab_course_title, theme_fsbac{{/str}}</h1>
+       
+        {{#customcertid}}
+            <p class="fsbac-completed_dicolab_course-card-msg">{{#str}}dicolab.completed_dicolab_course_msgcustomcertid, theme_fsbac, {{coursename}}{{/str}}</p>
+            <a href="{{config.wwwroot}}/mod/certificate/view.php?id={{customcertid}}&downloadown=1" class=" mt-4 btn btn-secondary button-certificate" target="_blank">
+                {{#str}}course.certificate_download, theme_fsbac{{/str}} <i class="fas fa-download"></i>
+            </a>
+			<a href="{{config.wwwroot}}/course/view.php?id={{courseid}}" class="mt-4 btn btn-secondary button-certificate">
+                {{#str}} backtocourse, local_fsbaclogin {{/str}}
+            </a>
+        {{/customcertid}}
+        {{^customcertid}}
+           <p class="mt-2  fsbac-completed_dicolab_course-card-msg">{{#str}}dicolab.completed_dicolab_course_msgcustomcertidno, theme_fsbac, {{coursename}}{{/str}}</p>
+            <a href="{{config.wwwroot}}/course/view.php?id={{courseid}}" class="mt-4 btn btn-secondary button-certificate">
+                {{#str}} backtocourse, local_fsbaclogin {{/str}}
+            </a>
+        {{/customcertid}}
+
+          <div class="fsbac-completed_dicolab_course-card-courses">
+                <div class="fsbac-completed_dicolab_course-card-courses-header" >
+                    {{< theme_fsbac/components/title-section}}
+                                    {{$title}}{{#str}}dicolab.completed_dicolab_course_title2, theme_fsbac{{/str}}{{/title}}
+                {{/ theme_fsbac/components/title-section}}
+                    <div class="fsbac-dicolab-courses_navigation">
+                            <button class="fsbac-dicolab-courses-prev"><i class="fa fa-angle-left"></i></button>
+                            <button class="fsbac-dicolab-courses-next"><i class="fa fa-angle-right"></i></button>
+                    </div>
+                </div>
+
+                 <div class="swiper fsbac-dicolab-courses-swiper w-100">
+                        <div class="swiper-wrapper">  
+                            {{#dicolabCourses}}
+                                  <div class="swiper-slide">
+                                      {{> theme_fsbac/components/course-card/mini}} 
+                                   </div>    
+                            {{/dicolabCourses}} 
+                        </div>
+                 </div>
+
+            
+
+          </div>
+         
+
+    </div>
+
+{{> theme_fsbac/components/confetti}}
+</div>
+<script>
+ new Swiper('.fsbac-dicolab-courses-swiper', {
+  loop: true,
+  slidesPerView: 'auto',
+  spaceBetween: 12,
+  centeredSlides:false,
+    breakpoints: {
+  
+   
+  
+   
+  },
+ 
+
+  // Navigation arrows
+ navigation: {
+    nextEl: '.fsbac-dicolab-courses-next',
+    prevEl: '.fsbac-dicolab-courses-prev',
+  }
+});
+</script>

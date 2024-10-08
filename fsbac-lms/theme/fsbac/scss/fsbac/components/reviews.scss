@@ -1,0 +1,31 @@
+.fsbac-no-reviews{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+
+    p.msg{
+        margin: 0px;
+        padding: 0px;
+        color: $neri-nero-pieno;
+        text-align: center;
+        font-family:$font-bold-NunitoSans;
+        font-size: 18px;
+        line-height: 140%; 
+        margin-top: 8px;
+    }
+    p.submsg{
+        margin: 0px;
+        padding: 0px;
+        color: $neri-nero-chiaro;
+        text-align: center;
+        font-family:$font-regular-OpenSans;
+        font-size: 16px;
+        line-height: 140%; 
+        margin-top: 16px;
+    }
+    
+}

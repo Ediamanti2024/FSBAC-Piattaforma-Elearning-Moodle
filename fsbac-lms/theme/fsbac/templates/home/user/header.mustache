@@ -1,0 +1,22 @@
+<section class="fsbac-home_user-header">
+    <div class="container ">
+
+        <div class="fsbac-section-text {{^corsiPerTeShow}}image-right{{/corsiPerTeShow}}">
+            <h1>{{#isF}}{{#str}}home_user.header_title_f, theme_fsbac, {{firstname}}{{/str}}{{/isF}}
+                {{^isF}}{{#str}}home_user.header_title, theme_fsbac, {{firstname}}{{/str}}{{/isF}}
+            </h1>
+            <p>{{#str}}home_user.header_subtitle, theme_fsbac{{/str}}</p>
+            <div class="fsbac-container-button">
+                <a href="{{config.wwwroot}}/theme/fsbac/pages/courses.php" class="btn btn-light">{{#str}}home_user.header_button_catalog, theme_fsbac{{/str}}<i class="fas fa-arrow-down"></i></a>
+                <a href="{{config.wwwroot}}/my" class="btn btn-outline-light">{{#str}}home_user.header_button_personal_area, theme_fsbac{{/str}} <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="fsbac-section-right {{^corsiPerTeShow}}fsbac-coursesperte-image{{/corsiPerTeShow}}">
+                {{#corsiPerTeShow}}
+                    {{> theme_fsbac/home/user/components/courses_perte }}
+                 {{/corsiPerTeShow}}
+        </div>
+
+
+    </div>
+</section>

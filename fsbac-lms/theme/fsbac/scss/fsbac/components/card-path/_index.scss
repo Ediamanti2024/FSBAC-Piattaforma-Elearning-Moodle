@@ -1,0 +1,116 @@
+.fsbac-card-path {
+    display: flex;
+
+    width: 628px;
+    height: 228px;
+    border-radius: 6px;
+    border: 1px solid $neri-grigio-chiaro;
+    background: $white;
+    box-shadow: 2px 4px 60px 0px rgba(101, 102, 106, 0.10);
+
+    @include media-breakpoint-down(md) {
+        width: 100%;
+    }
+
+    .fsbac-card-path-img {
+        width: 222px;
+        height: 100%;
+        background-color: $primary;
+        border-radius: 6px 0px 0px 6px;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
+
+    .fsbac-card-path-body {
+        flex: 1;
+        padding: 24px;
+
+        .fsbac-card-path-info {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 24px;
+            border-bottom: 1px solid $neri-grigio-chiaro;
+
+            p {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .fsbac-card-path-title {
+                color: $neri-nero-pieno;
+                font-family: $font-bold-NunitoSans;
+                font-size: 21px;
+                line-height: 135%;
+                margin-bottom: 8px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 350px;
+
+                @include media-breakpoint-down(md) {
+                    width: 300px;
+                }
+            }
+
+            .fsbac-card-path-subtitle {
+                color: $neri-nero-pieno;
+                font-family: $font-regular-OpenSans;
+                font-size: 18px;
+                line-height: 140%;
+                margin-bottom: 16px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 350px;
+
+                @include media-breakpoint-down(md) {
+                    width: 300px;
+                }
+            }
+
+            .fsbac-card-path-container-icons {
+                display: flex;
+                gap: 14px;
+
+                .fsbac-card-path-icons {
+                    display: flex;
+                    gap: 3px;
+                    align-items: center;
+                    color: $neri-nero-chiaro;
+                    font-family: $font-regular-NunitoSans;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 140%;
+                }
+            }
+        }
+
+        .fsbac-card-path-links {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 16px;
+            &.with-progress {
+                justify-content: space-between;
+                align-items: center;
+                .fsbac-progress-container{
+                    max-width: 300px;
+                }
+
+
+            }
+
+            .btn {
+                i {
+                    padding-left: 8px;
+                }
+            }
+        }
+
+    }
+}

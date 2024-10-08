@@ -1,0 +1,41 @@
+<div class="fsbac-filters-container">
+    <p class="fsbac-filters-title">{{searchLabel}}</p>
+
+    <div class="fsbac-header-inputs">
+        <div class="fsbac-filters-input-container">
+            <div class="fsbac-filters-input-search">
+                <div class='icon-search'>
+                    {{> theme_fsbac/icons_svg/search}}
+                </div>
+                <input type='text'  placeholder="Prova con “Patrimonio" data-type='text' />
+                <button type="button" class="btn btn-primary submit-filter">{{#str}}search,theme_fsbac{{/str}}</button>
+            </div>
+        </div>
+        <div class="form-group fsbac-select-fiters">
+            <label for="order">{{#str}}filter.order,theme_fsbac{{/str}}</label>
+            <select  class="form-control" id="order" data-type='order'>
+                <option value='-'>-</option>
+                {{#orderFilters}}
+                <option value="{{value}}">{{label}}</option>
+                {{/orderFilters}}
+           
+            </select>
+        </div>
+        <button type="button" class="btn btn-secondary showFilters">
+        {{#str}}filter.show_button,theme_fsbac{{/str}}
+        {{> theme_fsbac/icons_svg/filter}}
+        </button>
+
+    </div>
+    
+    {{#filtersCourses}}
+        {{> theme_fsbac/components/filters/courses}}
+     {{/filtersCourses}}
+     {{#filtersPaths}}
+        {{> theme_fsbac/components/filters/paths}}
+     {{/filtersPaths}}
+
+     
+   
+
+</div>

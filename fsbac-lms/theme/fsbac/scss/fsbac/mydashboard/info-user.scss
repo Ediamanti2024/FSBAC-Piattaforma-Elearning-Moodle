@@ -1,0 +1,38 @@
+.fsbac-info-user {
+    width: 100%;
+    padding: 32px 32px 16px;
+    border-radius: 8px;
+    background-color: $neri-grigio-chiarissimo;
+
+    h4.title-info-user {
+        color: $neri-nero-pieno;
+        font-family: $font-bold-NunitoSans;
+        font-size: 21px;
+        line-height: 135%;
+    }
+
+    ul {
+        padding: 0px;
+        margin: 0px;
+
+        li {
+            list-style: none;
+            padding: 12px 0px;
+            border-bottom: 1px solid #E7E9F1;
+
+            color: $neri-grigio-scuro;
+            font-family: $font-regular-OpenSans;
+            font-size: 14px;
+            line-height: 140%;
+            span{
+                font-family: $font-bold-OpenSans;
+            }
+            b {
+                color: $neri-nero-chiaro;
+                font-family: $font-bold-NunitoSans;
+                font-size: 16px;
+                line-height: 140%;
+            }
+        }
+    }
+}

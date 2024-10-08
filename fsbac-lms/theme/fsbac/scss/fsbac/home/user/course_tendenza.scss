@@ -1,0 +1,33 @@
+.fsbac-home_user-course_tendenza {
+    width: 100%;
+    background-color: $secondari-default;
+    padding: 96px 0px;
+
+    .container {
+        width: 100%;
+
+        .fsbac-course_tendenza-container-courses {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            @include media-breakpoint-down(md) {
+                grid-template-columns: 1fr;
+            }
+
+            .fsbac-card-course-mini {
+                max-width: 412px;
+
+                .fsbac-card-course-mini-container {
+
+                    p,
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

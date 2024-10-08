@@ -1,0 +1,118 @@
+.fsbac-argomenti-container {
+    margin-top: 30px;
+    width: 100%;
+
+
+}
+
+.fsbac-card-argomento {
+
+    width: 411px;
+    height: 358px;
+    flex-shrink: 0;
+    border-radius: 4px;
+
+    box-shadow: 2px 4px 60px 0px rgba(101, 102, 106, 0.10);
+    padding: 40px;
+
+    &.produzione_gestione{
+        background: #005F85;
+        color: $white;
+        .btn-link{
+            color: $white; 
+        }
+        .icon-title{
+            color: #A61598;
+        }
+       
+        
+    }
+    &.processi_di_supporto{
+        background: #FFCF00;
+        color: $neri-nero-chiaro;
+        .btn-link{
+            color: $neri-nero-chiaro;
+        }
+        .icon-title{
+            color: #00B6ED;
+        }
+    }
+
+    &.pensiero_digitale{
+        background: #00B6ED;
+        color: #23242A;
+        .btn-link{
+            color: #23242A;
+        }
+        .icon-title{
+            color: $primary;
+        }
+    }
+   
+    &.governance_della_rasformazione_digitale{
+        background: #FF6800;
+        color: $neri-nero-chiaro;
+        .btn-link{
+            color: $neri-nero-chiaro;
+        }
+        .icon-title{
+            color: #005F85;
+        }
+    }
+
+    &.uso_e_condivisione{
+        background: #A61598;
+        color: $white;
+        .btn-link{
+            color: $white;
+        }
+        .icon-title{
+            color: #FFCF00;
+        }
+    }
+    &.ricerca_e_innovazione{
+        background: #7F55D3;
+        color: $white;
+        .btn-link{
+            color: $white;
+        }
+        .icon-title{
+            color: #FF6800;
+        }
+    }
+
+    .fsbac-card-argomento-title-container {
+        display: flex;
+        gap: 12px;
+
+        .title-card-argomento {
+            margin: 0px;
+            padding: 0px;
+            font-family: $font-bold-NunitoSans;
+            font-size: 24px;
+            line-height: 135%;
+        }
+    }
+
+    .fsbac-card-argomento-desc {
+        margin-top: 45px;
+        font-family: $font-regular-OpenSans;
+        font-size: 18px;
+        line-height: 160%;
+        margin-bottom: 30px;
+    }
+}
+
+.fsbac-argomenti_swiper_navigation{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap:40px;
+
+    button{
+        background: transparent;
+        border: none;
+        color: $primary;
+    }
+}

@@ -1,0 +1,15 @@
+.fsbac-home {
+    &#page.drawers {
+        padding: 0px;
+    }
+
+    @import 'user/index';
+
+    @import 'header-banner';
+    @import 'featured_courses_section';
+    @import 'your_interests_section';
+    @import 'methods_training_section';
+    @import 'percorsi_360_section';
+
+
+}

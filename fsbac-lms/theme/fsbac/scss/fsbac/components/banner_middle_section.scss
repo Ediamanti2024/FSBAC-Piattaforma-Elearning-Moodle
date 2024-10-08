@@ -1,0 +1,74 @@
+.fsbac-banner_middle_section {
+    width: 100%;
+    margin: 181px auto 0px;
+    max-width: 1723px;
+    padding: 88px 144px;
+    border-radius: 18px;
+    background-color: $secondari-default;
+
+    @include media-breakpoint-down(md) {
+        margin-top: 56px;
+        padding: 40px 16px 0px 16px;
+        width: calc(100% - 24px);
+    }
+
+
+    position: relative;
+
+    .fsbac-banner_middle_container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 680px;
+        gap: 16px;
+
+        .fsbac-banner_middle-title {
+            color: $general-bianco;
+            font-family: $font-bold-NunitoSans;
+            font-size: 38px;
+            font-style: normal;
+            line-height: 140%;
+
+            @include media-breakpoint-down(md) {
+                font-size: 28px;
+            }
+
+        }
+
+        p {
+            color: $neri-grigio-chiarissimo;
+            font-family: $font-regular-OpenSans;
+            font-size: 18px;
+            line-height: 160%;
+
+        }
+
+        .fsbac-banner_middle-links {
+            display: flex;
+            gap: 28px;
+
+            @include media-breakpoint-down(md) {
+                justify-content: center;
+            }
+
+            .enrol-link {
+                font-family: $font-bold-OpenSans;
+                color: $secondari-default;
+            }
+        }
+    }
+
+    .fsbac-banner_middle_image {
+        position: absolute;
+        bottom: 0px;
+        right: 168px;
+
+        @include media-breakpoint-down(md) {
+            position: unset;
+            width: 100%;
+            margin-top: 24px;
+        }
+
+    }
+
+}

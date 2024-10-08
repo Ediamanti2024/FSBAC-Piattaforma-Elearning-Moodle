@@ -1,0 +1,71 @@
+.fsbac-section-with-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .fsbac-title-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &.white {
+            .fsbac-title-section {
+                h3 {
+                    color: $white;
+                }
+
+                svg {
+                    path {
+                        fill: $white;
+                    }
+                }
+
+            }
+
+
+        }
+
+
+        .fsbac-header-arrow-swiper {
+            display: flex;
+            gap: 8px;
+
+            button {
+                background: transparent;
+                border: none;
+                color: $primary;
+
+                &:disabled {
+                    opacity: 0.4000000059604645;
+                }
+            }
+
+            &.white {
+                button {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .swiper {
+        width: 100%;
+    }
+}
+
+.fsbac-home_user_sections {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    @include media-breakpoint-down(md) {
+        gap: 60px;
+    }
+    @import 'header.scss';
+    @import 'course_like.scss';
+    @import 'course_suggeriti.scss';
+    @import 'course_last_minute.scss';
+    @import 'course_tendenza.scss';
+    @import 'course_new.scss';
+}

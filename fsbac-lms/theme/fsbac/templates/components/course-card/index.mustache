@@ -1,0 +1,89 @@
+<div class="fsbac-card-course">
+    <div class="fsbac-card-course-image" {{#courseimage}}style="background-image:url({{courseimage}})"{{/courseimage}}>
+    {{#dateLive}}
+        <div class="fsbac-live-date">
+            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Bootsy/calendar">
+                    <path id="Vector" d="M7.68543 2.5918C7.17724 2.5918 6.7648 3.00424 6.7648 3.51243C4.72927 3.51243 3.05371 5.16313 3.05371 7.19497V9.03624L3.08226 16.4013C3.08226 18.4322 4.73111 20.0839 6.7648 20.0839H15.9711C18.0048 20.0839 19.6537 18.435 19.6537 16.4013L19.6251 9.03624V7.19497C19.6251 5.15945 18.003 3.51243 15.9711 3.51243C15.9711 3.00424 15.5596 2.5918 15.0505 2.5918C14.5423 2.5918 14.1299 3.00424 14.1299 3.51243H8.60607C8.60607 3.00424 8.19454 2.5918 7.68543 2.5918ZM6.7648 5.3537C6.7648 5.86189 7.17724 6.27434 7.68543 6.27434C8.19454 6.27434 8.60607 5.86189 8.60607 5.3537H14.1299C14.1299 5.86189 14.5423 6.27434 15.0505 6.27434C15.5596 6.27434 15.9711 5.86189 15.9711 5.3537C16.9811 5.3537 17.7839 6.17123 17.7839 7.19497V8.11561C16.0126 8.11561 6.66628 8.11561 4.89498 8.11561V7.19497C4.89498 6.18503 5.74105 5.3537 6.7648 5.3537ZM4.89498 9.95688C6.66628 9.95688 16.0126 9.95688 17.7839 9.95688L17.8124 16.4013C17.8124 17.4149 16.9884 18.2426 15.9711 18.2426H6.7648C5.74841 18.2426 4.92353 17.4186 4.92353 16.4013L4.89498 9.95688Z" fill="white"/>
+                </g>
+                </svg>
+            <span class="day">{{day}}</span>
+            <span class="time">{{hour}}</span>
+        </div>
+    {{/dateLive}}
+    {{#showFavourite}}
+    <div class="fsbac-favorite-button {{#isfavourite}}favourite{{/isfavourite}}" data-courseid="{{id}}"  >
+        <i class="fas fa-heart"></i>
+    </div>
+    {{/showFavourite}}
+
+    <div class="fsbac-card-course-type {{tipologia}}"><span>{{tipologiaLabel}}</span></div>
+
+
+    </div>
+    <div class="fsbac-card-course-container">
+        <div class="fsbac-card-course-info">
+            <a href="{{{viewurl}}}"><p class="fsbac-card-course-fullname" title="{{{fullname}}}">{{{fullname}}}</p></a>
+            <p class="fsbac-card-course-description" title="{{{sottotitolo}}}">{{{sottotitolo}}} &nbsp;</p>
+            <p class="fsbac-card-course-author" title="{{{autore}}}" {{^autore}}style='visibility:hidden'{{/autore}} >{{#str}}common.coursecard_of,theme_fsbac{{/str}}  <b>{{autore}}</b></p>
+        </div>
+        <div class="fsbac-card-course-links {{#progressShow}}with-progress{{/progressShow}}">
+        {{#progressShow}}
+
+                    <div class="fsbac-progress-container {{#progressComplete}}complete{{/progressComplete}}" >
+                         <p>{{#str}}card.progress,theme_fsbac,{{progress}}{{/str}}</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width:{{progress}}%" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+         {{/progressShow}}
+         <a href="{{{viewurl}}}" class="btn btn-secondary">{{$labelButton}}{{labelButton}}{{/labelButton}}<i class="fa fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+
+{{#js}}
+require(
+[
+    'jquery',
+    'block_myoverview/repository',
+    'core/notification'
+],
+function(
+    $,
+    Repository,
+    Notification
+) {
+
+    $('.fsbac-favorite-button').off('click').on('click', function(e) {
+        const courseid = $(e.currentTarget).data('courseid');
+      const status = !$(e.currentTarget).hasClass('favourite');
+       Repository.setFavouriteCourses({
+        courses: [
+            {
+                'id': courseid,
+                'favourite': status
+            }
+        ]
+        }).then(result => {
+            if (result.warnings.length === 0) {
+
+                $('.fsbac-favorite-button').each(function( index ) {
+                    if($(this).data('courseid') === courseid){
+                        status ?   $(this).addClass('favourite') : $(this).removeClass('favourite')
+                    }
+                });
+
+
+                return true;
+            } else {
+
+                return false;
+            }
+        }).catch(Notification.exception);
+  });
+
+});
+{{/js}}

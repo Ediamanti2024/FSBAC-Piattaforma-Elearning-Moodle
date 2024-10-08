@@ -1,0 +1,164 @@
+body#page-local-contact-assistance {
+    hede #collapsesections {
+        display: none;
+    }
+
+    #page {
+        padding: 0px;
+        width: 100%;
+
+    }
+
+    div[role="main"] {
+        padding: 0 !important;
+    }
+
+    .main-inner {
+        max-width: 100% !important;
+        padding: 0px !important;
+        margin: 0px !important;
+        border-radius: 0px !important;
+
+    }
+
+    #page-header {
+        display: none;
+    }
+
+    h1.title-assistance {
+        color: $neri-nero-pieno;
+        font-family: $font-bold-NunitoSans;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 140%;
+        margin-bottom: 30px;
+        margin-top: 51px;
+    }
+
+    .fsbac-assistance-container {
+        display: flex;
+        gap: 24px;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+
+        .fsbac-assistance-info {
+            width: 410px;
+            @include media-breakpoint-down(md) {
+                width: 100%;
+            }
+
+            p {
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                color: $neri-nero-chiaro;
+                font-family: $font-regular-OpenSans;
+                font-size: 18px;
+                line-height: 160%;
+            }
+
+        }
+
+        .fsbac-assistance-container-cards {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 16px;
+
+            .fsbac-assistance-msg {
+                margin-top: 12px;
+                color: $neri-nero-chiaro;
+                /* Corpi/Corpo mini */
+                font-family: $font-regular-OpenSans;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 140%;
+            }
+
+            .fsbac-assistance-cards {
+                width: 100%;
+                border-radius: 8px;
+                display: flex;
+                padding: 24px 26px;
+                gap: 16px;
+
+                #faq {
+                    .faq-question {
+                        font-family: $font-bold-NunitoSans;
+                        font-size: 18px;
+                        line-height: 135%;
+                    }
+
+                    .faq-answer {
+                        font-family: $font-regular-OpenSans;
+                        font-size: 16px;
+                        line-height: 160%;
+                    }
+                }
+
+
+                .box-icon {
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .box-info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    flex: 1;
+
+                    .title-card {
+                        font-family: $font-bold-NunitoSans;
+                        font-size: 21px;
+                        line-height: 135%;
+                    }
+
+                    .info-card {
+                        font-family: $font-regular-OpenSans;
+                        font-size: 16px;
+                        line-height: 160%;
+                    }
+                }
+
+                &.light {
+                    background-color: $neri-grigio-chiarissimo;
+
+                    .box-icon {
+                        background-color: $white;
+                        color: $secondari-default;
+
+                    }
+                }
+
+                &.blue {
+                    background-color: $secondari-chiaro;
+
+                    .box-icon {
+                        background-color: rgba(255, 255, 255, 0.20);
+                        color: $white;
+
+                    }
+
+                    .box-info {
+                        .title-card {
+                            color: $white;
+                        }
+
+                        .info-card {
+                            color: $white;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

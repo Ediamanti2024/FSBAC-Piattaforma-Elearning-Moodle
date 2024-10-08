@@ -1,0 +1,68 @@
+.fsbac-cultura-container {
+    margin-top: 119px;
+    border: 3px solid #9B49D6;
+    height: 442px;
+    display: flex;
+
+    @include media-breakpoint-down(md) {
+       flex-direction: column;
+       padding: 10px 15px;
+       height:auto;
+    }
+
+    .fsbac-cultura-image {
+        flex: 0.5;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url([[pix:theme_fsbac|dicolab/dicolab_cultura]]);
+        @include media-breakpoint-down(md) {
+            flex: unset;
+            height: 300px;
+         }
+    }
+
+    .fsbac-cultura-text {
+        flex: 0.5;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        @include media-breakpoint-down(md) {
+            flex: unset;
+            height: auto;
+         }
+
+        .fsbac-cultura-info {
+            color: #9B49D6;
+            font-family: $font-bold-OpenSans;
+            font-size: 16px;
+            font-style: normal;
+            letter-spacing: 1.76px;
+            text-transform: uppercase;
+            padding: 0px;
+            margin: 0px 0px 16px;
+        }
+
+        h2.fsbac-cultura-title {
+            margin: 0px;
+            padding: 0px;
+            color:$neri-nero-pieno;
+            font-family: $font-bold-NunitoSans;
+            font-size: 38px;
+            line-height: 140%; 
+            @include media-breakpoint-down(md) {
+                font-size: 24px;
+             }
+        }
+
+        .fsbac-cultura-data{
+            margin-top: 61px;
+            color: $neri-nero-chiaro;
+            font-family: $font-regular-OpenSans;
+            font-size: 18px;
+            line-height: 160%; /* 28.8px */
+        }
+    }
+}

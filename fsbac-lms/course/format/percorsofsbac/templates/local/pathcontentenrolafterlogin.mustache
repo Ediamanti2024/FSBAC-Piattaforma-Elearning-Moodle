@@ -1,0 +1,130 @@
+
+<ul class="{{format}}">
+    {{#course_descr}}
+        <li>
+            {{{course_descr}}}
+        </li>
+    {{/course_descr}}
+</ul>
+
+{{< core_courseformat/local/content }}
+    {{$ core_courseformat/local/content/section }}
+        {{> format_percorsofsbac/local/content/section }}
+    {{/ core_courseformat/local/content/section }}
+{{/ core_courseformat/local/content }}
+
+<ul class="{{format}}">
+    {{#subcourses}}
+        <li>
+            {{number}}
+            {{#multiplesubcourses}}
+                {{#str}} courses, format_percorsofsbac {{/str}}
+            {{/multiplesubcourses}}
+            {{^multiplesubcourses}}
+                {{#str}} course, format_percorsofsbac {{/str}}
+            {{/multiplesubcourses}}
+            <ul>
+                {{#subcoursesinfo}}
+                    <li>
+                        <img src="{{{img_url}}}">
+                        <div>
+                            {{title}}
+                        </div>
+                        <div>
+                            {{mode}}
+                        </div>
+                        <div>
+                            {{teacherslist}}
+                        </div>
+                        <div>
+                            <label for="progress">
+                                {{^progressperc}}
+                                    0
+                                {{/progressperc}}
+                                {{#progressperc}}
+                                    {{progressperc}}
+                                {{/progressperc}}
+                                %
+                            </label>
+                            <progress id="progress" value={{^progressperc}}0{{/progressperc}}{{#progressperc}}{{progressperc}}{{/progressperc}} max="100">
+                                {{progressperc}}%
+                            </progress>
+                        </div>
+                    </li>
+                {{/subcoursesinfo}}
+            </ul>
+        </li>
+    {{/subcourses}}
+
+    {{#coursesinsight}}
+        <li>
+            {{number}}
+            {{#multiplecoursesinsight}}
+                {{#str}} courses, format_percorsofsbac {{/str}}
+            {{/multiplecoursesinsight}}
+            {{^multiplecoursesinsight}}
+                {{#str}} course, format_percorsofsbac {{/str}}
+            {{/multiplecoursesinsight}}
+            <ul>
+                {{#coursesinsightinfo}}
+                    <li>
+                        <img src="{{{img_url}}}">
+                        <div>
+                            {{coursename}}
+                        </div>
+                        <div>
+                            {{mode}}
+                        </div>
+                        <div>
+                            {{sottotitolo}}
+                        </div>
+                        <div>
+                            {{teacherslist}}
+                        </div>
+                    </li>
+                {{/coursesinsightinfo}}
+            </ul>
+        </li>
+    {{/coursesinsight}}
+
+    {{#generalinfo}}
+        <li>
+            {{#str}} generalinformation, format_percorsofsbac {{/str}}
+            {{#destinato_a}}
+                <div>
+                    {{#str}} intendedfor, format_percorsofsbac {{/str}}: {{destinato_a}}
+                </div>
+            {{/destinato_a}}
+            {{#level}}
+                <div>
+                    {{#str}} level, format_percorsofsbac {{/str}}: {{level}}
+                </div>
+            {{/level}}
+            {{#mode}}
+                <div>
+                    {{#str}} coursetypology, format_corsofsbac {{/str}}: {{mode}}
+                </div>
+            {{/mode}}
+            {{#programma}}
+                <div>
+                    {{#str}} category, format_corsofsbac {{/str}}: {{programma}}
+                </div>
+            {{/programma}}
+            {{#teacherslist}}
+                <div>
+                    {{#str}} authors, format_corsofsbac {{/str}}: {{teacherslist}}
+                </div>
+            {{/teacherslist}}
+            {{#tags}}
+                <div>
+                    {{#str}} tag, format_percorsofsbac {{/str}}: {{tags}}
+                </div>
+            {{/tags}}
+            {{#duration}}
+                <div>
+                    {{#str}} indicativeduration, format_percorsofsbac {{/str}}: {{duration}}
+                </div>
+            {{/duration}}
+        </li>
+    {{/generalinfo}}
+</ul>

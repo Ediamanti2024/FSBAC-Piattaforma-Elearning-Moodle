@@ -1,0 +1,60 @@
+<div class="fsbac-argomenti-container">
+    <p class="subtitlesection">{{#str}}dicolab.argomenti_info,theme_fsbac{{/str}}</p>
+    <h2 class="titlesection">{{#str}}dicolab.argomenti_title,theme_fsbac{{/str}}</h2>
+
+    <div class="w-100">
+        <div class="swiper fsbac-argomenti_swiper">
+            <div class="swiper-wrapper">  
+                {{> theme_fsbac/pages/dicolab/argomenti_card}}
+            </div>
+        </div>
+        <div class="fsbac-argomenti_swiper_navigation">
+         <button class="fsbac-argomenti-prev"><i class="fa fa-angle-left"></i></button>
+         <button class="fsbac-argomenti-next"><i class="fa fa-angle-right"></i></button>
+            </div>
+
+    </div>
+</div>
+
+
+
+<script>
+ new Swiper('.fsbac-argomenti_swiper', {
+  loop: false,
+    slidesPerView: "auto",
+    spaceBetween: 24,
+    breakpoints: {
+    320: {
+      slidesPerView: 1,
+      centeredSlides:true,
+      centerInsufficientSlides:true,
+      spaceBetween: 0
+    },
+   
+    480: {
+      slidesPerView: 1,
+      centeredSlides:true,
+       spaceBetween: 0
+     
+    },
+   
+    820: {
+      slidesPerView: 'auto',
+      
+       
+    }
+   
+  },
+
+
+  // Navigation arrows
+ navigation: {
+    nextEl: '.fsbac-argomenti-next',
+    prevEl: '.fsbac-argomenti-prev',
+  }
+});
+</script>
+
+
+
+ 

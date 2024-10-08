@@ -1,0 +1,138 @@
+<ul class="{{format}}">
+    {{#course_descr}}
+        <li>
+            {{{course_descr}}}
+        </li>
+    {{/course_descr}}
+</ul>
+
+{{< core_courseformat/local/content }}
+    {{$ core_courseformat/local/content/section }}
+        {{> format_corsofsbac/local/content/section }}
+    {{/ core_courseformat/local/content/section }}
+{{/ core_courseformat/local/content }}
+
+<ul class="{{format}}">
+    {{#iscustomcertavailable}}
+        <li>
+            <div>
+                {{#str}} certificate, format_corsofsbac {{/str}}
+            </div>
+            <div>
+                {{#str}} downloadcertificatedesc, format_corsofsbac {{/str}}
+            </div>
+            <a href="{{wwwroot}}/mod/certificate/view.php?id={{customcertid}}&downloadown=1"> {{#str}} downloadcertificate, format_corsofsbac {{/str}} </a>
+        </li>
+    {{/iscustomcertavailable}}
+
+    {{#reviews}}
+        <li>
+            {{#str}} reviews, format_corsofsbac {{/str}}
+            <div>
+                {{{reviews}}}
+            </div>
+        </li>
+    {{/reviews}}
+
+    {{#coursecompletioninfo}}
+        <li>
+            <div>
+                <label for="courseprogress">{{courseprogressstate}}</label>
+                <progress id="courseprogress" value={{^courseprogressperc}}0{{/courseprogressperc}}{{#courseprogressperc}}{{courseprogressperc}}{{/courseprogressperc}} max="100"> {{courseprogressperc}}% </progress> {{completedmodules}}/{{totalmodules}}
+            </div>
+        </li>
+    {{/coursecompletioninfo}}
+
+    {{#generalinformation}}
+        <li>
+            {{#str}} generalinformation, format_corsofsbac {{/str}}
+            {{#codicecorso}}
+                <div>
+                    {{#str}} codicecorso, format_corsofsbac {{/str}}: {{codicecorso}}
+                </div>
+            {{/codicecorso}}
+            {{#mode}}
+                <div>
+                    {{#str}} coursetypology, format_corsofsbac {{/str}}: {{mode}}
+                </div>
+            {{/mode}}
+            {{#programma}}
+                <div>
+                    {{#str}} category, format_corsofsbac {{/str}}: {{programma}}
+                </div>
+            {{/programma}}
+            {{#tags}}
+                <div>
+                    {{#str}} tag, format_corsofsbac {{/str}}: {{tags}}
+                </div>
+            {{/tags}}
+            {{#teacherslist}}
+                <div>
+                    {{#str}} authors, format_corsofsbac {{/str}}: {{teacherslist}}
+                </div>
+            {{/teacherslist}}
+            {{#duration}}
+                <div>
+                    {{#str}} overallduration, format_corsofsbac {{/str}}: {{duration}}
+                </div>
+            {{/duration}}
+            {{#destinato_a}}
+                <div>
+                    {{#str}} intendedfor, format_corsofsbac {{/str}}: {{destinato_a}}
+                </div>
+            {{/destinato_a}}
+            {{#level}}
+                <div>
+                    {{#str}} level, format_corsofsbac {{/str}}: {{level}}
+                </div>
+            {{/level}}
+            {{#expiration}}
+                <div>
+                    {{#str}} courseexpiration, format_corsofsbac {{/str}}: {{expiration}}
+                </div>
+            {{/expiration}}
+        </li>
+    {{/generalinformation}}
+
+    {{#paths}}
+        <li>
+            <div>
+                {{#str}}
+                    coursepartof,
+                    format_corsofsbac,
+                    {
+                        "number": {{number}},
+                        "items": {{#quote}}
+                                    {{#multiplepaths}}
+                                        {{#str}} paths, format_corsofsbac {{/str}}
+                                    {{/multiplepaths}}
+                                    {{^multiplepaths}}
+                                        {{#str}} path, format_corsofsbac {{/str}}
+                                    {{/multiplepaths}}
+                                {{/quote}}
+                    }
+                {{/str}}
+            </div>
+        </li>
+    {{/paths}}
+
+    {{#customcertid}}
+        <li>
+            <div>
+                {{#str}} completecoursetogetcertificate, format_corsofsbac {{/str}}
+            </div>
+        </li>
+    {{/customcertid}}
+
+    {{#coursebuttonlink}}
+        <li>
+            <a href="{{coursebuttonlink}}"> {{coursebuttonlabel}} </a>
+        </li>
+    {{/coursebuttonlink}}
+
+    {{#sottotitolo}}
+        <li>
+            {{sottotitolo}}
+        </li>
+    {{/sottotitolo}}
+</ul>

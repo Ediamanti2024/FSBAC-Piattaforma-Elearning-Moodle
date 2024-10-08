@@ -1,0 +1,114 @@
+.box-data-accordion {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    label {
+        color: $neri-nero-chiaro;
+        font-family: $font-regular-OpenSans;
+        font-size: 12px;
+        line-height: 140%;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    p {
+        padding: 0px;
+        margin: 0px;
+        color: $neri-nero-pieno;
+        font-family: $font-bold-NunitoSans;
+        font-size: 21px;
+        line-height: 135%;
+        padding-right: 20px;
+    }
+
+    .buttonAccordion {
+        position: absolute;
+        right: 20px;
+        top: 32px;
+        background-color: transparent;
+        border: none;
+        color: #C5C8D2;
+    }
+
+    .accordion-data {
+        display: none;
+        width: 100%;
+        border-top: 1px solid #E7E9F1;
+        padding-top: 12px;
+        margin-top: 16px;
+        flex-direction: column;
+
+    }
+
+    &.open {
+        .accordion-data {
+            display: block;
+        }
+
+        .buttonAccordion {
+            transform: rotate(180deg);
+        }
+    }
+
+    &.box-data-accordion-dicolab {
+       
+        background-color: #005f85 !important;
+        border-radius: 8px;
+        background: $neri-grigio-chiarissimo;
+        padding: 28px 24px 15px 24px;
+        
+   
+        &.open{
+            background-image: url([[pix:theme_fsbac|dicolab/cornice]]) !important;
+            background-position: bottom 20px right 20px !important;
+            background-size: 100px !important;
+            background-repeat: no-repeat !important;
+            padding-bottom: 100px !important;
+        }
+     
+         .accordion-data{
+            border: none !important;
+            padding-top: 0px !important;
+            margin-top: 0px !important;
+
+        }
+        p,
+        .fsbac-card-course-mini-author,
+        .fsbac-card-course-mini-description,
+        .fsbac-card-course-mini-fullname,
+        .buttonAccordion {
+            color: $white;
+        }
+
+        .fsbac-card-course-mini-fullname,.fsbac-card-course-mini-author,.fsbac-card-course-mini-description {
+            max-width: 200px;
+        }
+
+        .fsbac-card-course-mini-img {
+            width: 67px;
+            height: 74px;
+            
+        }
+        .fsbac-path_course_minicard-divider{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            display: none;
+        }
+
+        .fsbac-card-course-mini {
+            align-items: center;
+        }
+        .fsbac-card-course-type{
+            width: 20px;
+            height: 20px;
+            background-position:center !important;
+            span{
+                display: none;
+            }
+        }
+
+    }
+
+
+}

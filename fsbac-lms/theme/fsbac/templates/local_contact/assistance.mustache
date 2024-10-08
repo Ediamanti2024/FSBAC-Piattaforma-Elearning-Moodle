@@ -1,0 +1,120 @@
+<div class="container">
+<h1 class="title-assistance">{{#str}}assistence.title,theme_fsbac{{/str}}</h1>
+<div class="fsbac-assistance-container">
+
+    <div class="fsbac-assistance-info">
+        <p>{{#str}}assistence.info,theme_fsbac{{/str}}</p>
+    </div>
+    <div class="fsbac-assistance-container-cards">
+        <div class="fsbac-assistance-cards blue">
+            <div class="box-icon">
+            {{> theme_fsbac/icons_svg/download}}
+            </div>
+            <div class="box-info">
+                <div class="title-card">{{#str}}assistence.guide_title,theme_fsbac{{/str}}</div>
+                <div class="info-card">{{#str}}assistence.guide_info,theme_fsbac{{/str}}</div>
+                <form method="get" action="guida.pdf">
+                    <button type="sumit" class="btn btn-light">{{#str}}assistence.guide_button,theme_fsbac{{/str}} <i class="fas fa-arrow-right"></i></button>
+                </form>
+
+            </div>
+        </div>
+         <div class="fsbac-assistance-cards light">
+            <div class="box-icon">
+               {{> theme_fsbac/icons_svg/faq}}
+            </div>
+            <div class="box-info" >
+                <div class="title-card">{{#str}}assistence.faq_title,theme_fsbac{{/str}}</div>
+                <div class="info-card">{{#str}}assistence.faq_info,theme_fsbac{{/str}}</div>
+                <div>
+                    <button type="button" class="btn btn-primary" onclick="displayfaqform()">{{#str}}assistence.faq_button,theme_fsbac{{/str}} <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div id="faq" style="display:none" name="faq">
+                    <p class="faq-question">{{#str}} assistence.access_to_fad_platform_question, theme_fsbac {{/str}}</p>
+                    <p class="faq-answer" >{{#str}} assistence.access_to_fad_platform_answer, theme_fsbac, {{config.wwwroot}}/local/provisioning/ {{/str}}</p>
+                    <p class="faq-question">{{#str}} assistence.cant_remember_username_question, theme_fsbac {{/str}}</p>
+                    <p class="faq-answer">{{#str}} assistence.cant_remember_username_answer, theme_fsbac {{/str}}</p>
+                    <p class="faq-question">{{#str}} assistence.change_username_question, theme_fsbac {{/str}}</p>
+                    <p class="faq-answer">{{#str}} assistence.change_username_answer, theme_fsbac, mailto:helpdesk@fondazionescuolapatrimonio.it {{/str}}</p>
+                    <p class="faq-question">{{#str}} assistence.cant_remember_password_question, theme_fsbac {{/str}}</p>
+                    <p class="faq-answer">{{#str}} assistence.cant_remember_password_answer, theme_fsbac, {{config.wwwroot}}/local/fsbaclogin/forgot_password.php {{/str}}</p>
+                    <p class="faq-question">{{#str}} assistence.change_profile_info_question, theme_fsbac {{/str}}</p>
+                    <p class="faq-answer">{{#str}} assistence.change_profile_info_answer, theme_fsbac {{/str}}</p>
+                    <p class="faq-question">{{#str}} assistence.enrol_platform_course_question, theme_fsbac {{/str}}</p>
+                    <p class="faq-answer">{{#str}} assistence.enrol_platform_course_answer, theme_fsbac {{/str}}</p>
+                    <p class="faq-question">{{#str}} assistence.unenrol_platform_course_question, theme_fsbac {{/str}}</p>
+                    <p class="faq-answer">{{#str}} assistence.unenrol_platform_course_answer, theme_fsbac {{/str}}</p>
+                </div>
+            </div>
+        </div>
+
+          <div class="fsbac-assistance-cards light">
+            <div class="box-icon">
+              {{> theme_fsbac/icons_svg/chat}}
+            </div>
+            <div class="box-info">
+                <div class="title-card">{{#str}}assistence.chat_title,theme_fsbac{{/str}}</div>
+                <div class="info-card">{{#str}}assistence.chat_info,theme_fsbac{{/str}}</div>
+                <div>
+                    <button type="button" class="btn btn-secondary" onclick="displaycontactform()">{{#str}}assistence.chat_button,theme_fsbac{{/str}} <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <form action="{{config.wwwroot}}/local/contact/index.php" method="post" class="contact-us" id="contact-us"  style="display:none">
+                 <input id="recipient" name="recipient" type="hidden" value="helpdesk" />
+                <input type="hidden" id="sesskey" name="sesskey" value="{{sesskey}}"/>
+                 <div class="form-group">
+                    <label for="name">{{#str}} name {{/str}}</label>
+                    <input id="name" class="form-control" name="name" type="text" required="required" value="{{defaultname}}">
+                </div>
+                 <div class="form-group">
+                    <label for="email">{{#str}} email {{/str}}</label>
+                    <input id="email" class="form-control" name="email" type="email" required="required" value="{{defaultemail}}">
+                  </div>
+                 <div class="form-group">
+                    <label for="subject">{{#str}} subject {{/str}}</label>
+                     <input id="subject" class="form-control" name="subject" type="text" required="required" >
+                  </div>
+                   <div class="form-group">
+                    <label for="message">{{#str}} message {{/str}}</label>
+                    <textarea id="message" class="form-control" name="message" required="required"></textarea>
+                   </div>
+
+                   <div class="w-100">
+                      <button  id="submit"  name="submit"  type="submit" class="btn btn-primary w-100" >{{#str}}submit{{/str}}</button>
+
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+    function displaycontactform() {
+        document.getElementById("contact-us").style.display = "block";
+    }
+    function displayfaqform() {
+        document.getElementById("faq").style.display = "block";
+    }
+
+   
+</script>
+{{#js}}
+
+  if(location.hash &&  location.hash == '#faq'){
+      document.getElementById("faq").style.display = "block"
+      setTimeout(()=>{  
+            window.scroll(0,300)
+           
+      },100)
+    
+        
+       
+    }
+{{/js}}
+
+</div>

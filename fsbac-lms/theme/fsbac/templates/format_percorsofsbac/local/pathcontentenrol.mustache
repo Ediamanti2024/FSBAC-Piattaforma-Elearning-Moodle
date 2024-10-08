@@ -1,0 +1,138 @@
+
+{{> theme_fsbac/path/header }}
+<div class="path-fsbac-body container">
+
+    <div class="fsbac-header-path-sections">
+        {{#course_descr}}
+        <section class="fsbac-header-path-section">
+            {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}path.title, theme_fsbac{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+            <div class="desc">
+                    {{{course_descr}}}
+            </div>
+        </section>
+        {{/course_descr}}
+        {{#subcoursesShow}}
+        <section class="fsbac-header-path-section fsbac-section-courses">
+          {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}path.sections_courses_title, theme_fsbac,{{subcoursesCount}}{{/str}}{{/title}}
+          {{/ theme_fsbac/components/title-section}}
+
+        <div class="fsbac-grid-courses">
+            {{#subcourses}}
+               {{#subcoursesinfo}}
+                    {{< theme_fsbac/components/course-card/index}}
+                        {{$labelButton}}{{#str}}path.ctaCourse, theme_fsbac{{/str}}{{/labelButton}}
+                    {{/ theme_fsbac/components/course-card/index}}
+              {{/subcoursesinfo}}
+            {{/subcourses}}
+        </div>
+        <button class="btn btn-secondary addShowMoreCourses mt-3">{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+        </section>
+          {{/subcoursesShow}}
+
+     {{#coursesinsight}}
+         <section class="fsbac-header-path-section fsbac-section-coursesinsight">
+           {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}path.readmorecourse, theme_fsbac{{/str}}{{/title}}
+          {{/ theme_fsbac/components/title-section}}
+            <div class="fsbac-grid-coursesinsight">
+            {{#coursesinsight}}
+                {{#coursesinsightinfo}}
+                  {{> theme_fsbac/components/course-card/mini}}
+                 {{/coursesinsightinfo}}
+            {{/coursesinsight}}
+            </div>
+            <button class="btn btn-secondary addcoursesinsight mt-3" >{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+         </section>
+       {{/coursesinsight}}
+    </div>
+
+
+    <!--General Info-->
+     <div class="path-fsbac-information">
+        <div class="image-path-container">
+             <img src="{{{img_url}}}">
+        </div>
+        <button class="btn btn-primary button-enrol">{{#str}}path.button_enrol, theme_fsbac{{/str}}</button>
+
+        <div class="path-fsbac-information-general">
+         <h4 class="title-info">{{#str}}path.genaral_information, theme_fsbac{{/str}}</h4>
+         {{#generalinfo}}
+            <ul>
+                {{#programma}}<li><span>{{#str}}path.program, theme_fsbac{{/str}}:</span> {{programma}}{{/programma}}
+                {{#destinato_a}}<li><span>{{#str}}path.info_interest, theme_fsbac{{/str}}:</span> {{destinato_a}}{{/destinato_a}}
+                {{#level}}<li><span>{{#str}}path.info_level, theme_fsbac{{/str}}:</span> {{level}}{{/level}}
+                {{#tags}} <li><span>{{#str}}path.info_tag, theme_fsbac{{/str}}:</span> {{tags}}{{/tags}}
+                {{#duration}}<li><span>{{#str}}path.info_duration, theme_fsbac{{/str}}:</span> {{duration}}{{/duration}}
+            </ul>
+          {{/generalinfo}}
+
+         <button class="btn btn-secondary button-shared" data-toggle="tooltip" data-html="true" title="{{< theme_fsbac/components/shared}}{{$url}}{{{link}}}{{/url}}{{/ theme_fsbac/components/shared}}">{{#str}}path.button_shared, theme_fsbac{{/str}} <i class="fas fa-share-alt"></i></button>
+
+        </div>
+
+
+		{{^emptydicolabcourses}}
+            <div class="box-data-accordion  box-data-accordion-dicolab box-data-logged open">
+                <p>
+                    {{#str}} dicolabcoursesforyou, theme_fsbac {{/str}}
+                </p>
+                {{#dicolabcourses}}
+                    <button class="buttonAccordion"><i class="fas fa-chevron-down"></i></button>
+                        <div class='accordion-data'>
+                            {{> theme_fsbac/components/course-card/mini }}
+                            <div class="fsbac-path_course_minicard-divider"></div>
+                        </div>
+                {{/dicolabcourses}}
+            </div>
+        {{/emptydicolabcourses}}
+
+
+
+
+    </div>
+
+
+</div>
+
+ {{> theme_fsbac/components/section-box-course-info/index}}
+
+ {{> theme_fsbac/components/banner_middle_section}}
+ {{#js}}
+
+    $('.button-enrol, .enrol-link').click(()=>{
+      $('form').submit();
+    })
+
+    function showMore(section,button){
+        button.hide();
+        const courses = section;
+        if(courses.length > 4){
+        button.show();
+            courses.each(function( index ) {
+                if(index > 3){
+                    $( this ).hide()
+                }
+            });
+        }
+        button.on('click',()=>{
+            button.hide();
+           courses.each(function( index ) {
+                  $( this ).show()
+            });
+        })
+    }
+    showMore($('.fsbac-grid-courses .fsbac-card-course'), $('.addShowMoreCourses'))
+     showMore($('.fsbac-grid-coursesinsight .fsbac-card-course-mini'), $('.addcoursesinsight'))
+
+    $('.box-data-accordion .buttonAccordion').on('click',(e)=>{
+      const divParent = $(e.currentTarget).parent();
+      const isOpen = $(divParent).hasClass('open');
+      isOpen ? $(divParent).removeClass('open'): $(divParent).addClass('open');
+
+    });
+
+ {{/js}}
+

@@ -1,0 +1,119 @@
+.fsbac-section-box-path-info {
+    margin-top: 53px;
+    width: 100%;
+    background: $neri-grigio-chiarissimo;
+    padding: 80px 0px;
+
+    .container {
+        display: flex;
+        align-items: center;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column-reverse;
+        }
+
+        .content-path {
+            flex: 0.5;
+            display: flex;
+
+            @include media-breakpoint-down(md) {
+                flex: 1;
+                width: 100%;
+            }
+
+
+            .content-path-image {
+                border-radius: 6px;
+                width: 516px;
+                height: 466px;
+                background-image: url([[pix:theme_fsbac|path/path_image_banner]]);
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                    height: 294px;
+                }
+
+                .boxs-info {
+                    display: flex;
+                    height: fit-content;
+                    width: 216px;
+                    flex-direction: column;
+                    background-color: $white;
+                    padding: 24px;
+                    gap: 24px;
+                    border-radius: 4px;
+                    box-shadow: 2px 4px 60px 0px rgba(101, 102, 106, 0.10);
+                    position: absolute;
+                    top: 54px;
+                    right: -108px;
+
+                    @include media-breakpoint-down(md) {
+                        right: unset;
+                        top: unset;
+                        bottom: -50px;
+                        left: 71px;
+                    }
+
+
+                    .box {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        gap: 18px;
+
+                        div.text {
+                            flex: 1;
+                            font-family: $font-bold-NunitoSans;
+                            color: $neutral-100;
+                            font-size: 14px;
+                            font-weight: 700;
+                            line-height: 150%;
+                        }
+
+                        .icon {
+                            border-radius: 6px;
+                            background: $secondari-default;
+                            display: flex;
+                            color: $white;
+                            width: 32px;
+                            height: 32px;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+
+
+                    }
+
+                }
+            }
+
+            &.deatils-text {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                padding-left: 108px;
+
+                @include media-breakpoint-down(md) {
+                    padding-left: unset;
+                    padding-bottom: 24px;
+                }
+
+                .desc {
+                    margin-top: 24px;
+                    margin-bottom: 32px;
+                    font-size: 18px;
+                    font-family: $font-regular-OpenSans;
+                    line-height: 160%;
+                }
+            }
+        }
+    }
+
+
+
+}

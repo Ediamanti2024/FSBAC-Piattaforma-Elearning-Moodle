@@ -1,0 +1,48 @@
+.fsbac-your_interests_section {
+    display: flex;
+    margin-top: 136px;
+
+    @include media-breakpoint-down(md) {
+        margin-top: 56px;
+        flex-direction: column;
+    }
+
+    .fsbac-text-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 24px;
+        flex: 0.5;
+        padding-right: 20px;
+
+        p {
+            color: $neri-nero-chiaro;
+            font-family: $font-regular-OpenSans;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 160%;
+            width: 100%;
+            max-width: 511px;
+
+        }
+    }
+
+    .fsbac-container-tags {
+
+        display: flex;
+        flex: .5;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: start;
+
+        a {
+            margin: 4px;
+            flex: auto;
+            text-transform: uppercase;
+            font-family: $font-bold-NunitoSans;
+            font-size: 14px;
+            line-height: 140%;
+        }
+    }
+}

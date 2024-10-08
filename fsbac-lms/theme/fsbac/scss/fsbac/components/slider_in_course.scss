@@ -1,0 +1,41 @@
+.fsbac-slider_in_course {
+    width: 100%;
+    padding: 32px 0px 42px 28px;
+    border-radius: 8px;
+    background: $neri-grigio-chiarissimo;
+
+    .fsbac-slider_in_course_header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 32px;
+        h4{
+            color: $neri-nero-pieno;
+            font-family: $font-bold-NunitoSans;
+            font-size: 21px;
+            line-height: 135%; 
+        }
+        .fsbac-slider_in_course_header_navigation {
+            display: flex;
+            gap: 8px;
+            padding-right: 24px;
+
+            button {
+                background: transparent;
+                border: none;
+                color: $primary;
+
+                &:disabled {
+                    opacity: 0.4000000059604645;
+                }
+            }
+        }
+
+    }
+
+    .fsbac-card-course{
+        max-width: 301px;
+    }
+}
+
+
+

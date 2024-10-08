@@ -1,0 +1,140 @@
+body#page-theme-fsbac-pages-courses,
+body#page-theme-fsbac-pages-paths,
+body#page-theme-fsbac-pages-reservedcourses {
+
+    #collapsesections {
+        display: none;
+    }
+
+    #page {
+        padding: 0px;
+        width: 100%;
+
+    }
+
+    div[role="main"] {
+        padding: 0 !important;
+    }
+
+    .main-inner {
+        max-width: 100% !important;
+        padding: 0px !important;
+        margin: 0px !important;
+        border-radius: 0px !important;
+
+    }
+
+
+}
+
+.filter-container-logged {
+
+    .fsbac-filters-container {
+        margin: 96px auto;
+        @include media-breakpoint-down(md) {
+            margin: 0px auto;
+        }
+    }
+}
+
+.fsbac-courses-header-section-image {
+    flex: 0.5;
+    background-color: transparent;
+    height: 100%;
+    background-image: url([[pix:theme_fsbac|course/catalog]]);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    @include media-breakpoint-down(md) {
+        height: 213px !important;
+        flex: unset;
+        width: 100%;
+    }
+
+    &.fsbac-paths {
+        padding: 20px;
+        background-image: url([[pix:theme_fsbac|path/paths]]);
+    }
+}
+
+.fsbac-cards-courses {
+    margin-top: 198px;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+    row-gap: 64px;
+
+    @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+
+    &.cards-paths {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 24px;
+        row-gap: 40px;
+    }
+}
+
+
+.fsbac-pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+
+.fsbac-empty-values {
+    margin-top: 200px;
+    width: 100%;
+    text-align: center;
+    display: none;
+
+    h3 {
+        font-family: $font-bold-NunitoSans;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 130%;
+
+    }
+
+    p {
+        font-family: $font-regular-OpenSans;
+        font-size: 16px;
+        line-height: 160%;
+        color: $neri-nero-chiaro;
+    }
+
+}
+
+.fsbac-certicate-section-filter {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $neri-grigio-chiaro;
+    margin-top: 32px;
+    padding-top: 22px;
+    gap: 16px;
+
+    .fsbac-filter-section-title {
+        color: $secondari-scuro;
+        font-family: $font-bold-NunitoSans;
+        font-size: 12px;
+        line-height: 140%;
+        letter-spacing: 0.6px;
+    }
+
+    .form-group {
+        label {
+            color: $neri-nero-chiaro;
+            font-family: $font-regular-OpenSans;
+            font-size: 14px;
+            line-height: 140%
+        }
+    }
+
+}

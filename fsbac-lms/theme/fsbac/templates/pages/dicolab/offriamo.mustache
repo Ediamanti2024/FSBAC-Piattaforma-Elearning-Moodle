@@ -1,0 +1,36 @@
+<div class="fsbac-offriamo-container">
+    <p class="subtitlesection">{{#str}}dicolab.offriamo_info,theme_fsbac{{/str}}</p>
+    <h2 class="titlesection">{{#str}}dicolab.offriamo_title,theme_fsbac{{/str}}</h2>
+
+    <div class="container fsbac-offriamo-cards">
+        <div class="fsbac-offriamo-card">
+            <div class="fsbac-offriamo-card-title">{{#str}}dicolab.offriamo.card1_title,theme_fsbac{{/str}}</div>
+            <div class="fsbac-offriamo-card-desc">{{#str}}dicolab.offriamo.card1_desc,theme_fsbac{{/str}}</div>
+            <div class="fsbac-offriamo-card-link">
+                <a href="{{config.wwwroot}}/theme/fsbac/pages/courses.php?program=Dicolab" class="btn btn-link">{{#str}}dicolab.offriamo.link_course,theme_fsbac{{/str}}<i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="fsbac-offriamo-card">
+            <div class="fsbac-offriamo-card-title">{{#str}}dicolab.offriamo.card2_title,theme_fsbac{{/str}}</div>
+            <div class="fsbac-offriamo-card-desc">{{#str}}dicolab.offriamo.card2_desc,theme_fsbac{{/str}}</div>
+            <!-- <div class="fsbac-offriamo-card-link">
+                <a href="{{config.wwwroot}}/theme/fsbac/pages/paths.php" class="btn btn-link">{{#str}}dicolab.offriamo.link_path,theme_fsbac{{/str}}<i class="fa fa-arrow-right"></i></a>
+            </div> -->
+        </div>
+
+        <div class="fsbac-offriamo-card">
+            <div class="fsbac-offriamo-card-title">{{#str}}dicolab.offriamo.card3_title,theme_fsbac{{/str}}</div>
+            <div class="fsbac-offriamo-card-desc">{{#str}}dicolab.offriamo.card3_desc,theme_fsbac{{/str}}</div>
+             
+        </div>
+
+    </div>
+</div>
+
+
+{{#js}}
+    $('.fsbac-offriamo-card-link button').click(()=>{
+        window.scrollTo(0,520)
+    })
+{{/js}}

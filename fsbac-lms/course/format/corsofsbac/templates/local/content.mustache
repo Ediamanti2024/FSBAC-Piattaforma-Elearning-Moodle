@@ -1,0 +1,11 @@
+{{#islogged}}
+    {{#isenrolled}}
+        {{> format_corsofsbac/local/coursecontent }}
+    {{/isenrolled}}
+    {{^isenrolled}}
+        {{> format_corsofsbac/local/coursecontentenrolafterlogin }}
+    {{/isenrolled}}
+{{/islogged}}
+{{^islogged}}
+    {{> format_corsofsbac/local/coursecontentenrol }}
+{{/islogged}}

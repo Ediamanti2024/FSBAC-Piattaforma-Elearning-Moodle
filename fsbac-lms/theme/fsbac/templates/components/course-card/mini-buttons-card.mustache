@@ -1,0 +1,17 @@
+   <div class="fsbac-mini-buttons-card">
+        <div class="fsbac-mini-buttons-card-image" {{#courseimage}}style="background-image:url({{courseimage}})"{{/courseimage}}> 
+
+         {{#progressShow}}
+              <div class="fsbac-mini-buttons-card-progress">
+                      <div class="fsbac-mini-buttons-card-progress-value"  style="width:{{progress}}%"></div>
+              </div>
+         {{/progressShow}}
+        </div>
+        <div class="fsbac-mini-buttons-card-data">
+               <a   href='{{{viewurl}}}' class="title-mini-buttons-card">{{fullname}}</a>
+               <p class="subtitle-mini-buttons-card">{{sottotitolo}}</p>
+               <p class="teacher-mini-buttons-card">{{#str}}common.of ,theme_fsbac{{/str}} <span>{{{autore}}}</span></p>
+        
+        </div>
+        {{$contentRight}}{{{contentRight}}}{{/contentRight}}
+    </div>

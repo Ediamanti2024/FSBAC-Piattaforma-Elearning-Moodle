@@ -1,0 +1,226 @@
+.fsbac-filters-container {
+    width: 100%;
+    margin: -53px auto;
+    max-width: 1062px;
+    min-height: 172px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1px solid $neri-grigio-chiarissimo;
+    background: $white;
+    box-shadow: 2px 4px 60px 0px rgba(101, 102, 106, 0.10);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    z-index: 2;
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+        position: absolute;
+        bottom: -58px;
+        padding: 16px;
+        
+    }
+
+    .fsbac-filters-title {
+        margin: 0px;
+        padding: 0px;
+        color: $neri-nero-chiaro;
+        font-family: $font-bold-NunitoSans;
+        font-size: 21px;
+        line-height: 135%;
+
+        @include media-breakpoint-down(md) {
+            font-size: 18px;
+        }
+    }
+
+    .fsbac-header-inputs {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: flex-end;
+
+        .fsbac-select-fiters {
+            flex: 1;
+           
+            @include media-breakpoint-down(md) {
+                display: none;
+
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+
+        .fsbac-filters-input-container {
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+            padding-bottom: 16px;
+
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                align-items: flex-start;
+                padding: 0px;
+            }
+
+            .fsbac-filters-input-search {
+                display: flex;
+                width: 643px;
+                height: 48px;
+                align-items: center;
+                gap: 12px;
+                border-radius: 4px;
+                border: 1px solid $neri-grigio-chiaro;
+                background: $neri-grigio-chiarissimo;
+                padding-right: 4px;
+
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+
+                }
+
+                .icon-search {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    padding-left: 12px;
+
+                    svg {
+                        color: $primary;
+                    }
+
+                }
+
+                input {
+                    flex: 1;
+                    height: 100%;
+                    border: none;
+                }
+
+            }
+        }
+
+        button.showFilters {
+            height: 48px;
+            margin-bottom: 16px;
+
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                margin-bottom: 0px;
+
+            }
+        }
+
+
+    }
+
+
+    .fsbac-select-fiters {
+        select {
+            height: 48px;
+            border-radius: 4px;
+            border: 1px solid $neri-grigio-chiaro;
+            background: $neri-grigio-chiarissimo;
+        }
+
+        label {
+            color: $secondari-scuro;
+            font-family: $font-bold-NunitoSans;
+            font-size: 12px;
+            line-height: 140%;
+            letter-spacing: 0.6px;
+        }
+
+        &.range-filter{
+            margin-left: 20px ;
+        }
+        @include media-breakpoint-down(md) {
+            margin-left: 0px;
+
+        }
+
+
+    }
+
+
+}
+
+.fsbac-filters-container-inputs {
+    display: none;
+    .closeMobile{
+        display: none;
+    }
+    &.show {
+        display: block;
+
+        @include media-breakpoint-down(md) {
+            position: fixed;
+            left: 0px;
+            height: 100vh;
+            width: 100vw;
+            top: 0px;
+            background-color: $white;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            overflow-y: auto;
+
+            .closeMobile{
+                display: flex;
+                width: 100%;
+                background: $primary;
+                padding: 13px;
+                justify-content: flex-end;
+                position: sticky;
+                top: 0px;
+                button{
+                    background: none;
+                    border: none;
+                    padding: 6px;
+                    color:  $white;
+                }
+            }
+        }
+
+        
+    }
+
+    .mobileSearch{
+        display: none;
+
+        @include media-breakpoint-down(md) {
+            display: flex;
+            position: sticky;
+            align-content: center;
+            justify-content: center;
+            padding: 25px  0px 10px 0px;  
+            bottom: 0px;
+            background-color: $white;
+            width: 100%;
+            button{
+                width: 50%;
+            }
+        }
+    }
+
+    .fsbac-filters-courses {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 9px;
+        @include media-breakpoint-down(md) {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: auto;
+        }
+
+
+    }
+
+}

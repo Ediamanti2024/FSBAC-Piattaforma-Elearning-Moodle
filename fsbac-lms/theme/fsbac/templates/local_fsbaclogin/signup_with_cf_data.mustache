@@ -1,0 +1,52 @@
+
+
+<div class='fsbac-login-fixed'>
+
+    <div class='fsbac-login-section-form scroll-form' style='flex:1'>
+        {{< theme_fsbac/local_fsbaclogin/container}}
+           {{$lang}}{{{languagemenu}}}{{/lang}}
+           {{$container}}
+            <div class='fsbac-form-wrapper'>
+                <p class='fsbac-login-info text-center'>{{#str}}login.signup-data_msg, theme_fsbac{{/str}}</p>
+                <h1 class='fsbac-login-title text-center'>{{#str}}login.signup-data, theme_fsbac{{/str}}</h1>
+                <div class="fsbac-signup-data">
+                  {{{form}}}
+                </div>
+
+                <button class="btn btn-primary btn-lg w-100 buttonSubmitSign" type="submit" id="loginbtn">{{buttonlabel}}</button>
+
+
+            </div>
+           {{/container}}
+        {{/theme_fsbac/local_fsbaclogin/container}}
+    </div>
+
+
+
+</div>
+
+<style>
+i.icon.fa.fa-exclamation-circle.text-danger.fa-fw {
+    display: none;
+}
+.fdescription.required {
+    display: none;
+}
+</style>
+
+{{#js}}
+require(
+[
+    'jquery',
+],
+function(
+    $,
+
+) {
+    $('.buttonSubmitSign').on('click',()=>{
+        $('#fitem_id_submitbutton input').click();
+    })
+});
+{{/js}}
+
+

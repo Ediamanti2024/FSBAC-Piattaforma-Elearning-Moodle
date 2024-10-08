@@ -1,0 +1,101 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+<div class="path-local-ard_notification">
+    <h2>{{#str}}bulkusers, local_ard_notification{{/str}}</h2>
+    <!-- Search Bar -->
+    {{> local_ard_notification/partials/searchbar_bulk_users }}
+    {{#hasbulkusers}}
+        <!-- Pagination -->
+        {{> local_ard_notification/partials/pagination }}
+        <!-- Bulk users -->
+        <div class="table-responsive-lg table-striped">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">{{#str}}user{{/str}}</th>
+                        <th scope="col">{{#str}}email{{/str}}</th>
+                        <th scope="col">{{#str}}institution, local_ard_notification{{/str}}</th>
+                        <th scope="col">{{#str}}status{{/str}}</th>
+                        <th scope="col">{{#str}}statustime, local_ard_notification{{/str}}</th>
+                        <th scope="col">{{#str}}statusdescription, local_ard_notification{{/str}}</th>
+                        <th scope="col">{{#str}}actions{{/str}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#users}}
+                        <tr>
+                            <!-- User -->
+                            <td>
+                                <a href="{{ config.wwwroot }}/user/profile.php?id={{ userid }}" title="{{ user }}" alt="{{ user }}">
+                                    {{ user }}
+                                </a>
+                            </td>
+                            <!-- Email Address  -->
+                            <td>{{ email }}</td>
+                            <!-- Institution -->
+                            <td>{{ institution }}</td>
+                            <!-- Status -->
+                            <td>
+                                <span class="badge badge-{{ status.color }}">{{ status.label }}</span>
+                            </td>
+                            <!-- Status Time -->
+                            <td>{{ statustime }}</td>
+                            <!-- Status Description -->
+                            <td>
+                                <button type="button" class="btn btn-outline-primary my-2 my-sm-0" data-toggle="popover" title="{{#str}}statusdescription, local_ard_notification{{/str}}" data-content="{{ statusdescription }}" data-html="true">
+                                    {{#str}}view{{/str}}
+                                </button>
+                            </td>
+                            <!-- Actions -->
+                            <td>
+                                <!-- User bulks -->
+                                <a href="{{ config.wwwroot }}/local/ard_notification/user_bulks_monitoring.php?userid={{ userid }}" class="bulk-action" title="{{#str}}userbulks, local_ard_notification{{/str}}" alt="{{#str}}userbulks, local_ard_notification{{/str}}">
+                                    <svg class="svg-icon enabled">
+                                        <use xlink:href="{{ config.wwwroot }}/local/ard_notification/icons/sprite.svg#user"></use>
+                                    </svg>
+                                </a>
+                                <!-- Send Now -->
+                                <a {{#enablesendnow}}href="{{ config.wwwroot }}/local/ard_notification/send_message_now.php?bulkid={{ bulkid }}&userid={{ userid }}"{{/enablesendnow}} class="bulk-action" title="{{#str}}sendnow, local_ard_notification{{/str}}" alt="{{#str}}sendnow, local_ard_notification{{/str}}">
+                                    <svg class="svg-icon {{#enablesendnow}}enabled{{/enablesendnow}}{{^enablesendnow}}disabled{{/enablesendnow}}">
+                                        <use xlink:href="{{ config.wwwroot }}/local/ard_notification/icons/sprite.svg#paper-plane"></use>
+                                    </svg>
+                                </a>
+                                <!-- Delete -->
+                                <a href="{{ config.wwwroot }}/local/ard_notification/delete_bulk_user.php?bulkid={{ bulkid }}&userid={{ userid }}" class="bulk-action" title="{{#str}}delete{{/str}}" alt="{{#str}}delete{{/str}}">
+                                    <svg class="svg-icon enabled">
+                                        <use xlink:href="{{ config.wwwroot }}/local/ard_notification/icons/sprite.svg#trash"></use>
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                    {{/users}}
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination -->
+        {{> local_ard_notification/partials/pagination }}
+    {{/hasbulkusers}}
+    <!-- No results -->
+    {{^hasbulkusers}}
+        <div class="row">
+            <div class="col-12 my-3">
+                {{#str}}nobulkusersfound, local_ard_notification{{/str}}
+            </div>
+        </div>
+    {{/hasbulkusers}}
+</div>

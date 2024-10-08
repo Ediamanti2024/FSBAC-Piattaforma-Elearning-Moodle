@@ -1,0 +1,164 @@
+<!-- <div style="display:inline-block">
+    <img src="{{{course_descr_img_url}}}">
+</div> -->
+{{> theme_fsbac/course/header }}
+<div class="course-fsbac-body container">
+    <div class="fsbac-header-course-sections">
+        <section class="fsbac-header-course-section">
+            {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}course.title, theme_fsbac{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+            <div class="desc">
+                    {{{course_descr}}}
+            </div>
+        <div class="fsbac-header-course-cards">
+          {{#iscustomcertavailable}}
+            {{< theme_fsbac/components/cardinfo }}
+                {{$icon}}<i class="fas fa-medal"></i>{{/icon}}
+               {{$title}}{{#str}}course.infocerticate, theme_fsbac{{/str}}{{/title}}
+               {{$content}}{{#str}}course.infocerticate_desc, theme_fsbac{{/str}}{{/content}}
+            {{/ theme_fsbac/components/cardinfo }}
+          {{/iscustomcertavailable}}
+            {{#paths}}
+              {{< theme_fsbac/components/cardinfo }}
+                {{$icon}}{{> theme_fsbac/icons_svg/path}}{{/icon}}
+               {{$title}}
+                    {{number}}
+                    {{#multiplepaths}}
+                        {{#str}} relatedpaths, format_corsofsbac {{/str}}
+                    {{/multiplepaths}}
+                    {{^multiplepaths}}
+                        {{#str}} relatedpath, format_corsofsbac {{/str}}
+                    {{/multiplepaths}}
+                {{/title}}
+               {{$content}}
+                <p class="card-paths-link">
+                    {{#str}}
+                        coursepartof,
+                        format_corsofsbac,
+                        {
+                            "number": {{number}},
+                            "items": {{#quote}}
+                                        {{#multiplepaths}}
+                                            {{#str}} paths, format_corsofsbac {{/str}}
+                                        {{/multiplepaths}}
+                                        {{^multiplepaths}}
+                                            {{#str}} path, format_corsofsbac {{/str}}
+                                        {{/multiplepaths}}
+                                    {{/quote}}
+                        }
+                    {{/str}}:
+                </p>
+                <div class="card-paths-paths">
+                    {{#pathsinfo}}
+                        <div>
+                            <a href="{{pathlink}}"> {{pathname}} </a>
+                        </div>
+                    {{/pathsinfo}}
+                </div>
+
+               {{/content}}
+              {{/ theme_fsbac/components/cardinfo }}
+            {{/paths}}
+        </div>
+
+        </section>
+
+            <section class="fsbac-header-course-section fsbac-program">
+                {{< theme_fsbac/components/title-section}}
+                            {{$title}}{{#str}}course.program, theme_fsbac{{/str}}{{/title}}
+                {{/ theme_fsbac/components/title-section}}
+                {{< core_courseformat/local/content }}
+                    {{$ core_courseformat/local/content/section }}
+                        {{> format_corsofsbac/local/content/section }}
+                    {{/ core_courseformat/local/content/section }}
+                {{/ core_courseformat/local/content }}
+
+            {{#iscustomcertavailable}}
+                {{> theme_fsbac/course/certificate }}
+            {{/iscustomcertavailable}}
+
+        </section>
+
+
+
+    </div>
+
+    <div class="course-fsbac-information">
+        <div class="image-course-container">
+             <img src="{{{img_url}}}">
+        </div>
+
+        <button class="btn btn-primary button-enrol">{{#str}}course.button_enrol, theme_fsbac{{/str}}</button>
+
+        <div class="course-fsbac-information-general box-data-logged">
+                <h4 class="title-info">{{#str}}course.genaral_information, theme_fsbac{{/str}}</h4>
+                {{#generalinformation}}
+                    <ul>
+                        {{#codicecorso}}<li> <span>{{#str}} course.code, theme_fsbac {{/str}}:</span> {{codicecorso}}</li>{{/codicecorso}}
+                        {{#teacherslist}}<li><span>{{#str}}course.author, theme_fsbac{{/str}}:</span> {{teacherslist}}{{/teacherslist}}
+                        {{#mode}}<li><span>{{#str}}course.typology, theme_fsbac{{/str}}:</span> {{mode}}{{/mode}}
+                        {{#programma}}<li><span>{{#str}}course.category, theme_fsbac{{/str}}:</span> {{programma}}{{/programma}}
+                        {{#tags}} <li><span>{{#str}}course.tag, theme_fsbac{{/str}}:</span> {{tags}}{{/tags}}
+                        {{#duration}}<li><span>{{#str}}course.duration, theme_fsbac{{/str}}:</span> {{duration}}{{/duration}}
+                    </ul>
+                {{/generalinformation}}
+
+                <button class="btn btn-secondary button-shared" data-toggle="tooltip" data-html="true" title="{{< theme_fsbac/components/shared}}{{$url}}{{{link}}}{{/url}}{{/ theme_fsbac/components/shared}}">{{#str}}course.button_shared, theme_fsbac{{/str}} <i class="fas fa-share-alt"></i></button>
+
+        </div>
+
+
+        {{^emptydicolabcourses}}
+            <div class="box-data-accordion  box-data-accordion-dicolab box-data-logged open">
+                <p>
+                    {{#str}} dicolabcoursesforyou, theme_fsbac {{/str}}
+                </p>
+                {{#dicolabcourses}}
+                    <button class="buttonAccordion"><i class="fas fa-chevron-down"></i></button>
+                        <div class='accordion-data'>
+                            {{> theme_fsbac/components/course-card/mini }}
+                            <div class="fsbac-path_course_minicard-divider"></div>
+                        </div>
+                {{/dicolabcourses}}
+            </div>
+        {{/emptydicolabcourses}}
+
+
+        
+    </div>
+</div>
+
+<style>
+span.badge.badge-pill.badge-light {
+    display: none;
+}
+.availabilityinfo.small.course-description-item.isrestricted {
+    display: none;
+}
+</style>
+
+
+ {{> theme_fsbac/components/section-box-path-info/index}}
+
+ {{> theme_fsbac/components/banner_middle_section}}
+
+ {{#js}}
+    $($('#region-main form')[0]).hide();
+
+    $('.enrol-link').click(()=>{
+        $('form').submit();
+    })
+
+    $('.button-enrol').click(()=>{
+        $('form').submit();
+    })
+
+    $('.box-data-accordion .buttonAccordion').on('click',(e)=>{
+      const divParent = $(e.currentTarget).parent();
+      const isOpen = $(divParent).hasClass('open');
+      isOpen ? $(divParent).removeClass('open'): $(divParent).addClass('open');
+
+    });
+
+ {{/js}}

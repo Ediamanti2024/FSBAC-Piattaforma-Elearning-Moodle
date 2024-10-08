@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/ard_notification/db" VERSION="20211125" COMMENT="XMLDB file for Moodle local/ard_notification"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_ard_notification_bulk" COMMENT="local_ard_notification_bulk">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="bulkname" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="bulkname"/>
+        <FIELD NAME="bulkcreatedby" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="bulkcreatedby"/>
+        <FIELD NAME="bulkscheduletime" TYPE="int" LENGTH="11" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="bulkscheduletime"/>
+        <FIELD NAME="bulkstatus" TYPE="char" LENGTH="32" NOTNULL="true" SEQUENCE="false" COMMENT="status"/>
+        <FIELD NAME="bulknotes" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="bulknotes"/>
+        <FIELD NAME="messagesubject" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="messagesubject"/>
+        <FIELD NAME="messagebody" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="messagebody"/>
+        <FIELD NAME="messagesenderalias" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="messagesenderalias"/>
+        <FIELD NAME="messagelanguage" TYPE="char" LENGTH="32" NOTNULL="true" SEQUENCE="false" COMMENT="messagelanguage"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="11" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="timecreated"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="11" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="timemodified"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_ard_notification_users" COMMENT="local_ard_notification_users">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="userid"/>
+        <FIELD NAME="bulkid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="bulkid"/>
+        <FIELD NAME="status" TYPE="char" LENGTH="32" NOTNULL="true" SEQUENCE="false" COMMENT="status"/>
+        <FIELD NAME="statustime" TYPE="int" LENGTH="11" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="statusdate"/>
+        <FIELD NAME="statusdescription" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="statusdescription"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="11" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="timecreated"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="11" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="timemodified"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

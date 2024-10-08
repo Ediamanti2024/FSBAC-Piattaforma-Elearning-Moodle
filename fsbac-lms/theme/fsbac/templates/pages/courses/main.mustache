@@ -1,0 +1,60 @@
+{{#isloggedin}}
+<div class="header_page_logged">
+    <div class="container">
+        <h1 class="title">{{#str}} courses.header_title_logged , theme_fsbac {{/str}}</h1>
+        <p class='subtitle'>{{#str}} courses.header_subtitle_logged , theme_fsbac {{/str}}</p>
+    </div>
+    <div class='filter-container-logged '>
+        {{> theme_fsbac/components/filters/index}}
+    </div>
+   
+</div>
+{{/isloggedin}}
+
+{{^isloggedin}}
+<div class="fsbac-header-page">
+    <div class="container">
+        <div class="fsbac-header-section-text">
+            <p class='infotext'>{{#str}} courses.header_info , theme_fsbac {{/str}}</p>
+            <h1 class="title">{{#str}} courses.header_title , theme_fsbac {{/str}}</h1>
+        </div>
+        <div class="fsbac-header-section-image fsbac-courses-header-section-image"></div>
+    </div>
+     {{> theme_fsbac/components/filters/index}}
+</div>
+{{/isloggedin}}
+
+<div class="fsbac-cards-courses  container">
+
+
+</div>
+<div class="container fsbac-pagination-container">
+
+</div>
+<div class="fsbac-empty-values">
+    <h3>{{#str}} filter.zero_results , theme_fsbac {{/str}}</h3>
+    <p>{{#str}} filter.zero_results_msg , theme_fsbac {{/str}}</p>
+</div>
+
+{{^isloggedin}}
+ {{> theme_fsbac/components/section-box-path-info/index}}
+
+ {{> theme_fsbac/components/banner_middle_section}}
+{{/isloggedin}}
+
+{{#js}}
+require(
+[
+    'jquery',
+    'theme_fsbac/courses',
+],
+function(
+    $,
+    Courses
+) {
+   const courses = {{{coursesJson}}};
+    const params = {{{params}}};
+
+    Courses.init(courses,{params});
+});
+{{/js}}

@@ -1,0 +1,350 @@
+body#page-enrol-index.format-corsofsbac,body#page-course-view-corsofsbac {
+    #collapsesections {
+        display: none;
+    }
+
+    #page {
+        padding: 0px;
+        width: 100%;
+
+    }
+
+    div[role="main"] {
+        padding: 0 !important;
+    }
+
+    .main-inner {
+        max-width: 100% !important;
+        padding: 0px !important;
+        margin: 0px !important;
+        border-radius: 0px !important;
+
+
+
+    }
+
+
+
+    .generalbox {
+        padding-top: 0px !important;
+
+        &.info {
+            display: none;
+        }
+    }
+
+    .coursebox {
+        display: none;
+    }
+
+    #id_fsbacheader {
+        display: none;
+    }
+
+
+    .fsbac-header-course {
+        width: 100%;
+        height: 246px;
+        background-color: $secondari-default;
+        background-image: url([[pix:theme_fsbac|course/backgroung_header]]);
+        display: flex;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right center;
+        margin-bottom: 40px;
+        padding-top: 32px;
+
+        @include media-breakpoint-down(md) {
+            background-image: unset;
+            height: fit-content;
+            padding-top: 32px;
+            padding-bottom: 74px;
+        }
+
+        a.fsbac-link-back {
+            color: $white;
+            font-family: $font-bold-NunitoSans;
+            font-size: 14px;
+            line-height: 140%;
+
+
+            i {
+                margin-right: 24px;
+            }
+        }
+
+        .title-course-container {
+            margin-top: 26px;
+            width: 100%;
+            max-width: 845px;
+            display: flex;
+            gap: 12px;
+            flex-direction: column;
+
+            div.title {
+                display: flex;
+                align-items: flex-start;
+
+                @include media-breakpoint-down(md) {
+                    flex-direction: column-reverse;
+                    gap: 8px;
+                }
+
+                h1 {
+                    color: $white;
+                    font-family: $font-bold-NunitoSans;
+                    font-size: 38px;
+                    line-height: 140%;
+                    display: inline-block;
+                    flex: 1;
+
+                    @include media-breakpoint-down(md) {
+                        font-size: 24px;
+                    }
+
+                }
+
+            }
+
+
+            h2 {
+                font-family: $font-regular-OpenSans;
+                font-size: 22px;
+                line-height: 140%;
+                color: $white;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 16px;
+                }
+            }
+
+          
+        }
+
+
+
+    }
+
+    .fsbac-header-course-sections {
+        width: 100%;
+        max-width: 845px;
+
+        .fsbac-header-course-section {
+            width: 100%;
+
+            .desc {
+                color: $neri-nero-chiaro;
+                font-family: $font-regular-OpenSans;
+                font-size: 18px;
+                line-height: 30.6px;
+                padding: 0px;
+                margin: 0px;
+
+            }
+
+            .fsbac-header-course-cards {
+                margin-top: 48px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+
+                @include media-breakpoint-down(md) {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                }
+            }
+
+            .fsbac-title-section {
+                margin-bottom: 19px;
+            }
+
+            &.fsbac-program {
+                margin-top: 57px;
+
+                .corsofsbac {
+                    padding-left: 0px;
+
+                    .course-section {
+                        margin-bottom: 48px;
+                    }
+
+                    .sectionname {
+                        font-family: $font-bold-NunitoSans;
+                        font-size: 26px;
+                        line-height: 130%;
+                    }
+
+                    .course-section {
+                        border: none;
+                    }
+
+                    li.activity {
+                        border-radius: 8px;
+                        border: 0.5px solid $neri-grigio-chiarissimo;
+                        background: $neri-grigio-chiarissimo;
+                        border: unset;
+                        margin-top: 16px;
+
+                        .activity-item {
+                            border: none;
+                            background: transparent;
+
+                            .activityiconcontainer {
+                                border-radius: 4px;
+
+                                background-color: $secondari-chiaro;
+                            }
+
+                            .activityname {
+                                color: $neri-nero-pieno;
+                                font-family: $font-bold-NunitoSans;
+                                font-size: 18px;
+                                line-height: 135%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .course-fsbac-body {
+        display: flex;
+        flex-direction: row;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column-reverse;
+        }
+
+        .course-fsbac-information {
+            flex: 1;
+            height: fit-content;
+            margin-top: -233px;
+            position: sticky;
+            top: 100px;
+
+            padding-left: 26px;
+
+            @include media-breakpoint-down(md) {
+                position: unset;
+                padding-left: unset;
+                margin-top: -77px;
+            }
+
+            .image-course-container {
+                width: 100%;
+                height: 234px;
+                margin-bottom: 24px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 6px;
+                    object-position: 0 0;
+
+                }
+            }
+
+            .button-enrol {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                width: 100%;
+            }
+
+            .course-fsbac-information-general {
+                margin-top: 16px;
+                padding: 28px 24px;
+                border-radius: 8px;
+                background: $neri-grigio-chiarissimo;
+
+                .title-info {
+                    font-family: $font-bold-NunitoSans;
+                    font-size: 21px;
+                    line-height: 135%;
+                    margin-bottom: 37px;
+                }
+
+                ul {
+                    margin-top: 37px;
+                    margin-bottom: 31px;
+                    list-style: none;
+                    padding: 0px;
+
+                    li {
+                        padding: 16px 0px;
+                        border-bottom: 1px solid #E7E9F1;
+
+                        span {
+                            color: $neri-nero-chiaro;
+                            font-family: $font-bold-NunitoSans;
+                            font-size: 16px;
+                            line-height: 140%;
+                        }
+
+                        &:last-child {
+                            border-bottom: unset;
+                        }
+
+                    }
+
+                }
+
+            }
+
+
+        }
+    }
+
+    .fsbac-banner_middle_container {
+        .catalog-link {
+            display: none !important;
+        }
+
+    }
+
+    .card-paths-link {
+        margin: 0px;
+    }
+
+    .card-paths-paths {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            width: 100%;
+        }
+    }
+
+
+
+
+    @import 'logged.scss';
+
+
+    .isNewCourse {
+        border-radius: 4px;
+        background: #64BB20;
+        display: flex;
+        align-items: flex-start;
+        padding: 6px;
+        color: $neri-grigio-chiarissimo;
+        text-align: center;
+        font-family: $font-regular-OpenSans;
+        font-size: 12px;
+        line-height: 140%;
+
+    }
+
+    #content-similarcourse{
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+}
+
+@import 'section-box-course-info.scss';
+@import 'certificate.scss';

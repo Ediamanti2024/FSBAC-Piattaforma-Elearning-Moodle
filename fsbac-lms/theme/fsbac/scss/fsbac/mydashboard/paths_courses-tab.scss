@@ -1,0 +1,58 @@
+.fsbac-paths_courses-tab {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+
+    .fsbac-tab-grid {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        @include media-breakpoint-down(md) {
+            display: flex;
+            flex-direction: column;
+        }
+        &.followingPaths-grid {
+            display: flex;
+            flex-direction: column;
+
+            .fsbac-card-path {
+                width: 100%;
+
+                .fsbac-card-path-title,
+                .fsbac-card-path-subtitle {
+                    width: 100%;
+                    max-width: 700px;
+                }
+            }
+
+        }
+    }
+
+    .fsbac-section {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .fsbac-divider {
+            width: 100%;
+            background-color: $neri-grigio-chiaro;
+            height: 1px;
+        }
+
+        .fsbac-card-course-mini-fullname,
+        .fsbac-card-course-mini-description 
+       {
+            max-width: 500px;
+        }
+
+        .fsbac-path_course_minicard{
+            .title-path-course,
+            .subtitle-path-course{
+                max-width: 500px;
+            }
+        }
+    }
+}

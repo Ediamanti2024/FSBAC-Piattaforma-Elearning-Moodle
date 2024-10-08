@@ -1,0 +1,151 @@
+<div class="fsbac-paths_courses-tab" >
+{{^no_activity}}
+    <section class="fsbac-paths_courses-section">
+        {{#corsi_following_show}}
+        {{< theme_fsbac/components/title-section}}
+                    {{$title}}{{#str}}my.tab1_followingCourses, theme_fsbac,{{corsi_following_num}}{{/str}}{{/title}}
+        {{/ theme_fsbac/components/title-section}}
+        <div class="fsbac-tab-grid followingCourses-grid">
+                {{#corsi_following}}
+                {{< theme_fsbac/components/course-card/index}} 
+                        {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                    {{/ theme_fsbac/components/course-card/index}} 
+                {{/corsi_following}}
+        </div>
+        <button class="btn btn-secondary followingCourses mt-3">{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+        {{/corsi_following_show}}
+         {{^corsi_following_show}}
+          {{< theme_fsbac/mydashboard/empty-message}}
+              {{$title}}{{#str}}my.tab1_followingCourses_no_title,theme_fsbac{{/str}}{{/title}} 
+              {{$message}}{{#str}}my.tab1_followingCourses_no,theme_fsbac{{/str}}{{/message}}
+              {{$linkLabel}}{{#str}}my.tab1_followingCourses_no_linkLabel,theme_fsbac{{/str}}{{/linkLabel}}
+              {{$link}}{{config.wwwroot}}/theme/fsbac/pages/courses.php{{/link}}
+              
+           {{/ theme_fsbac/mydashboard/empty-message}}
+         {{/corsi_following_show}}
+    </section>
+
+   <section class="fsbac-paths_courses-section">
+      {{#percorsi_following_show}}
+            {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}my.tab1_followingPaths, theme_fsbac,{{percorsi_following_num}}{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+            <div class="fsbac-tab-grid followingPaths-grid">
+                    {{#percorsi_following}}
+                    {{< theme_fsbac/components/path-card/index}} 
+                            {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                        {{/ theme_fsbac/components/path-card/index}} 
+                    {{/percorsi_following}}
+            
+            </div>
+            <button class="btn btn-secondary followingPaths mt-3">{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+        {{/percorsi_following_show}}
+         {{^percorsi_following_show}}
+          {{< theme_fsbac/mydashboard/empty-message}}
+              {{$title}}{{#str}}my.tab1_followingPaths_no_title,theme_fsbac{{/str}}{{/title}} 
+              {{$message}}{{#str}}my.tab1_followingPaths_no,theme_fsbac{{/str}}{{/message}}
+              {{$linkLabel}}{{#str}}my.tab1_followingPaths_no_linkLabel,theme_fsbac{{/str}}{{/linkLabel}}
+               {{$link}}{{config.wwwroot}}/theme/fsbac/pages/paths.php{{/link}}
+           {{/ theme_fsbac/mydashboard/empty-message}}
+         {{/percorsi_following_show}}
+    </section>
+
+
+    <section class="fsbac-paths_courses-section">
+      {{#corsi_completed_show}}
+        {{< theme_fsbac/components/title-section}}
+                    {{$title}}{{#str}}my.tab1_completedCourses, theme_fsbac,{{corsi_completed_num}}{{/str}}{{/title}}
+        {{/ theme_fsbac/components/title-section}}
+        <div class="fsbac-section completedCourses-section">
+                {{#corsi_completed}}
+                    {{> theme_fsbac/components/course-card/mini}} 
+                    <div class="fsbac-divider"></div>
+                {{/corsi_completed}}
+      
+        </div>
+        <button class="btn btn-secondary completedCourses mt-3">{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+      {{/corsi_completed_show}}
+       {{^corsi_completed_show}}
+          {{< theme_fsbac/mydashboard/empty-message}}
+              {{$title}}{{#str}}my.tab1_completedCourses_no_title,theme_fsbac{{/str}}{{/title}} 
+              {{$message}}{{#str}}my.tab1_completedCourses_no,theme_fsbac{{/str}}{{/message}}
+              {{$linkLabel}}{{#str}}my.tab1_completedCourses_no_linkLabel,theme_fsbac{{/str}}{{/linkLabel}}
+               {{$link}}{{config.wwwroot}}/theme/fsbac/pages/courses.php{{/link}}
+           {{/ theme_fsbac/mydashboard/empty-message}}
+        {{/corsi_completed_show}}
+    </section>
+
+
+     <section class="fsbac-paths_courses-section">
+       {{#percorsi_completed_show}}
+            {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}my.tab1_completedPaths, theme_fsbac,{{percorsi_completed_num}}{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+            <div class="fsbac-section completedPaths-section">
+                    {{#percorsi_completed}}
+                        {{< theme_fsbac/components/path_course_minicard }}
+                            {{$id}}{{id}}{{/id}}
+                            {{$image}}{{image}}{{/image}}
+                            {{$title}}{{fullname}}{{/title}}
+                            {{$subtitle}}{{sottotitolo}}{{/subtitle}}
+                            {{$level}}{{livelloLabel}}{{/level}}
+                            {{$duration}}{{{durata}}}{{/duration}}
+                            {{$completed}}<div class="fsbac-path_course_minicard-completed">{{#str}}common.completed,theme_fsbac{{/str}}</div>{{/completed}}
+                        {{/theme_fsbac/components/path_course_minicard }}
+                        <div class="fsbac-divider"></div>
+                        {{/percorsi_completed}}
+            
+            </div>
+            <button class="btn btn-secondary completedPaths mt-3">{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+     {{/percorsi_completed_show}}
+     {{^percorsi_completed_show}}
+          {{< theme_fsbac/mydashboard/empty-message}}
+              {{$title}}{{#str}}my.tab1_completedPaths_no_title,theme_fsbac{{/str}}{{/title}} 
+              {{$message}}{{#str}}my.tab1_completedPaths_no,theme_fsbac{{/str}}{{/message}}
+              {{$linkLabel}}{{#str}}my.tab1_completedPaths_no_linkLabel,theme_fsbac{{/str}}{{/linkLabel}}
+              {{$link}}{{config.wwwroot}}/theme/fsbac/pages/paths.php{{/link}}
+           {{/ theme_fsbac/mydashboard/empty-message}}
+     {{/percorsi_completed_show}}
+    </section>
+{{/no_activity}}
+  
+{{#no_activity}}
+       {{< theme_fsbac/mydashboard/empty-message-all}}
+               {{$icon}}{{> theme_fsbac/icons_svg/view-list-fill }}{{/icon}}
+              {{$title}}{{#str}}my.tab1_no_activity,theme_fsbac{{/str}}{{/title}} 
+              {{$message}}{{#str}}my.tab1_no_activity_message,theme_fsbac{{/str}}{{/message}}
+              {{$linkLabel}}{{#str}}my.tab1_no_activity_link,theme_fsbac{{/str}}{{/linkLabel}}
+              {{$link}}{{config.wwwroot}}/theme/fsbac/pages/courses.php{{/link}}
+        {{/ theme_fsbac/mydashboard/empty-message-all}}
+{{/no_activity}}
+</div>
+{{#js}}
+
+    function showMore(section,button,num=4){
+        button.hide();
+        const courses = section;
+        const divider = $(section).parent().find('.fsbac-divider');
+
+        if(courses.length > num){
+        button.show();
+            courses.each(function( index ) {
+                if(index > (num-1)){
+                    $( this ).hide();
+                    $(divider[index]).hide();
+                }
+            });
+        }
+        button.on('click',()=>{
+            button.hide();
+           courses.each(function( index ) {
+                  $( this ).show();
+                  $(divider[index]).show();
+            });
+        })
+    }
+    showMore($('.followingCourses-grid .fsbac-card-course'), $('.followingCourses'));
+    showMore($('.followingPaths-grid .fsbac-card-path'), $('.followingPaths'),2);
+    showMore($('.completedCourses-section .fsbac-card-course-mini'), $('.completedCourses'),3);
+    showMore($('.completedPaths-section .fsbac-path_course_minicard'), $('.completedPaths'),3);
+
+ {{/js}}

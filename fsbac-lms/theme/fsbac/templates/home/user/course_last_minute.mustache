@@ -1,0 +1,66 @@
+{{#corsiLastMinuteShow}}
+<section class="fsbac-home_user-course_last_minute">
+   <div class="container fsbac-section-with-title">
+        <div class="fsbac-title-top">
+            {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}home_user.section_course_last_minute, theme_fsbac{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+            <div class="fsbac-header-arrow-swiper">
+                <button class="fsbac-course_last_minute-arrow-prev"><i class="fa fa-angle-left"></i></button>
+                <button class="fsbac-course_last_minute-arrow-next"><i class="fa fa-angle-right"></i></button>
+            </div>
+        </div>
+        
+
+            <div class="swiper fsbac-course_last_minute-container-courses">
+                <div class="swiper-wrapper ">   
+                {{#corsiLastMinute}}
+                    <div class="swiper-slide">
+                            {{< theme_fsbac/components/course-card/index}} 
+                                    {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                            {{/ theme_fsbac/components/course-card/index}} 
+                    </div>    
+                {{/corsiLastMinute}} 
+            
+                </div>
+            </div>
+
+        
+    </div>
+</section>
+{{/corsiLastMinuteShow}}
+<script>
+ new Swiper('.fsbac-course_last_minute-container-courses', {
+
+  loop: false,
+  slidesPerView:3,
+  spaceBetween: 24,
+  centeredSlides:false,
+    breakpoints: {
+     320: {
+      slidesPerView: 1,
+      centeredSlides:true,
+      centerInsufficientSlides:true,
+    },
+   
+    480: {
+      slidesPerView: 1,
+      centeredSlides:true,
+     
+    },
+   
+    820: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+       
+    }
+     
+    },
+
+
+ navigation: {
+    nextEl: '.fsbac-course_last_minute-arrow-next',
+    prevEl: '.fsbac-course_last_minute-arrow-prev',
+  }
+});
+</script>

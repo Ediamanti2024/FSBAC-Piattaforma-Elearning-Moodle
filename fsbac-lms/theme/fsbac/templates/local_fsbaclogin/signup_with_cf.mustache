@@ -1,0 +1,61 @@
+
+
+<div class='fsbac-login-fixed'>
+
+    <div class='fsbac-login-section-form'>
+        {{< theme_fsbac/local_fsbaclogin/container}}
+           {{$lang}}{{{languagemenu}}}{{/lang}}
+           {{$container}}
+            <div class='fsbac-form-wrapper'>
+                <p class='fsbac-login-info'>{{#str}}login.signup_msg, theme_fsbac{{/str}}</p>
+                <h1 class='fsbac-login-title'>{{#str}}login.signup, theme_fsbac{{/str}}</h1>
+                <div class="fsbac-signup">
+                  {{{form}}}
+                </div>
+                {{^cfExistsError}}
+                    <div class="fsbac-signup-msg-container">
+                        <div class="title-msg">{{#str}}login.signup_cf_title, theme_fsbac{{/str}}</div>
+                        <div class="text-msg">{{#str}}login.signup_cf_text, theme_fsbac{{/str}}</div>
+                    </div>
+                {{/cfExistsError}}
+                {{#cfExistsError}}
+                    <div class="fsbac-signup-msg-container">
+                        <div class="title-msg">{{#str}}login.signup_cf_error_title, theme_fsbac{{/str}}</div>
+                        <div class="text-msg">{{#str}}login.signup_cf_error_text, theme_fsbac{{/str}}</div>
+                        <div class="container-buttons"> 
+                            <a href="{{config.wwwroot}}/login/index.php" class="btn btn-secondary" >{{#str}}login.signup_login, theme_fsbac{{/str}}</a>
+                            <a href="{{config.wwwroot}}/local/fsbaclogin/forgot_password.php" class="btn btn-secondary"  >{{#str}}login.signup_pw, theme_fsbac{{/str}}</a>
+                        </div>
+                    </div>
+                {{/cfExistsError}}
+                <button class="btn btn-primary btn-lg w-100 buttonSubmitSign" type="submit" id="loginbtn">{{#str}}login.signup, theme_fsbac{{/str}}</button>
+                <div class="fsbac-signup-login">
+                <span>{{#str}}login.signup_msg_account, theme_fsbac{{/str}}</span> <a href="{{config.wwwroot}}/login/index.php">{{#str}}login.signup_login, theme_fsbac{{/str}}</a>
+                </div>
+        
+            </div>
+           {{/container}}
+        {{/theme_fsbac/local_fsbaclogin/container}}
+    </div>
+     <div class='fsbac-login-section-image fsbac-image-login'>
+    </div>
+
+
+</div>
+
+{{#js}}
+require(
+[
+    'jquery',
+],
+function(
+    $,
+
+) {
+    $('.buttonSubmitSign').on('click',()=>{
+        $('#fitem_id_submitbutton input').click();
+    })
+});
+{{/js}}
+   
+

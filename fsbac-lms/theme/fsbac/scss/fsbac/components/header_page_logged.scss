@@ -1,0 +1,28 @@
+.header_page_logged {
+    width: 100%;
+    height: 339px;
+    background-color: $neri-grigio-chiarissimo;
+    margin-top: -16px;
+    padding-top: 56px;
+    position: relative;
+
+    .container {
+
+        h1.title {
+            color: $neri-nero-pieno;
+            font-family: $font-bold-NunitoSans;
+            font-size: 38px;
+            line-height: 140%;
+        }
+
+        p.subtitle {
+            color: $neri-nero-chiaro;
+            font-family: $font-regular-OpenSans;
+            font-size: 22px;
+            line-height: 140%;
+        }
+
+    }
+
+
+}

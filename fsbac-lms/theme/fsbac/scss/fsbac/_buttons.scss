@@ -1,0 +1,17 @@
+.btn-secondary {
+    color: $primary;
+    border: none;
+}
+
+.btn-light {
+    color: $primary;
+}
+
+.btn {
+    font-size: 14px;
+    font-family: $font-bold-NunitoSans;
+
+    i {
+        margin-left: 5px;
+    }
+}

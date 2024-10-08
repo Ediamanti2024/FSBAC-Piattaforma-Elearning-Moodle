@@ -1,0 +1,28 @@
+.path-local-ard_notification h2 {
+    margin-bottom: 1.5rem;
+}
+
+.path-local-ard_notification #region-main {
+    border: none;
+}
+
+.path-local-ard_notification a.bulk-action {
+    text-decoration: none;
+}
+
+.path-local-ard_notification a.bulk-action:not(:last-child) {
+    margin-right: 10px;
+}
+
+.path-local-ard_notification .svg-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.path-local-ard_notification .svg-icon.enabled {
+    fill: #0f6cbf;
+}
+
+.path-local-ard_notification .svg-icon.disabled {
+    fill: #808080;
+}

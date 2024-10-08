@@ -1,0 +1,66 @@
+
+
+<div class="userprofile">
+    <div class="profile_tree">
+        <section class="node_category card d-inline-block w-100 mb-3">
+            <div class="card-body">
+                <li style="text-align:right; list-style:none">
+                    <a href="{{changegeneralfieldslink}}" target="_blank">{{#str}} changegeneralfieldslabel, local_fsbaclogin {{/str}} </a>
+                </li>
+                {{#generalfields}}
+                    <ul style="list-style-type:none; padding:0">
+                        <li class="contentnode">
+                            <dl>
+                                <dt>
+                                    {{name}}
+                                </dt>
+                                    {{value}}
+                                <dd>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                {{/generalfields}}
+            </div>
+        </section>
+
+        <section class="node_category card d-inline-block w-100 mb-3">
+            <div class="card-body">
+                <li style="text-align:right; list-style:none">
+                    <a href="{{changeadditionalfieldslink}}" target="_blank">{{#str}} changeadditionalfieldslabel, local_fsbaclogin {{/str}} </a>
+                </li>
+                {{#additionalfields}}
+                    <ul style="list-style-type:none; padding:0">
+                        <li class="contentnode">
+                            <dl>
+                                <dt>
+                                    {{name}}
+                                </dt>
+                                    {{value}}
+                                <dd>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                {{/additionalfields}}
+            </div>
+        </section>
+
+        <section class="node_category card d-inline-block w-100 mb-3">
+            <div class="card-body">
+                <li style="text-align:right; list-style:none">
+                    <a href="{{changepreferenceslink}}" target="_blank"> {{#str}} changepreferenceslabel, local_fsbaclogin {{/str}} </a>
+                </li>
+                <ul style="list-style-type:none; padding:0">
+                    <li class="contentnode">
+                        {{#preferences}}
+                            <li class="badge badge-info standardtag">
+                                {{tag}}
+                            </li>
+                        {{/preferences}}
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>

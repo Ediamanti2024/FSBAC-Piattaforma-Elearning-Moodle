@@ -1,0 +1,186 @@
+.fsbac-methods_training_section {
+    background: $secondari-default;
+    padding: 104px 0px 113px;
+    margin-top: 132px;
+
+    @include media-breakpoint-down(md) {
+        padding: 48px 0px;
+    }
+
+    .fsbac-methods_training_section-container {
+        display: flex;
+
+        @include media-breakpoint-down(md) {
+
+            flex-direction: column;
+        }
+
+        .fsbac-methods_training_section-description {
+            flex: 0.5;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            @include media-breakpoint-down(md) {
+
+                flex: 1;
+            }
+
+
+            .fsbac-title-arrow {
+                color: $neri-grigio-chiarissimo;
+            }
+
+            p {
+                width: 100%;
+                max-width: 500px;
+                color: $neri-grigio-chiarissimo;
+                font-family: $font-regular-OpenSans;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 160%;
+
+            }
+
+            .fsbac-methods_training_section-number {
+                display: flex;
+                gap: 52px;
+
+                .fsbac-methods_training_section-number-group {
+                    display: flex;
+                    gap: 12px;
+
+                    .fsbac-icon-box {
+                        width: 48px;
+                        height: 48px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: $neri-grigio-chiarissimo;
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            height: 100%;
+                            width: 100%;
+                            background-color: $neri-grigio-chiarissimo;
+                            opacity: 0.10000000149011612;
+                            border-radius: 4px;
+
+                        }
+                    }
+
+                    .fsbac-text-box {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        span.top-text {
+                            color: $neri-grigio-chiarissimo;
+                            font-family: $font-bold-NunitoSans;
+                            font-size: 16px;
+                            font-style: normal;
+                            line-height: 140%;
+                            /* 22.4px */
+                        }
+
+                        span.bottom-text {
+                            color: $neri-grigio-chiarissimo;
+                            font-family: $font-regular-OpenSans;
+                            font-size: 14px;
+                            font-style: normal;
+                            line-height: 140%;
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+
+
+        .fsbac-methods_training_section-image {
+            flex: 0.5;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            @include media-breakpoint-down(md) {
+                flex: 1;
+
+            }
+        }
+    }
+
+    .fsbac-methods_training_section-image-container-mobile {
+        display: none;
+        margin-top: 32px;
+
+        .fsbac-methods_training_section-image {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        @include media-breakpoint-down(md) {
+            display: block;
+            width: 100%;
+            height: 224px;
+        }
+    }
+
+    .fsbac-methods_training_section-container-info {
+        margin-top: 75px;
+        display: flex;
+        gap: 24px;
+
+        @include media-breakpoint-down(md) {
+            margin-top: 48px;
+            flex-direction: column;
+        }
+
+    }
+
+
+}
+
+.fsbac-methods_training_section-box-white {
+
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid $neri-grigio-medio;
+    background: $general-bianco;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+
+
+
+    .box-icon-blue {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        color: $neri-grigio-chiarissimo;
+        background: $secondari-default;
+    }
+
+    .box-text-info {
+        color: $neri-nero-pieno;
+        font-family: $font-bold-NunitoSans;
+        font-size: 18px;
+        line-height: 140%;
+    }
+
+
+}

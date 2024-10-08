@@ -1,0 +1,59 @@
+
+<div class='fsbac-profilazione-fixed'>
+
+    <div class='fsbac-profilazione-section-form'>
+         <div class="fsbac-profilazione-header">
+            <div class="fsbac-logo">
+                <a href="{{config.wwwroot}}/index.php"><img src="{{logourl}}" /></a>
+            </div>
+            <div class="fsbac-lang">
+            <a class="btn btn-secondary" href="{{{logoutUrl}}}"> {{#str}}login.exit, theme_fsbac{{/str}} </a>
+            {{{languagemenu}}}
+    
+            </div>
+        </div>
+       <div class="fsbac-profilazione-container">
+   
+       
+         {{$container}}{{{container}}}{{/container}}
+      
+        
+    </div>
+        <div class="fsbac-profilazione-footer">
+                {{#str}}login.footer, theme_fsbac{{/str}} 
+        </div>
+        
+    </div>
+     <div class='fsbac-profilazione-section-image fsbac-image-step{{page}}'>
+    </div>
+
+
+</div>
+
+{{#js}}
+require(
+[
+    'jquery',
+],
+function(
+    $,
+
+) {
+    const page = parseInt("{{page}}");
+   
+   
+
+    $('.profilazione_steps .step').each(function( index ) {
+               
+        if(index === page){
+         $( this ).addClass('current');
+        }
+ 
+         if(index < page){
+         $( this ).addClass('complete');
+        }
+  
+});
+
+});
+{{/js}}

@@ -1,0 +1,62 @@
+
+<section class="fsbac-methods_training_section">
+
+   <div class="container">
+        <div class="fsbac-methods_training_section-container">
+            
+            <div class="fsbac-methods_training_section-description">
+                {{< theme_fsbac/components/title-section}}
+                            {{$title}}{{#str}}home.methods_training_section, theme_fsbac{{/str}}{{/title}}
+                            {{$class}}fsbac-white-arrow{{/class}}
+                {{/ theme_fsbac/components/title-section}}
+                <p>{{#str}}home.methods_training_section_text, theme_fsbac{{/str}}</p>
+                <div class="fsbac-methods_training_section-number">
+                    {{< theme_fsbac/home/methods_training/number-group}}
+                        {{$icon}} {{> theme_fsbac/icons_svg/collection-play-fill}} {{/icon}}
+                        {{$toptext}} 100+ {{/toptext}}
+                        {{$bottomtext}}{{#str}}common.corses, theme_fsbac{{/str}}{{/bottomtext}}
+                     {{/ theme_fsbac/home/methods_training/number-group}}
+
+                      {{< theme_fsbac/home/methods_training/number-group}}
+                        {{$icon}} {{> theme_fsbac/icons_svg/person-lines-fill}} {{/icon}}
+                        {{$toptext}} 20k {{/toptext}}
+                        {{$bottomtext}}{{#str}}common.registered_users, theme_fsbac{{/str}}{{/bottomtext}}
+                     {{/ theme_fsbac/home/methods_training/number-group}}
+                </div>
+
+             
+            </div>
+            
+               <div class="fsbac-methods_training_section-image" style="background-image:url('{{imageBannerTraningMethod}}')" ></div>
+            
+
+         </div>
+    
+        <div class="fsbac-methods_training_section-container-info">
+          {{< theme_fsbac/home/methods_training/box-white}}
+            {{$icon}} {{> theme_fsbac/icons_svg/card-checklist-fill}} {{/icon}}
+            {{$text}}{{#str}}home.methods_training_box1, theme_fsbac{{/str}}{{/text}}
+          {{/ theme_fsbac/home/methods_training/box-white}}
+
+          {{< theme_fsbac/home/methods_training/box-white}}
+            {{$icon}} <i class="fa fa-microphone"></i> {{/icon}}
+            {{$text}}{{#str}}home.methods_training_box2, theme_fsbac{{/str}}{{/text}}
+          {{/ theme_fsbac/home/methods_training/box-white}}
+
+          {{< theme_fsbac/home/methods_training/box-white}}
+            {{$icon}} {{> theme_fsbac/icons_svg/collection-play-fill}} {{/icon}}
+            {{$text}}{{#str}}home.methods_training_box3, theme_fsbac{{/str}}{{/text}}
+          {{/ theme_fsbac/home/methods_training/box-white}}
+
+          {{< theme_fsbac/home/methods_training/box-white}}
+            {{$icon}} <i class="fa fa-video"></i> {{/icon}}
+          {{$text}}{{#str}}home.methods_training_box4, theme_fsbac{{/str}}{{/text}}
+          {{/ theme_fsbac/home/methods_training/box-white}}
+        </div>
+
+          <div  class="fsbac-methods_training_section-image-container-mobile">
+               <div class="fsbac-methods_training_section-image" style="background-image:url('{{imageBannerTraningMethod}}')" ></div>
+          </div>
+    </div>
+   
+</section>

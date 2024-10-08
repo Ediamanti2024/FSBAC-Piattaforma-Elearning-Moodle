@@ -1,0 +1,71 @@
+
+<div class="fsbac-header-page">
+    <div class="container">
+        <div class="fsbac-header-section-text">
+            <p class='infotext'>{{#str}} chisiamo.header_info , theme_fsbac {{/str}}</p>
+            <h1 class="title">{{#str}} chisiamo.header_title , theme_fsbac {{/str}}</h1>
+        </div>
+        <div class="fsbac-header-section-image fsbac-header-section-video">
+        <video  controls>
+            <source src="{{config.wwwroot}}/theme/fsbac/pix/chisiamo/chisiamo.mp4" type="video/mp4">
+
+            Your browser does not support the video tag.
+        </video>
+        </div>
+    </div>
+   
+</div>
+<div class="container">
+    <section class="section-todo">
+       {{< theme_fsbac/components/title-section}}
+            {{$title}}{{#str}}chisiamo.todo, theme_fsbac{{/str}}{{/title}}
+        {{/ theme_fsbac/components/title-section}}
+        <div class="container-cards"> 
+
+            <div class="container-cards-mini">
+                <div class="cards-info cards-info-horizontal">
+                    <div class="fcbac-box-blue-icon"> {{> theme_fsbac/icons_svg/award-fill}}</div>
+                    <div class="title-card">{{#str}}chisiamo.formazione, theme_fsbac{{/str}}</div> 
+                    <p class="msg-card">{{#str}}chisiamo.formazione_text, theme_fsbac{{/str}}</p> 
+                </div>
+                <div class="cards-info cards-info-horizontal">
+                    <div class="fcbac-box-blue-icon"> {{> theme_fsbac/icons_svg/clipboard-data-fill}}</div>
+                    <div class="title-card">{{#str}}chisiamo.ricerca, theme_fsbac{{/str}}</div> 
+                    <p class="msg-card">{{#str}}chisiamo.ricerca_text, theme_fsbac{{/str}}</p> 
+                </div>
+                <div class="cards-info cards-info-horizontal">
+                    <div class="fcbac-box-blue-icon"> {{> theme_fsbac/icons_svg/file-earmark-medical-fill}}</div>
+                    <div class="title-card">{{#str}}chisiamo.innovazione, theme_fsbac{{/str}}</div> 
+                    <p class="msg-card">{{#str}}chisiamo.innovazione_text, theme_fsbac{{/str}}</p> 
+                </div>
+            
+            </div>
+
+            <div class="cards-info cards-info-horizontal">
+                <div class="title-card">{{#str}}chisiamo.internazionale, theme_fsbac{{/str}}</div> 
+                <p class="msg-card">{{#str}}chisiamo.internazionale_text, theme_fsbac{{/str}}</p> 
+            </div>
+
+            <div class="cards-info cards-info-horizontal">
+                <div class="title-card">{{#str}}chisiamo.patrimonio, theme_fsbac{{/str}}</div> 
+                <p class="msg-card">{{#str}}chisiamo.patrimonio_text, theme_fsbac{{/str}}</p> 
+            </div>
+        </div>
+    <section>
+</div>
+
+{{> theme_fsbac/pages/chisiamo/banner_blue}}
+
+{{> theme_fsbac/pages/chisiamo/info_box}}
+
+
+
+
+
+
+
+
+ {{> theme_fsbac/components/banner_middle_section}}
+
+
+

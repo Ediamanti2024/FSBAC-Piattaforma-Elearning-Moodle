@@ -1,0 +1,77 @@
+<section class="fsbac-featured_courses_section container">
+    <div class="fsbac-featured_courses_header">
+      {{< theme_fsbac/components/title-section}}
+                {{$title}}{{#str}}home.featured_courses_section, theme_fsbac{{/str}}{{/title}}
+      {{/ theme_fsbac/components/title-section}}
+      <div class="fsbac--featured_courses_navigation">
+         <button class="fsbac-featured_courses-prev"><i class="fa fa-angle-left"></i></button>
+         <button class="fsbac-featured_courses-next"><i class="fa fa-angle-right"></i></button>
+       </div>
+  
+    </div>
+
+
+
+    <div class="swiper fsbac-featured_courses_section_swiper">
+        <div class="swiper-wrapper ">   
+        {{#corsiInVetrina}}
+            <div class="swiper-slide">{{< theme_fsbac/components/course-card/index}} 
+                       {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+            {{/ theme_fsbac/components/course-card/index}} 
+            
+             </div>    
+        {{/corsiInVetrina}} 
+        </div>
+   
+    </div>
+  <div class="fsbac-featured_courses_section_swiper_pagination"></div>
+
+  <div>
+       <a href='{{config.wwwroot}}/theme/fsbac/pages/courses.php' class="btn btn-primary">{{#str}}home.gotocourse, theme_fsbac{{/str}}</a>
+  </div>
+</section>
+
+<script>
+ new Swiper('.fsbac-featured_courses_section_swiper', {
+  loop: false,
+  slidesPerView:3,
+  spaceBetween: 24,
+  centeredSlides:false,
+    breakpoints: {
+     320: {
+      slidesPerView: 1,
+      centeredSlides:true,
+      centerInsufficientSlides:true,
+    },
+   
+    480: {
+      slidesPerView: 1,
+      centeredSlides:true,
+     
+    },
+   
+    820: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+       
+    }
+  
+   
+  },
+  pagination: {
+    el: '.fsbac-featured_courses_section_swiper_pagination',
+    type: 'bullets',
+    clickable:true,
+    dynamicBullets:false,
+    dynamicMainBullets:1
+    
+
+  },
+
+  // Navigation arrows
+ navigation: {
+    nextEl: '.fsbac-featured_courses-next',
+    prevEl: '.fsbac-featured_courses-prev',
+  }
+});
+</script>

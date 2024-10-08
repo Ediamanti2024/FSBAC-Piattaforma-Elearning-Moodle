@@ -1,0 +1,48 @@
+  {{#notify}} 
+   
+    <div class="fsbac-notify">
+        {{^link}}
+         <span>{{text}}</span>
+        {{/link}}
+        {{#link}}
+             <a href="{{{link}}}">{{text}} <i class="fas fa-arrow-right"></i> </a>
+        {{/link}}
+
+        <button>  <i class="fas fa-close"></i> </button>
+    </div>
+
+
+
+  {{#js}}
+        require(
+        [
+            'jquery',
+        ],
+        function(
+            $,
+       
+        ) {
+            
+            $(()=>{
+                const NOTIFY = 'notify_v1.0';
+            if(sessionStorage.getItem(NOTIFY)){
+             $('body').removeClass('notify');
+             $('.fsbac-notify').remove();
+            }else{
+              $('body').addClass('notify')
+               $('.fsbac-notify').css('display','flex');
+            }
+          
+            $('.fsbac-notify button').on('click',()=>{
+                $('body').removeClass('notify');
+                $('.fsbac-notify').remove();
+                sessionStorage.setItem(NOTIFY,true);
+            })
+            });
+
+          
+         
+        });
+{{/js}}
+
+  {{/notify}} 

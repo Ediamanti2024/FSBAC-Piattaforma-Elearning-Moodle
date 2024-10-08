@@ -1,0 +1,145 @@
+.fsbac-signup {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+
+
+
+    #fitem_id_cf {
+        display: flex;
+        flex-direction: column;
+
+        &.has-danger {
+
+            label {
+                color: $servizio-pericolo-default;
+            }
+
+        }
+
+        .col-form-label,
+        .form-inline {
+            width: 100%;
+            max-width: 100%;
+            flex: 1;
+            margin: 0px;
+        }
+
+
+        label {
+            color: $secondari-chiaro;
+            font-family: $font-bold-NunitoSans;
+            font-size: 12px;
+            line-height: 140%;
+            letter-spacing: 0.6px;
+        }
+
+        input[type=text] {
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid $neri-grigio-medio;
+            background-color: $neri-grigio-chiarissimo;
+        }
+
+
+    }
+
+    .checkbox {
+        width: 100%;
+        max-width: 100%;
+        flex: 1;
+
+        .form-check {
+            label {
+                color: $neri-grigio-scuro;
+                font-family: $font-regular-OpenSans;
+                font-size: 14px;
+                line-height: 155%;
+                /* 21.7px */
+            }
+        }
+    }
+
+    .fitem {
+        .col-form-label {
+            display: none;
+        }
+    }
+
+    form {
+        width: 100%;
+
+        .form-control-feedback {
+            text-align: left;
+            color: $servizio-pericolo-default;
+            font-family: $font-regular-OpenSans;
+            font-size: 12px;
+            line-height: 140%;
+        }
+
+        #fitem_id_submitbutton {
+            display: none;
+        }
+
+    }
+
+
+
+
+}
+
+.fsbac-signup-msg-container {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+
+    .title-msg {
+        color: $neri-nero-pieno;
+        font-family: $font-bold-NunitoSans;
+        font-size: 16px;
+        line-height: 140%;
+    }
+
+    .text-msg {
+        color: $neri-nero-chiaro;
+        font-family: $font-regular-OpenSans;
+        font-size: 16px;
+        line-height: 160%;
+        font-weight: 400;
+
+    }
+
+    .container-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 11px;
+    }
+}
+
+
+.buttonSubmitSign {
+    margin-top: 36px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: $font-bold-NunitoSans;
+}
+
+.fsbac-signup-login {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    font-family: $font-bold-NunitoSans;
+    line-height: 140%;
+
+    span {
+        color: $neri-nero-pieno;
+
+    }
+
+
+}

@@ -1,0 +1,17 @@
+<section class="fsbac-your_interests_section container">
+       
+         <div class="fsbac-text-description">
+            {{< theme_fsbac/components/title-section}}
+                {{$title}}{{#str}}home.your_interests_section, theme_fsbac{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+            <p>{{#str}}home.your_interests_section_text, theme_fsbac{{/str}}</p>
+         </div> 
+
+         <div class="fsbac-container-tags">
+                {{#interests}}
+                   <a  href="{{config.wwwroot}}/theme/fsbac/pages/courses.php?tag={{tag}}" class="btn btn-outline-primary">{{label}}</a>
+                {{/interests}}
+             
+         </div>
+
+</section>  

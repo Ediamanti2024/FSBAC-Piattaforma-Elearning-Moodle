@@ -1,0 +1,41 @@
+<div class="fsbac-section-box-course-info">
+    <div class="container">
+         <div class="content-course">
+           <div class="content-course-image">
+            <div class="boxs-info">
+                <div class="box">
+                    <div class="icon"> {{> theme_fsbac/icons_svg/card-checklist-fill}}</div>
+                    <div class="text">{{#str}}home.methods_training_box1, theme_fsbac{{/str}}</div>
+                </div>
+                <div class="box">
+                    <div class="icon"> <i class="fa fa-microphone"></i> </div>
+                    <div class="text">{{#str}}home.methods_training_box2, theme_fsbac{{/str}}</div>
+                </div>
+                <div class="box">
+                    <div class="icon"> {{> theme_fsbac/icons_svg/collection-play-fill}} </div>
+                    <div class="text">{{#str}}home.methods_training_box3, theme_fsbac{{/str}}</div>
+                </div>
+                     <div class="box">
+                    <div class="icon">  <i class="fa fa-video"></i>  </div>
+                    <div class="text">{{#str}}home.methods_training_box4, theme_fsbac{{/str}}</div>
+                </div>
+            
+            </div>
+           </div>
+         </div>
+         <div class="content-course deatils-text">
+
+             {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}course.banner_title, theme_fsbac{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+            <div class="desc">
+             {{#str}}course.banner_desc, theme_fsbac{{/str}}
+            </div>
+            <div>
+               <a href="{{config.wwwroot}}/theme/fsbac/pages/courses.php" class="btn btn-primary">{{#str}}course.button_course, theme_fsbac{{/str}}</a>
+            </div>
+         
+         </div>
+    </div>
+
+</div>

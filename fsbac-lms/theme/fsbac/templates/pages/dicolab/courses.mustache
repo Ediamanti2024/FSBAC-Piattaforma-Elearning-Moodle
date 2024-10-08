@@ -1,0 +1,61 @@
+<div class="container fsbac-dicolab-courses-container">
+<div class="fsbac-dicolab-courses-container-title"> 
+    <h2  class="fsbac-dicolab-course-title">{{#str}}dicolab.courses.title,theme_fsbac{{/str}}</h2>
+    <a href="{{config.wwwroot}}/theme/fsbac/pages/courses.php?program=Dicolab" class="btn btn-link">{{#str}}dicolab.courses.link,theme_fsbac{{/str}}</a>
+</div>
+
+ <div class="swiper fsbac-dicolab-courses-swiper w-100">
+            <div class="swiper-wrapper">  
+                   {{#courses}}
+                        <div class="swiper-slide">
+                        {{< theme_fsbac/components/course-card/index}} 
+                                {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                        {{/ theme_fsbac/components/course-card/index}} 
+                        </div>    
+                    {{/courses}} 
+            </div>
+  </div>
+
+     <div class="fsbac-dicolab-courses_navigation">
+         <button class="fsbac-dicolab-courses-prev"><i class="fa fa-angle-left"></i></button>
+         <button class="fsbac-dicolab-courses-next"><i class="fa fa-angle-right"></i></button>
+     </div>
+
+</div>
+
+<script>
+ new Swiper('.fsbac-dicolab-courses-swiper', {
+  loop: false,
+  slidesPerView:3,
+  spaceBetween: 24,
+  centeredSlides:false,
+    breakpoints: {
+     320: {
+      slidesPerView: 1,
+      centeredSlides:true,
+      centerInsufficientSlides:true,
+    },
+   
+    480: {
+      slidesPerView: 1,
+      centeredSlides:true,
+     
+    },
+   
+    820: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+       
+    }
+  
+   
+  },
+ 
+
+  // Navigation arrows
+ navigation: {
+    nextEl: '.fsbac-dicolab-courses-next',
+    prevEl: '.fsbac-dicolab-courses-prev',
+  }
+});
+</script>

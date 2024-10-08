@@ -1,0 +1,113 @@
+body#page-local-fsbaclogin-profile {
+    #collapsesections {
+        display: none;
+    }
+
+    #page {
+        padding: 0px;
+        width: 100%;
+
+    }
+
+    div[role="main"] {
+        padding: 0 !important;
+    }
+
+    .main-inner {
+        max-width: 100% !important;
+        padding: 0px !important;
+        margin: 0px !important;
+        border-radius: 0px !important;
+
+
+
+    }
+
+    h1.title-profile {
+        color: $neri-nero-pieno;
+        font-family: $font-bold-NunitoSans;
+        font-size: 38px;
+        line-height: 140%;
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    .fsbac-container-data-profile {
+        margin-top: 34px;
+        display: flex;
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .fsbac-container-left {
+            width: 410px;
+            padding-right: 10px;
+            p{
+                color: $neri-nero-chiaro;
+                font-family: $font-regular-OpenSans;
+                font-size: 18px;
+                line-height: 160%; 
+            }
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                padding-right: 0px;
+            }
+        }
+
+        .fsbac-container-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .box-section-profile {
+                width: 100%;
+
+                .box-section-header{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .section-profile-title {
+                        color: $neri-nero-pieno;
+                        font-family: $font-bold-NunitoSans;
+                        font-size: 21px;
+                        line-height: 135%;
+                    }
+                    .link-edit-data{
+                        font-size: 18px;
+                    }
+                }
+               
+
+                
+
+
+            }
+
+            .data-preferences{
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                align-content: start;
+
+                .fsbac-preference{
+                    margin: 4px;
+                    flex: auto;
+                    text-transform: uppercase;
+                    font-family: $font-bold-NunitoSans;
+                    font-size: 14px;
+                    line-height: 140%;
+                    padding: 4px 6px;
+                    border-radius: 2px;
+                    background-color: $primary;
+                    color: $white;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

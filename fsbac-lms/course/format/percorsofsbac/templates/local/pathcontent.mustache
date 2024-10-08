@@ -1,0 +1,266 @@
+<ul class="{{format}}">
+    {{#course_descr}}
+        <li>
+            {{{course_descr}}}
+        </li>
+    {{/course_descr}}
+</ul>
+
+{{< core_courseformat/local/content }}
+    {{$ core_courseformat/local/content/section }}
+        {{> format_percorsofsbac/local/content/section }}
+    {{/ core_courseformat/local/content/section }}
+{{/ core_courseformat/local/content }}
+
+<ul class="{{format}}">
+    {{#subcourses}}
+        <li>
+            {{number}}
+            {{#multiplesubcourses}}
+                {{#str}} courses, format_percorsofsbac {{/str}}
+            {{/multiplesubcourses}}
+            {{^multiplesubcourses}}
+                {{#str}} course, format_percorsofsbac {{/str}}
+            {{/multiplesubcourses}}
+            <ul>
+                {{#subcoursesinfo}}
+                    <li>
+                        <img src="{{{img_url}}}">
+                        <div>
+                            {{title}}
+                        </div>
+                        {{#sottotitolo}}
+                            <div>
+                                {{sottotitolo}}
+                            </div>
+                        {{/sottotitolo}}
+                        {{#mode}}
+                            <div>
+                                {{mode}}
+                            </div>
+                        {{/mode}}
+                        {{#teacherslist}}
+                            <div>
+                                {{teacherslist}}
+                            </div>
+                        {{/teacherslist}}
+                        <div>
+                            <label for="progress">
+                                {{^progressperc}}
+                                    0
+                                {{/progressperc}}
+                                {{#progressperc}}
+                                    {{progressperc}}
+                                {{/progressperc}}
+                                %
+                            </label>
+                            <progress id="progress" value={{^progressperc}}0{{/progressperc}}{{#progressperc}}{{progressperc}}{{/progressperc}} max="100">
+                                {{progressperc}}%
+                            </progress>
+                        </div>
+                        <div>
+                            <a href="{{course_url}}"> {{#str}} seedetail, format_percorsofsbac {{/str}} </a>
+                        </div>
+                    </li>
+                {{/subcoursesinfo}}
+            </ul>
+        </li>
+    {{/subcourses}}
+
+    {{#coursesinsight}}
+        <li>
+            {{number}}
+            {{#multiplecoursesinsight}}
+                {{#str}} courses, format_percorsofsbac {{/str}}
+            {{/multiplecoursesinsight}}
+            {{^multiplecoursesinsight}}
+                {{#str}} course, format_percorsofsbac {{/str}}
+            {{/multiplecoursesinsight}}
+            <ul>
+                {{#coursesinsightinfo}}
+                    <li>
+                        <img src="{{{img_url}}}">
+                        <div>
+                            {{coursename}}
+                        </div>
+                        <div>
+                            {{mode}}
+                        </div>
+                        <div>
+                            {{sottotitolo}}
+                        </div>
+                        <div>
+                            {{teacherslist}}
+                        </div>
+                    </li>
+                {{/coursesinsightinfo}}
+            </ul>
+        </li>
+    {{/coursesinsight}}
+
+    {{#reviews}}
+        <li>
+            {{#str}} reviews, format_percorsofsbac {{/str}}
+            <div>
+                {{{reviews}}}
+            </div>
+        </li>
+    {{/reviews}}
+
+    {{#followpathlabel}}
+        <li>
+            <button id="followpath">
+                <div id="followpathlabel">{{followpathlabel}}</div>
+            </button>
+        </li>
+    {{/followpathlabel}}
+
+    {{#coursecompletioninfo}}
+        <li>
+            <div>
+                <label for="file">{{courseprogressstate}}</label>
+                <progress id="file" value={{^courseprogressperc}}0{{/courseprogressperc}}{{#courseprogressperc}}{{courseprogressperc}}{{/courseprogressperc}} max="100"> {{courseprogressperc}}% </progress> {{completedmodules}}/{{totalmodules}}
+            </div>
+        </li>
+    {{/coursecompletioninfo}}
+
+    {{#generalinfo}}
+        <li>
+            {{#str}} generalinformation, format_corsofsbac {{/str}}
+            {{#codicecorso}}
+                <div>
+                    {{#str}} codicecorso, format_corsofsbac {{/str}}: {{codicecorso}}
+                </div>
+            {{/codicecorso}}
+            {{#destinato_a}}
+                <div>
+                    {{#str}} intendedfor, format_corsofsbac {{/str}}: {{destinato_a}}
+                </div>
+            {{/destinato_a}}
+            {{#level}}
+                <div>
+                    {{#str}} level, format_corsofsbac {{/str}}: {{level}}
+                </div>
+            {{/level}}
+            {{#programma}}
+                <div>
+                    {{#str}} category, format_corsofsbac {{/str}}: {{programma}}
+                </div>
+            {{/programma}}
+            {{#duration}}
+                <div>
+                    {{#str}} indicativeduration, format_corsofsbac {{/str}}: {{duration}}
+                </div>
+            {{/duration}}
+            {{#teacherslist}}
+                <div>
+                    {{#str}} authors, format_corsofsbac {{/str}}: {{teacherslist}}
+                </div>
+            {{/teacherslist}}
+            {{#mode}}
+                <div>
+                    {{#str}} coursetypology, format_corsofsbac {{/str}}: {{mode}}
+                </div>
+            {{/mode}}
+        </li>
+    {{/generalinfo}}
+
+    {{#competenze}}
+        <li>
+            {{#str}} skillstoget, format_corsofsbac {{/str}}:
+            <div>
+                {{competenze}}
+            </div>
+        </li>
+    {{/competenze}}
+
+    {{#consequentialpaths}}
+        <li>
+            {{#str}}
+                pathconsequentialto,
+                format_corsofsbac,
+                {
+                    "number": {{number}},
+                    "items": {{#quote}}
+                                {{#multipleconsequentialpaths}}
+                                    {{#str}} paths, format_corsofsbac {{/str}}
+                                {{/multipleconsequentialpaths}}
+                                {{^multipleconsequentialpaths}}
+                                    {{#str}} path, format_corsofsbac {{/str}}
+                                {{/multipleconsequentialpaths}}
+                            {{/quote}}
+                }
+            {{/str}}
+            <div>
+                {{#str}}
+                    pathconsequentialtoandfindout,
+                    format_corsofsbac,
+                    {
+                        "number": {{number}}
+                    }
+                {{/str}}
+            </div>
+            <ul>
+                {{#consequentialpathsinfo}}
+                    <li>
+                        {{pathname}}
+                        {{#img_url}}
+                            <div>
+                                <img src="{{{img_url}}}">
+                            </div>
+                        {{/img_url}}
+                        {{#sottotitolo}}
+                            <div>
+                                {{sottotitolo}}
+                            </div>
+                        {{/sottotitolo}}
+                        {{#level}}
+                            <div>
+                                {{level}}
+                            </div>
+                        {{/level}}
+                        {{#duration}}
+                            <div>
+                                {{duration}}
+                            </div>
+                        {{/duration}}
+                    </li>
+                {{/consequentialpathsinfo}}
+            </ul>
+        </li>
+    {{/consequentialpaths}}
+
+    {{#totalcertificates}}
+        <li>
+            <div>
+                {{#str}}
+                    completepathtogetcertificates,
+                    format_corsofsbac,
+                    {
+                        "number": {{number}},
+                        "items": {{#quote}}
+                                    {{#multipletotalcertificates}}
+                                        {{#str}} certificates, format_corsofsbac {{/str}}
+                                    {{/multipletotalcertificates}}
+                                    {{^multipletotalcertificates}}
+                                        {{#str}} certificate, format_corsofsbac {{/str}}
+                                    {{/multipletotalcertificates}}
+                                {{/quote}}
+                    }
+                {{/str}}
+            </div>
+        </li>
+    {{/totalcertificates}}
+
+    {{#coursebuttonlink}}
+        <li>
+            <a href="{{coursebuttonlink}}"> {{coursebuttonlabel}} </a>
+        </li>
+    {{/coursebuttonlink}}
+
+    {{#sottotitolo}}
+        <li>
+            {{sottotitolo}}
+        </li>
+    {{/sottotitolo}}
+</ul>

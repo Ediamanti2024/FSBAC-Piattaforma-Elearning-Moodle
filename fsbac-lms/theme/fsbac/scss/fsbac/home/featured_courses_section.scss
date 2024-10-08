@@ -1,0 +1,46 @@
+.fsbac-featured_courses_section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .fsbac-featured_courses_header {
+        display: flex;
+        justify-content: space-between;
+
+        .fsbac--featured_courses_navigation {
+            display: flex;
+            gap: 8px;
+
+            button {
+                background: transparent;
+                border: none;
+                color: $primary;
+
+                &:disabled {
+                    opacity: 0.4000000059604645;
+                }
+            }
+        }
+    }
+
+    .fsbac-featured_courses_section_swiper {
+        width: 100%;
+        padding-right: 16px;
+
+
+    }
+
+    .fsbac-featured_courses_section_swiper_pagination {
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        @include media-breakpoint-down(md) {
+            display: flex;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: $primary;
+        }
+    }
+}

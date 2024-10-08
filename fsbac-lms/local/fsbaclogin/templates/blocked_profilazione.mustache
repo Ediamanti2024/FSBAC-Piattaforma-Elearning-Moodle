@@ -1,0 +1,17 @@
+<div class='fsbac-login-fixed fsbac-container-confirm'>
+
+    <div class="fsbac-container-confirm-card">
+        <p class="welcome"> {{#str}} cisiamoquasi, local_fsbaclogin {{/str}}</p>
+        <p class="fsbac-welcome-text-info">{{#str}} accettapoliciesprofilazione, local_fsbaclogin {{/str}}</p>
+        {{#profilazionepoliciesnames}}
+            <li>
+                {{policyname}}
+            </li>
+        {{/profilazionepoliciesnames}}
+
+        <a class="btn btn-primary" href="{{config.wwwroot}}/admin/tool/policy/user.php" target="_blank">
+            {{#str}}changeyourpolicyagreements, local_fsbaclogin {{/str}}
+        </a>
+    </div>
+
+</div>

@@ -1,0 +1,78 @@
+.fsbac-header-page {
+    width: 100%;
+    height: 561px;
+    background-color: $secondari-default;
+    margin-top: -16px;
+
+    @include media-breakpoint-down(md) {
+        padding: 72px 0px 86px;
+        height: auto;
+        position: relative;
+    }
+
+    .container {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: center;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            display: unset;
+            padding: 16px 72px 66px 16px;
+
+        }
+
+        .fsbac-header-section-text {
+            flex: 0.5;
+
+            @include media-breakpoint-down(md) {
+                flex: unset;
+                width: 100%;
+            }
+
+            p.infotext {
+                color: $neri-grigio-medio;
+                font-family: $font-bold-NunitoSans;
+                font-size: 14px;
+                line-height: 19.6px;
+                letter-spacing: 1.4px;
+                text-transform: uppercase;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 12px;
+                    text-align: center;
+                }
+            }
+
+            h1.title {
+                color: $white;
+                font-family: $font-bold-NunitoSans;
+                font-size: 48px;
+                line-height: 135%;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 24px;
+                    text-align: center;
+                    margin-top: 24px;
+                }
+            }
+        }
+
+        .fsbac-header-section-image {
+            flex: 0.5;
+            background-color: transparent;
+            height: 100%;
+
+            @include media-breakpoint-down(md) {
+                flex: unset;
+                width: 100%;
+                margin-top: 38px;
+                background-size: contain;
+            }
+
+        }
+    }
+
+}

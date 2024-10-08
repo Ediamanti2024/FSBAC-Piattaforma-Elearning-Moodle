@@ -1,0 +1,101 @@
+.fsbac-card-course-mini {
+    display: flex;
+    width: 100%;
+    height: 106px;
+    gap: 16px;
+    position: relative;
+
+    .fsbac-card-course-mini-img {
+        width: 132px;
+        height: 100%;
+        background-color: $primary;
+        border-radius: 6px;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include media-breakpoint-down(md) {
+            width: 80px;
+            height: 80px;
+        }
+
+
+        .fsbac-card-course-type {
+            left: 0px;
+            top: 0px;
+
+            @include media-breakpoint-down(md) {
+                span{
+                    display: none;
+                }
+                width: 20px;
+                height: 20px;;
+                background-position: center;
+            }
+        }
+
+    }
+
+    .fsbac-card-course-mini-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+
+        p {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .fsbac-card-course-mini-fullname {
+            max-width: 263px;
+            color: $neri-nero-pieno;
+            font-family: $font-bold-NunitoSans;
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 140%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .fsbac-card-course-mini-description {
+            overflow: hidden;
+            color: $neri-nero-chiaro;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-family: $font-regular-OpenSans;
+            font-size: 14px;
+            line-height: 140%;
+            max-width: 263px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .fsbac-card-course-mini-author {
+            color: $neri-grigio-scuro;
+            font-family: $font-regular-NunitoSans;
+            font-size: 14px;
+            line-height: 140%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .fsbac-card-course-mini-completed {
+        position: absolute;
+        right: 11px;
+        bottom: 43px;
+        background-color: $servizio-conferma-default;
+        border-radius: 20px;
+        padding: 2px;
+        color: $white;
+        font-family: $font-regular-NunitoSans;
+        font-size: 16px;
+        line-height: 130%;
+    }
+}

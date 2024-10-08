@@ -1,0 +1,68 @@
+{{#corsiSuggeritiShow}}
+<section class="fsbac-home_user-course_suggeriti">
+   <div class="container fsbac-section-with-title  ">
+        <div class="fsbac-title-top white">
+            {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}home_user.section_course_suggeriti, theme_fsbac{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+            <div class="fsbac-header-arrow-swiper white">
+                <button class="fsbac-course_suggeriti-arrow-prev"><i class="fa fa-angle-left"></i></button>
+                <button class="fsbac-course_suggeriti-arrow-next"><i class="fa fa-angle-right"></i></button>
+            </div>
+        </div>
+        
+
+            <div class="swiper fsbac-course_suggeriti-container-courses">
+                <div class="swiper-wrapper ">   
+                {{#corsiSuggeriti}}
+                    <div class="swiper-slide">
+                            {{< theme_fsbac/components/course-card/index}} 
+                                    {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                            {{/ theme_fsbac/components/course-card/index}} 
+                    </div>    
+                {{/corsiSuggeriti}} 
+            
+                </div>
+            </div>
+
+        
+    </div>
+</section>
+{{/corsiSuggeritiShow}}
+
+
+<script>
+ new Swiper('.fsbac-course_suggeriti-container-courses', {
+
+  loop: false,
+  slidesPerView:4,
+  spaceBetween: 24,
+  centeredSlides:false,
+    breakpoints: {
+     320: {
+      slidesPerView: 1,
+      centeredSlides:true,
+      centerInsufficientSlides:true,
+    },
+   
+    480: {
+      slidesPerView: 1,
+      centeredSlides:true,
+     
+    },
+   
+    820: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+       
+    }
+     
+    },
+
+
+ navigation: {
+    nextEl: '.fsbac-course_suggeriti-arrow-next',
+    prevEl: '.fsbac-course_suggeriti-arrow-prev',
+  }
+});
+</script>

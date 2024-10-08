@@ -1,0 +1,137 @@
+body#page-local-fsbaclogin-completed_fsbac_course
+{
+    #fsbac-dicolab-confetti {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .fsbac-completed_dicolab_course-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        background: #FFF;
+
+        .fsbac-title-section {
+
+            h3 {
+                color: $white;
+            }
+
+            svg {
+                .svg-arrow-bottom {
+                    fill: $white;
+                }
+
+            }
+        }
+
+        .fsbac-card-course-mini-container {
+
+            .fsbac-card-course-mini-fullname,
+            .fsbac-card-course-mini-description,
+            .fsbac-card-course-mini-author {
+                color: $white;
+            }
+        }
+
+        .button-certificate{
+                border:1px solid $white ;
+                color: $white;
+            
+        }
+
+        .fsbac-completed_dicolab_course-card {
+            border-radius: 16px;
+            background: $primary;
+            box-shadow: 0px 20px 30px -8px rgba(9, 52, 72, 0.20);
+            max-width: 846px;
+            width: 100%;
+            padding: 56px;
+            text-align: left;
+            background-image: url([[pix:theme_fsbac|dicolab/logobianco]]);
+            background-position: right 12px;
+            background-repeat: no-repeat;
+            background-size: 300px;
+
+            @include media-breakpoint-down(md) {
+                background-position: bottom 20px center;
+                background-size: 200px;
+                box-shadow: unset;
+                height: 100%;
+                padding: 32px 25px 40px;
+                border-radius: 0px;
+                box-shadow: unset;
+                height: 100%;
+            }
+
+
+            h1.congratulation {
+                color: $white;
+                font-family: $font-bold-NunitoSans;
+                font-size: 38px;
+                line-height: 140%;
+                margin: 0px;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 21px;
+                }
+            }
+
+            .fsbac-completed_dicolab_course-card-msg {
+                margin: 0px;
+                padding: 0px;
+                color: $white;
+                font-family: $font-regular-OpenSans;
+                font-size: 16px;
+                line-height: 160%;
+                text-align: left;
+                max-width: 400px;
+            }
+
+            .fsbac-completed_dicolab_course-card-courses {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 24px;
+                margin-top: 120px;
+
+                .fsbac-completed_dicolab_course-card-courses-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .fsbac-dicolab-courses-swiper {
+                    .swiper-slide {
+                        width: 400px;
+
+                        .fsbac-card-course-mini {
+                            width: 400px;
+
+                            .fsbac-card-course-mini-author {
+                                max-width: 200px;
+                            }
+                        }
+                    }
+                }
+
+                .fsbac-dicolab-courses_navigation {
+
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 40px;
+
+                    button {
+                        background: transparent;
+                        border: none;
+                        color: $white;
+                    }
+                }
+            }
+
+
+        }
+
+    }
+}

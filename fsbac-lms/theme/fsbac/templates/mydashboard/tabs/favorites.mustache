@@ -1,0 +1,107 @@
+<div class="fsbac-favorites-tab" >
+{{^no_activity}}
+  <section class="fsbac-paths_courses-section">
+        {{#incomplete_course_show}}
+        {{< theme_fsbac/components/title-section}}
+                    {{$title}}
+                        {{#incomplete_course_multiple}}
+                            {{#str}}my.tab2_incompletedCourses, theme_fsbac,{{incomplete_course_num}}{{/str}}
+                        {{/incomplete_course_multiple}}
+                        {{^incomplete_course_multiple}}
+                            {{#str}}my.tab2_incompletedCourse, theme_fsbac,{{incomplete_course_num}}{{/str}}
+                        {{/incomplete_course_multiple}}
+                  {{/title}}
+        {{/ theme_fsbac/components/title-section}}
+        <div class="fsbac-tab-grid incompleteCourses-grid">
+                {{#incomplete_course}}
+                {{< theme_fsbac/components/course-card/index}} 
+                        {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                {{/ theme_fsbac/components/course-card/index}} 
+                {{/incomplete_course}}
+        </div>
+        <button class="btn btn-secondary incompleteCourse mt-3">{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+        {{/incomplete_course_show}}
+         {{^incomplete_course_show}}
+          {{< theme_fsbac/mydashboard/empty-message}}
+              {{$title}}{{#str}}my.tab2_incompletedCourses_no_title,theme_fsbac{{/str}}{{/title}} 
+              {{$message}}{{#str}}my.tab2_incompletedCourses_no,theme_fsbac{{/str}}{{/message}}
+              {{$linkLabel}}{{#str}}my.tab2_incompletedCourses_linkLabel,theme_fsbac{{/str}}{{/linkLabel}}
+              {{$link}}{{config.wwwroot}}/theme/fsbac/pages/courses.php{{/link}}
+              
+           {{/ theme_fsbac/mydashboard/empty-message}}
+         {{/incomplete_course_show}}
+    </section>
+
+
+     <section class="fsbac-paths_courses-section mt-5">
+        {{#started_course_show}}
+        {{< theme_fsbac/components/title-section}}
+                    {{$title}}
+                        {{#started_course_multiple}}
+                            {{#str}}my.tab2_startedCourses, theme_fsbac,{{started_course_num}}{{/str}}
+                        {{/started_course_multiple}}
+                        {{^started_course_multiple}}
+                            {{#str}}my.tab2_startedCourse, theme_fsbac,{{started_course_num}}{{/str}}
+                        {{/started_course_multiple}}
+                  {{/title}}
+        {{/ theme_fsbac/components/title-section}}
+        <div class="fsbac-tab-grid startedCourses-grid">
+                {{#started_course}}
+                {{< theme_fsbac/components/course-card/index}} 
+                        {{$labelButton}}{{#str}}common.coursecard_link,theme_fsbac{{/str}}{{/labelButton}}
+                {{/ theme_fsbac/components/course-card/index}} 
+                {{/started_course}}
+        </div>
+        <button class="btn btn-secondary startedCourse mt-3">{{#str}} showmore_button, theme_fsbac{{/str}}</button>
+        {{/started_course_show}}
+         {{^started_course_show}}
+          {{< theme_fsbac/mydashboard/empty-message}}
+              {{$title}}{{#str}}my.tab2_incompletedCourses_no_title,theme_fsbac{{/str}}{{/title}} 
+              {{$message}}{{#str}}my.tab2_incompletedCourses_no,theme_fsbac{{/str}}{{/message}}
+              {{$linkLabel}}{{#str}}my.tab2_incompletedCourses_linkLabel,theme_fsbac{{/str}}{{/linkLabel}}
+              {{$link}}{{config.wwwroot}}/theme/fsbac/pages/courses.php{{/link}}
+              
+           {{/ theme_fsbac/mydashboard/empty-message}}
+         {{/started_course_show}}
+    </section>
+{{/no_activity}}
+{{#no_activity}}
+        {{< theme_fsbac/mydashboard/empty-message-all}}
+              {{$icon}}{{> theme_fsbac/icons_svg/bookmark-heart-fill }}{{/icon}}
+              {{$title}}{{#str}}my.tab2_no_activity,theme_fsbac{{/str}}{{/title}} 
+              {{$message}}{{#str}}my.tab2_no_activity_message,theme_fsbac{{/str}}{{/message}}
+              {{$linkLabel}}{{#str}}my.tab2_no_activity_link,theme_fsbac{{/str}}{{/linkLabel}}
+              {{$link}}{{config.wwwroot}}/theme/fsbac/pages/courses.php{{/link}}
+        {{/ theme_fsbac/mydashboard/empty-message-all}}
+{{/no_activity}}
+
+</div>
+
+{{#js}}
+
+    function showMore(section,button,num=4){
+        button.hide();
+        const courses = section;
+        const divider = $(section).parent().find('.fsbac-divider');
+
+        if(courses.length > num){
+        button.show();
+            courses.each(function( index ) {
+                if(index > (num-1)){
+                    $( this ).hide();
+                    $(divider[index]).hide();
+                }
+            });
+        }
+        button.on('click',()=>{
+            button.hide();
+           courses.each(function( index ) {
+                  $( this ).show();
+                  $(divider[index]).show();
+            });
+        })
+    }
+    showMore($('.incompleteCourses-grid .fsbac-card-course'), $('.incompleteCourse'));
+    showMore($('.startedCourses-grid .fsbac-card-course'), $('.startedCourse'));
+
+ {{/js}}

@@ -1,0 +1,133 @@
+form {
+
+
+
+    h3 {
+        color: $neri-nero-pieno;
+        font-family: $font-bold-NunitoSans;
+        font-size: 36px;
+        line-height: 140%;
+        margin: 0px;
+        padding: 0px;
+
+        @include media-breakpoint-down(md) {
+            font-size: 30px;
+        }
+    }
+
+    .profilazione_error {
+        font-family: $font-bold-NunitoSans;
+        padding: 0px;
+        margin: 0px;
+        color: $servizio-pericolo-default;
+    }
+
+    .col-form-label {
+        display: none;
+    }
+
+    .checkbox {
+        flex: 1;
+        max-width: 100%;
+
+        .form-check {
+
+
+            label {
+                font-family: $font-regular-OpenSans;
+                font-size: 18px;
+                line-height: 160%;
+                margin: 0px;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .profilazione_steps {
+        width: 100%;
+        height: 4px;
+        display: flex;
+        justify-content: space-between;
+        gap: 9px;
+        margin: 16px 0px 24px;
+
+        .step {
+            flex: 1;
+            background: $neri-grigio-chiaro;
+
+            &.current {
+                background: $secondari-chiaro;
+            }
+
+            &.complete {
+                background: $servizio-conferma-default;
+            }
+
+        }
+    }
+
+    .profilazione_subtitle {
+        color: $neri-nero-chiaro;
+        font-family: $font-regular-OpenSans;
+        font-size: 18px;
+        line-height: 160%;
+        margin: 0px 0px 26px 0px;
+        padding: 0px;
+
+        @include media-breakpoint-down(md) {
+            font-size: 16px;
+        }
+    }
+
+    .profilazione_info_list {
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 0px 0px 0px 10px;
+
+            li {
+                color: $neri-nero-chiaro;
+                font-family: $font-regular-OpenSans;
+                font-size: 18px;
+                line-height: 160%;
+                list-style: none;
+                margin: 0px;
+                padding: 0px;
+                background-image: url([[pix:theme_fsbac|login/check-circle]]);
+                background-repeat: no-repeat;
+                background-position: left;
+                padding-left: 33px;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+
+    #fitem_id_submitbutton {
+        .col-form-label {
+            display: none !important;
+        }
+
+        .form-inline {
+            width: 100%;
+            max-width: 100%;
+            flex: 1;
+
+            input {
+                width: 100%;
+            }
+        }
+    }
+
+    .finish_step {
+        width: 100%;
+    }
+
+}

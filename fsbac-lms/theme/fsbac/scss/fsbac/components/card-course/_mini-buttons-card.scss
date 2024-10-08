@@ -1,0 +1,64 @@
+.fsbac-mini-buttons-card {
+    width: 100%;
+    display: flex;
+    gap: 18px;
+    .fsbac-mini-buttons-card-image {
+        border-radius: 4px;
+        width: 67px;
+        height: 67px;
+        background-color: $primary;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+
+        .fsbac-mini-buttons-card-progress{
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 8px;
+            background-color: $neri-grigio-medio;
+            .fsbac-mini-buttons-card-progress-value{
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                height: 100%;
+                background-color: $servizio-conferma-default;
+            }
+        }
+    }
+    .fsbac-mini-buttons-card-data{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        p{
+            margin: 0px;
+            padding: 0px;
+        }
+        a.title-mini-buttons-card{
+            text-decoration: none;
+            color: $neri-nero-pieno;
+            font-family: $font-bold-NunitoSans;
+            font-size: 21px;
+            line-height: 135%;
+        }
+        p.subtitle-mini-buttons-card{
+            color: $neri-nero-pieno;
+            font-family: $font-regular-OpenSans;
+            font-size: 21px;
+            line-height: 135%;
+        }
+
+        p.teacher-mini-buttons-card{
+            color: $neri-nero-chiaro;
+            font-family: $font-regular-NunitoSans;
+            font-size: 14px;
+            line-height: 140%; 
+            span{
+                font-family: $font-bold-NunitoSans;
+                font-size: 14px;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<div class="fsbac-info-user">
+    <h4 class="title-info-user">
+                {{#isF}}{{#str}}home_user.header_title_f, theme_fsbac, {{firstname}}{{/str}}{{/isF}}
+                {{^isF}}{{#str}}home_user.header_title, theme_fsbac, {{firstname}}{{/str}}{{/isF}}
+    </h4>
+
+    <ul>
+        <li>{{#str}} my.info_followingCourses,theme_fsbac,{{followingCourses}}{{/str}}
+        <li>{{#str}} my.info_completedCourses,theme_fsbac,{{completedCourses}}{{/str}}
+        <li>{{#str}} my.info_followingPaths,theme_fsbac,{{followingPaths}}{{/str}}
+        <li>{{#str}} my.info_completedPaths,theme_fsbac,{{completedPaths}}{{/str}}
+        <li>{{#str}} my.info_badges,theme_fsbac,{{badges}}{{/str}}
+    </ul>
+</div>

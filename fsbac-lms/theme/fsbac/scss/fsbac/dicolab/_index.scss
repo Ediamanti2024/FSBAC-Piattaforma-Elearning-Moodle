@@ -1,0 +1,110 @@
+body#page-theme-fsbac-pages-dicolab {
+
+    #collapsesections {
+        display: none;
+    }
+
+    #page {
+        padding: 0px;
+        width: 100%;
+
+    }
+
+    div[role="main"] {
+        padding: 0 !important;
+        margin-top: -15px
+    }
+
+    .main-inner {
+        max-width: 100% !important;
+        padding: 0px !important;
+        margin: 0px !important;
+        border-radius: 0px !important;
+
+    }
+
+
+    .fsbac-dicolab-header {
+        display: flex;
+        width: 100%;
+        height: 600px;
+        background-color: #A61598;
+        @include media-breakpoint-down(md) {
+            height:auto;
+
+        }
+
+        .fsbac-dicolab-header-container {
+            display: flex;
+            align-items: center;
+            background-image: url([[pix:theme_fsbac|dicolab/bannerfucsia]]);
+            background-size: 500px;
+            background-repeat: no-repeat;
+            background-position: center right;
+            @include media-breakpoint-down(md) {
+                align-items: flex-start;
+                padding: 20px 15px;
+                background-image: unset;
+    
+            }
+            .fsbac-dicolab-header-text {
+                max-width: 627px;
+                p.info {
+                    color: $neri-grigio-medio;
+                    font-family: $font-bold-NunitoSans;
+                    font-size: 14px;
+                    font-style: normal;
+                    letter-spacing: 1.4px;
+                    text-transform: uppercase;
+
+                }
+
+                h1 {
+                    color: $white;
+                    font-family: $font-bold-NunitoSans;
+                    font-size: 48px;
+                    line-height: 135%;
+                    @include media-breakpoint-down(md) {
+                        font-size: 24px;
+            
+                    }
+                }
+            }
+        }
+    }
+
+    p.subtitlesection {
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        color: #9B49D6;
+        text-align: center;
+        font-family: $font-bold-OpenSans;
+        font-size: 16px;
+        font-style: normal;
+        letter-spacing: 1.76px;
+        text-transform: uppercase;
+    }
+
+    h2.titlesection {
+        color: #23242A;
+        width: 100%;
+        text-align: center;
+        font-family: $font-bold-NunitoSans;
+        font-size: 38px;
+        line-height: 140%;
+        margin: 8px 0px 0px;
+        margin-bottom: 42px;
+        @include media-breakpoint-down(md) {
+            font-size: 24px;
+
+        }
+    }
+
+    @import 'argomenti.scss';
+    @import 'cultura.scss';
+    @import 'dicolab-courses.scss';
+    @import 'offriamo.scss';
+    @import 'banner.scss';
+
+}

@@ -1,0 +1,19 @@
+    <nav class='fsbac-pagination'>
+      <ul class="pagination">
+        <li class="page-item">
+        <button class="page-link fsbac-button-pagination" {{#disabledPrev}}disabled{{/disabledPrev}}  data-page="prev" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+        </button>
+        </li>
+        {{#pages}}
+           <li class="page-item {{#active}}active{{/active}}"><button class="page-link fsbac-button-pagination" data-page="{{page}}">{{page}}</button></li>
+        {{/pages}}
+       <li class="page-item">
+            <button class="page-link fsbac-button-pagination"  {{#disabledNext}}disabled{{/disabledNext}}  data-page="next" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </button>
+        </li>
+     </ul>
+    </nav>

@@ -1,0 +1,22 @@
+.fsbac-shared{
+    list-style: none;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    li{
+        font-size: 13px;
+        font-family:$font-bold-NunitoSans;
+        text-align: left;
+        width: 100%;
+        
+       a{
+        color: $white;
+        i{
+            margin-right: 10px;
+        }
+       }
+    }
+}

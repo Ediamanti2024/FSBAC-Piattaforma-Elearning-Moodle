@@ -1,0 +1,61 @@
+.fsbac-badges-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+
+    section{
+        .fsbac-title-section{
+            margin-bottom: 48px;
+        }
+
+        .fsbac-mini-buttons-card{
+            padding: 24px 0px;
+            border-bottom:1px solid $neri-grigio-medio;
+        }
+    }
+
+    .fsbac-badges-section-certificate-list{
+        display: flex;
+        flex-direction: column;
+
+        .fsbac-badges-section-certificate-buttons{
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+    }
+
+    .fsbac-badges-section-badges{
+        #issued-badge-table{
+            h2{
+                display: none;
+            }
+            .generalbox{
+                display: none;
+            }
+           
+        }
+        #fgroup_id_searchgroup{
+            display: none;
+        }
+
+        .generalbox{
+            display: none;
+        }
+        #issued-badge-table.generalbox{
+            display: block;
+        }
+
+        .box.py-3.row.ml-5{
+            display: none;
+        }
+      
+    }
+
+
+
+
+
+
+}
+

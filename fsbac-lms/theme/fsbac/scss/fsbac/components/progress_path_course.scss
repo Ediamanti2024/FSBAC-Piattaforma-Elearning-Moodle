@@ -1,0 +1,38 @@
+.fsbac-progress-container {
+    flex: 1;
+    margin-right: 33px;
+
+    p {
+        margin: 0px 0px 5px 0px;
+        padding: 0px;
+        color: $neri-nero-chiaro;
+        font-family: $font-bold-NunitoSans;
+        font-size: 12px;
+        line-height: 140%;
+        letter-spacing: 0.6px;
+    }
+
+    .progress {
+        width: 100%;
+        background-color: $primari-10;
+        height: 8px;
+        border-radius: 100px;
+
+        .progress-bar {
+            border-radius: 100px;
+            background: linear-gradient(270deg, #6B30BB 28.42%, #0F4290 99.99%, rgba(126, 101, 160, 0.00) 100%);
+
+        }
+    }
+
+    &.complete{
+        p{
+            color: $servizio-conferma-default;
+        }
+        .progress{
+            .progress-bar {
+                background:  $servizio-conferma-default;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<div class="fsbac-section-box-path-info">
+    <div class="container">
+         <div class="content-path">
+           <div class="content-path-image">
+            <div class="boxs-info">
+                <div class="box">
+                    <div class="icon"> {{> theme_fsbac/icons_svg/columns-gap-fill}}</div>
+                    <div class="text">{{#str}}path.box1, theme_fsbac{{/str}}</div>
+                </div>
+                <div class="box">
+                    <div class="icon"> {{> theme_fsbac/icons_svg/dice-4-fill}} </div>
+                    <div class="text">{{#str}}path.box2, theme_fsbac{{/str}}</div>
+                </div>
+                <div class="box">
+                    <div class="icon"> {{> theme_fsbac/icons_svg/pie-chart-fill}} </div>
+                    <div class="text">{{#str}}path.box3, theme_fsbac{{/str}}</div>
+                </div>
+           
+            
+            </div>
+           </div>
+         </div>
+         <div class="content-path deatils-text">
+
+             {{< theme_fsbac/components/title-section}}
+                        {{$title}}{{#str}}path.banner_title, theme_fsbac{{/str}}{{/title}}
+            {{/ theme_fsbac/components/title-section}}
+            <div class="desc">
+             {{#str}}path.banner_desc, theme_fsbac{{/str}}
+            </div>
+            <div>
+               <a href="{{config.wwwroot}}/theme/fsbac/pages/paths.php" class="btn btn-primary">{{#str}}path.button_path, theme_fsbac{{/str}}</a>
+            </div>
+         
+         </div>
+    </div>
+
+</div>
